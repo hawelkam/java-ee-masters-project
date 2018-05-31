@@ -16,7 +16,7 @@ public class MultimediaShopFacade {
     private List<ItemName> itemNames;
 
     public MultimediaShopFacade() {
-        this.itemNames = new ArrayList<>();
+        this.itemNames = new ArrayList<ItemName>();
 
     }
 
