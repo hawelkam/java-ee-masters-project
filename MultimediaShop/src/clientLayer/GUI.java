@@ -12,9 +12,7 @@ public class GUI {
 
     public void demo() {
         MusicAlbumNameDto dto = new MusicAlbumNameDto("Behemoth", 10, Medium.CD);
-        ap.addItemName(MediaType.MusicAlbum, dto);
-        String createdName = ap.getItemName().toString();
-        JOptionPane.showMessageDialog(null, createdName);
+        JOptionPane.showMessageDialog(null, ap.addItemName(MediaType.MusicAlbum, dto));
     }
 
     static public void main(String args[]) {

@@ -1,4 +1,4 @@
-package businessLayer.entity;
+package businessLayer.entity.itemNames;
 
 import businessLayer.businessLayerEnums.MovieGenre;
 

@@ -1,84 +1,59 @@
 package businessLayer.facade;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import businessLayer.businessLayerEnums.MediaType;
 import businessLayer.dataaccess.dto.ItemNameDto;
 import businessLayer.dataaccess.dto.MovieNameDto;
 import businessLayer.dataaccess.dto.MusicAlbumNameDto;
 import businessLayer.dataaccess.dto.VideoGameNameDto;
-import businessLayer.entity.ItemName;
-import businessLayer.entity.MovieName;
-import businessLayer.entity.MusicAlbumName;
-import businessLayer.entity.VideoGameName;
+import businessLayer.entity.itemNames.ItemName;
+import businessLayer.factories.ItemFactory;
 
 public class MultimediaShopFacade {
 
-    private ItemName itemName;
+    private List<ItemName> itemNames;
 
     public MultimediaShopFacade() {
+        this.itemNames = new ArrayList<>();
 
     }
 
-    public void addItemName(MediaType mediaType, ItemNameDto dto) {
+    public String addItemName(MediaType mediaType, ItemNameDto dto) {
+        ItemName newItem = new ItemName();
         switch (mediaType) {
             case Movie:
-                itemName = createMovieName((MovieNameDto) dto);
+                newItem = ItemFactory.createMovieName((MovieNameDto) dto);
                 break;
             case VideoGame:
-                itemName = createVideoGameName((VideoGameNameDto) dto);
+                newItem = ItemFactory.createVideoGameName((VideoGameNameDto) dto);
                 break;
             case MusicAlbum:
-                itemName = createMusicAlbumName((MusicAlbumNameDto) dto);
+                newItem = ItemFactory.createMusicAlbumName((MusicAlbumNameDto) dto);
                 break;
-            default:
         }
+        if (searchItemName(newItem) == null) {
+            itemNames.add(newItem);
+            return newItem.toString();
+        }
+        return null;
     }
 
-    public ItemName getItemName() {
-        return itemName;
+    public ItemName searchItemName(ItemName newItem) {
+        int idx;
+        if ((idx = itemNames.indexOf(newItem)) != -1) {
+            newItem = itemNames.get(idx);
+            return newItem;
+        }
+        return null;
     }
 
-    public void setItemName(ItemName itemName) {
-        this.itemName = itemName;
+    public List<ItemName> getItemNames() {
+        return itemNames;
     }
 
-    private MusicAlbumName createMusicAlbumName(MusicAlbumNameDto dto) {
-        MusicAlbumName musicAlbumName = new MusicAlbumName();
-        musicAlbumName.setArtits(dto.getArtits());
-        musicAlbumName.setNoOfTracks(dto.getNoOfTracks());
-        musicAlbumName.setMedium(dto.getMedium());
-        musicAlbumName.setName(dto.getName());
-        musicAlbumName.setPrice(dto.getPrice());
-        musicAlbumName.setProductCode(dto.getProductCode());
-        musicAlbumName.setReleaseDate(dto.getReleaseDate());
-        return musicAlbumName;
-    }
-
-    private MovieName createMovieName(MovieNameDto dto) {
-        MovieName movieName = new MovieName();
-        movieName.setDescription(dto.getDescription());
-        movieName.setDirector(dto.getDirector());
-        movieName.setDistributor(dto.getDistributor());
-        movieName.setDurationInMinutes(dto.getDurationInMinutes());
-        movieName.setGenre(dto.getGenre());
-        movieName.setMedium(dto.getMedium());
-        movieName.setName(dto.getName());
-        movieName.setPrice(dto.getPrice());
-        movieName.setProductCode(dto.getProductCode());
-        movieName.setReleaseDate(dto.getReleaseDate());
-        return movieName;
-    }
-
-    private VideoGameName createVideoGameName(VideoGameNameDto dto) {
-        VideoGameName videoGameName = new VideoGameName();
-        videoGameName.setGenre(dto.getGenre());
-        videoGameName.setPlatform(dto.getPlatform());
-        videoGameName.setProducer(dto.getProducer());
-        videoGameName.setPublisher(dto.getPublisher());
-        videoGameName.setMedium(dto.getMedium());
-        videoGameName.setName(dto.getName());
-        videoGameName.setPrice(dto.getPrice());
-        videoGameName.setProductCode(dto.getProductCode());
-        videoGameName.setReleaseDate(dto.getReleaseDate());
-        return videoGameName;
+    public void setItemNames(List<ItemName> itemNames) {
+        this.itemNames = itemNames;
     }
 }

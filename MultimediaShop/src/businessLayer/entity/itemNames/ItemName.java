@@ -1,8 +1,10 @@
-package businessLayer.entity;
+package businessLayer.entity.itemNames;
 
 import java.util.Date;
+import java.util.List;
 
 import businessLayer.businessLayerEnums.Medium;
+import businessLayer.entity.items.Item;
 
 public class ItemName {
     private String name;
@@ -10,6 +12,7 @@ public class ItemName {
     private double price;
     private Medium medium;
     private Date releaseDate;
+    private List<Item> items;
 
     public ItemName() {
     }
@@ -52,6 +55,14 @@ public class ItemName {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override
