@@ -1,7 +1,7 @@
-package businessLayer.dataaccess.dto;
+package server.dataaccess;
 
-import businessLayer.businessLayerEnums.GameGenre;
-import businessLayer.businessLayerEnums.GamePlatform;
+import server.business.enums.GameGenre;
+import server.business.enums.GamePlatform;
 
 public class VideoGameNameDto extends ItemNameDto {
     private String producer;

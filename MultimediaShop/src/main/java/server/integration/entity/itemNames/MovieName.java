@@ -1,6 +1,6 @@
-package businessLayer.entity.itemNames;
+package server.integration.entity.itemNames;
 
-import businessLayer.businessLayerEnums.MovieGenre;
+import server.business.enums.MovieGenre;
 
 public class MovieName extends ItemName{
     private String director;

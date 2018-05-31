@@ -1,11 +1,11 @@
-package clientLayer;
+package client;
 
 import javax.swing.JOptionPane;
 
-import businessLayer.businessLayerEnums.MediaType;
-import businessLayer.businessLayerEnums.Medium;
-import businessLayer.dataaccess.dto.MusicAlbumNameDto;
-import businessLayer.facade.MultimediaShopFacade;
+import server.business.enums.MediaType;
+import server.business.enums.Medium;
+import server.dataaccess.MusicAlbumNameDto;
+import server.business.facade.MultimediaShopFacade;
 
 public class GUI {
     MultimediaShopFacade ap = new MultimediaShopFacade();

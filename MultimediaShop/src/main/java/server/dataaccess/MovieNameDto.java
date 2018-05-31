@@ -1,6 +1,6 @@
-package businessLayer.dataaccess.dto;
+package server.dataaccess;
 
-import businessLayer.businessLayerEnums.MovieGenre;
+import server.business.enums.MovieGenre;
 
 public class MovieNameDto extends ItemNameDto {
     private String director;

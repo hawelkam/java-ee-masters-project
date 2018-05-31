@@ -1,7 +1,7 @@
-package businessLayer.entity.itemNames;
+package server.integration.entity.itemNames;
 
-import businessLayer.businessLayerEnums.GameGenre;
-import businessLayer.businessLayerEnums.GamePlatform;
+import server.businessLayerEnums.GameGenre;
+import server.business.enums.GamePlatform;
 
 public class VideoGameName extends ItemName{
     private String producer;

@@ -1,4 +1,4 @@
-package businessLayer.entity.itemNames;
+package server.integration.entity.itemNames;
 
 public class MusicAlbumName extends ItemName {
     private String artits;

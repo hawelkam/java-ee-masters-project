@@ -1,6 +1,6 @@
-package businessLayer.dataaccess.dto;
+package server.dataaccess;
 
-import businessLayer.businessLayerEnums.Medium;
+import server.business.enums.Medium;
 
 public class MusicAlbumNameDto extends ItemNameDto {
     private String artits;

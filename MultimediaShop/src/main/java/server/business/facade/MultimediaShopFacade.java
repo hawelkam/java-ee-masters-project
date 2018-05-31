@@ -1,15 +1,15 @@
-package businessLayer.facade;
+package server.business.facade;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import businessLayer.businessLayerEnums.MediaType;
-import businessLayer.dataaccess.dto.ItemNameDto;
-import businessLayer.dataaccess.dto.MovieNameDto;
-import businessLayer.dataaccess.dto.MusicAlbumNameDto;
-import businessLayer.dataaccess.dto.VideoGameNameDto;
-import businessLayer.entity.itemNames.ItemName;
-import businessLayer.factories.ItemFactory;
+import server.business.enums.MediaType;
+import server.dataaccess.dto.ItemNameDto;
+import server.dataaccess.MovieNameDto;
+import server.dataaccess.MusicAlbumNameDto;
+import server.dataaccess.VideoGameNameDto;
+import server.integration.entity.itemNames.ItemName;
+import server.factories.ItemFactory;
 
 public class MultimediaShopFacade {
 

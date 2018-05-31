@@ -1,4 +1,4 @@
-package businessLayer.businessLayerEnums;
+package server.business.enums;
 
 public enum MediaType {
     Movie,

@@ -1,4 +1,4 @@
-package businessLayer.entity.items;
+package server.integration.entity.items;
 
 public class VideoGame extends Item {
 }

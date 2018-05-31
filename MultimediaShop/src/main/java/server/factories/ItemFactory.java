@@ -1,11 +1,11 @@
-package businessLayer.factories;
+package server.factories;
 
-import businessLayer.dataaccess.dto.MovieNameDto;
-import businessLayer.dataaccess.dto.MusicAlbumNameDto;
-import businessLayer.dataaccess.dto.VideoGameNameDto;
-import businessLayer.entity.itemNames.MovieName;
-import businessLayer.entity.itemNames.MusicAlbumName;
-import businessLayer.entity.itemNames.VideoGameName;
+import server.dataaccess.MovieNameDto;
+import server.dataaccess.MusicAlbumNameDto;
+import server.dataaccess.VideoGameNameDto;
+import server.integration.entity.itemNames.MovieName;
+import server.integration.entity.itemNames.MusicAlbumName;
+import server.integration.entity.itemNames.VideoGameName;
 
 public class ItemFactory {
 

@@ -1,21 +1,15 @@
-package businessLayer.entity.itemNames;
+package server.dataaccess;
 
 import java.util.Date;
-import java.util.List;
 
-import businessLayer.businessLayerEnums.Medium;
-import businessLayer.entity.items.Item;
+import server.business.enums.Medium;
 
-public class ItemName {
-    private String name;
-    private String productCode;
-    private double price;
-    private Medium medium;
-    private Date releaseDate;
-    private List<Item> items;
-
-    public ItemName() {
-    }
+public class ItemNameDto {
+    protected String name;
+    protected String productCode;
+    protected double price;
+    Medium medium;
+    protected Date releaseDate;
 
     public String getName() {
         return name;
@@ -55,18 +49,5 @@ public class ItemName {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
-    }
-
-    public List<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(List<Item> items) {
-        this.items = items;
-    }
-
-    @Override
-    public String toString() {
-        return "Nazwa: " + getName() + " Nosnik: " + getMedium().toString() + " Cena: " + getPrice();
     }
 }
