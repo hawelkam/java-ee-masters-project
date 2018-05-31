@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import server.business.enums.MediaType;
-import server.dataaccess.dto.ItemNameDto;
+import server.dataaccess.ItemNameDto;
 import server.dataaccess.MovieNameDto;
 import server.dataaccess.MusicAlbumNameDto;
 import server.dataaccess.VideoGameNameDto;

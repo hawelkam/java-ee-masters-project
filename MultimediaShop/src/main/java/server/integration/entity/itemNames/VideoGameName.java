@@ -1,6 +1,6 @@
 package server.integration.entity.itemNames;
 
-import server.businessLayerEnums.GameGenre;
+import server.business.enums.GameGenre;
 import server.business.enums.GamePlatform;
 
 public class VideoGameName extends ItemName{
