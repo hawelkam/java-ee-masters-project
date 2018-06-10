@@ -6,11 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MultimediaShop" />
+        <module name="MultimediaShop-ear" />
+        <module name="MultimediaShop-ejb" />
+        <module name="MultimediaShop-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="MultimediaShop" target="1.5" />
+      <module name="MultimediaShop-ear" target="1.7" />
+      <module name="MultimediaShop-ejb" target="1.7" />
+      <module name="MultimediaShop-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
