@@ -6,6 +6,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="MultimediaShop-web" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax:javaee-api:8.0" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.6.0" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/MultimediaShop-web/target/MultimediaShop-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />

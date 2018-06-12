@@ -1,11 +1,16 @@
 package com.mikehawek.integration.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Customer {
@@ -22,6 +27,11 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
+
+    /*@OneToMany(mappedBy = "buyer",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<Order> orders = new ArrayList<>();*/
 
     @Basic
     @Column(name = "first_name")
@@ -42,6 +52,14 @@ public class Customer {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    /*public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }*/
 
     @Override
     public boolean equals(Object o) {

@@ -8,22 +8,15 @@ package com.mikehawek.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.annotation.Resource;
-import javax.jms.Connection;
-import javax.jms.ConnectionFactory;
-import javax.jms.JMSException;
-import javax.jms.MessageProducer;
-import javax.jms.ObjectMessage;
-import javax.jms.Session;
-import javax.jms.Topic;
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mikehawek.business.enums.Medium;
-import com.mikehawek.integration.entities.itemnames.MovieName;
+import com.mikehawek.business.dto.ItemNameDto;
+import com.mikehawek.business.dto.MovieNameDto;
 
 /**
  *
@@ -31,11 +24,10 @@ import com.mikehawek.integration.entities.itemnames.MovieName;
  */
 @WebServlet(name = "AddItem", urlPatterns = {"/AddItem"})
 public class AddItem extends HttpServlet {
-    @Resource (mappedName = "jms/FetchItemsMessageFactory")
-    private ConnectionFactory connectionFactory;
-    
-    @Resource (mappedName = "jms/FetchItemsMessage")
-    private Topic topic;
+
+    @EJB
+    private com.mikehawek.business.facade.ItemNameFacade itemNameFacade;
+
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -52,27 +44,11 @@ public class AddItem extends HttpServlet {
         String name=request.getParameter("name");
         String productCode=request.getParameter("productCode");
         if (name != null && productCode != null) {
-            try {
-                Connection connection = connectionFactory.createConnection();
-                Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-                MessageProducer messageProducer = session.createProducer(topic);
-
-                ObjectMessage message = session.createObjectMessage();
-                //TODO: Here DTO/DTS should be used - MDB should map it to entity
-                MovieName e = new MovieName();
-                e.setName(name);
-                e.setProductCode(productCode);
-                e.setMedium(Medium.DVD);
-
-                message.setObject(e);
-                messageProducer.send(message);
-                messageProducer.close();
-                connection.close();
-                response.sendRedirect("ListItems");
-
-            } catch (JMSException ex) {
-                ex.printStackTrace();
-            }
+            ItemNameDto dto = new MovieNameDto();
+            dto.setProductCode(productCode);
+            dto.setName(name);
+            itemNameFacade.addItemName(dto);
+            response.sendRedirect("ListItems");
         }
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -86,6 +62,10 @@ public class AddItem extends HttpServlet {
             out.println("<form>");
             out.println("Name: <input type='text' name='name'><br/>");
             out.println("ProductCode: <textarea name='productCode'></textarea><br/>");
+            out.println("Type: <select name='itemType'>" +
+                    " <option value=\"Movie\">Movie</option>" +
+                    " <option value=\"VideoGame\">Video Game</option>" +
+                    " <option value=\"MusicAlbum\">Music Album</option></select><br/>");
             out.println("<input type='submit'><br/>");
             out.println("</form>");
             

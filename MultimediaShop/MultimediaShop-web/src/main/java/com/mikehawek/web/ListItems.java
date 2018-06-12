@@ -5,17 +5,19 @@
  */
 package com.mikehawek.web;
 
-import com.mikehawek.integration.entities.itemnames.ItemName;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.List;
+
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.mikehawek.business.dto.ItemNameDto;
 
 /**
  *
@@ -48,9 +50,9 @@ public class ListItems extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ListItems at " + request.getContextPath() + "</h1>");
-            List items = itemNameFacade.findAll();
+            List items = itemNameFacade.listItemNames();
             for (Iterator it = items.iterator(); it.hasNext();) {
-                ItemName elem = (ItemName) it.next();
+                ItemNameDto elem = (ItemNameDto) it.next();
                 out.println(" <b>"+elem.getName()+" </b><br />");
                 out.println(elem.getProductCode()+"<br /> ");
             }

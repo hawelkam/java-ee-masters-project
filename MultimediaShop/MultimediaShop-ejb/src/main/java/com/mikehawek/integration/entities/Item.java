@@ -19,6 +19,9 @@ public class Item {
     @ManyToOne(fetch = FetchType.LAZY)
     private ItemName itemName;
 
+    @ManyToOne
+    private Order order;
+
     @Column(name = "IS_AVAILABLE")
     private boolean isAvailable;
 
@@ -33,4 +36,12 @@ public class Item {
     public boolean isAvailable() { return isAvailable; }
 
     public void setAvailable(boolean available) { isAvailable = available; }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
 }
