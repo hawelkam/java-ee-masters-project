@@ -17,5 +17,13 @@
         <h:inputText id="name" value="#{itemBean.name}"></h:inputText>
         <h:commandButton value="greeting" action="welcome"></h:commandButton>
     </h:form>
+
+    <h3>List Items:</h3>
+    <h:form rendered="#{not empty itemBean.itemNames}">
+        <h:dataTable value="#{itemBean.itemNames}" var="item">
+            <h:column><f:facet name="header">Product code</f:facet>#{item.productCode}</h:column>
+            <h:column><f:facet name="header">Name</f:facet>#{item.name}</h:column>
+        </h:dataTable>
+     </h:form>
 </h:body>
 </html>

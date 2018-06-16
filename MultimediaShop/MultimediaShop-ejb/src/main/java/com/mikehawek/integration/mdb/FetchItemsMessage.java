@@ -9,13 +9,13 @@ import javax.annotation.Resource;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.ejb.MessageDrivenContext;
+import javax.inject.Inject;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
+import com.mikehawek.business.dao.ItemNameDao;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 /**
@@ -37,9 +37,9 @@ public class FetchItemsMessage implements MessageListener {
     
     @Resource
     private MessageDrivenContext mdc;
-    
-    @PersistenceContext(unitName = "DBConnection")
-    private EntityManager em;
+
+    @Inject
+    private ItemNameDao dao;
     
     public FetchItemsMessage() {
     }
@@ -51,7 +51,7 @@ public class FetchItemsMessage implements MessageListener {
             if (message instanceof ObjectMessage) {
                 msg = (ObjectMessage) message;
                 ItemName item = (ItemName) msg.getObject();
-                save(item);
+                dao.save(item);
             }
         } catch (JMSException e) {
             e.printStackTrace();
@@ -60,9 +60,4 @@ public class FetchItemsMessage implements MessageListener {
             te.printStackTrace();
         }
     }
-    
-    private void save(Object object) {
-        em.persist(object);
-    }
-    
 }
