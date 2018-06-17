@@ -40,4 +40,16 @@ public class VideoGameNameDto extends ItemNameDto {
     public void setGenre(GameGenre genre) {
         this.genre = genre;
     }
+
+    public VideoGameNameDto() {
+    }
+
+    public VideoGameNameDto(String name, String productCode) {
+        super(name, productCode);
+    }
+
+    @Override
+    public VideoGameNameDto clone() throws CloneNotSupportedException {
+        return new VideoGameNameDto(name, productCode);
+    }
 }

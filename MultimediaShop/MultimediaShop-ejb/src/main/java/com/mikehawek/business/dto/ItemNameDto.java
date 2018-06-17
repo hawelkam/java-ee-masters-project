@@ -1,17 +1,26 @@
 package com.mikehawek.business.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 import com.mikehawek.business.enums.Medium;
 
-public class ItemNameDto {
+public class ItemNameDto implements Serializable{
     protected String name;
     protected String productCode;
     protected double price;
     Medium medium;
     protected Date releaseDate;
     protected List<ItemDto> items;
+
+    public ItemNameDto() {
+    }
+
+    public ItemNameDto(String name, String productCode) {
+        this.name = name;
+        this.productCode = productCode;
+    }
 
     public String getName() { return name; }
 
@@ -36,4 +45,14 @@ public class ItemNameDto {
     public List<ItemDto> getItems() { return items; }
 
     public void setItems(List<ItemDto> items) { this.items = items; }
+
+    @Override
+    public ItemNameDto clone() throws CloneNotSupportedException {
+        return new ItemNameDto(name, productCode);
+    }
+
+    public void restore(ItemNameDto item) {
+        this.productCode = item.getProductCode();
+        this.name = item.getName();
+    }
 }

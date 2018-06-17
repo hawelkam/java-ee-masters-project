@@ -16,6 +16,7 @@
     <h:form>
         <h:inputText id="name" value="#{itemBean.name}"></h:inputText>
         <h:commandButton value="greeting" action="welcome"></h:commandButton>
+        <h:commandButton value="Search for items" action="searchItems"></h:commandButton>
     </h:form>
 
     <h3>List Items:</h3>
@@ -23,7 +24,45 @@
         <h:dataTable value="#{itemBean.itemNames}" var="item">
             <h:column><f:facet name="header">Product code</f:facet>#{item.productCode}</h:column>
             <h:column><f:facet name="header">Name</f:facet>#{item.name}</h:column>
+            <h:column>
+                <h:commandButton value="Edit" action="#{itemBean.edit(item)}" />
+            </h:column>
+            <h:column>
+                <h:commandButton value="Delete" action="#{itemBean.delete(item.productCode)}" />
+            </h:column>
         </h:dataTable>
      </h:form>
+
+    <h:panelGroup rendered="#{empty itemBean.itemNames}">
+        <p>No items! Please add items!</p>
+    </h:panelGroup>
+
+    <h:panelGroup rendered="#{!itemBean.edit}">
+        <h3>Add item</h3>
+        <h:form>
+            <p>Product Code: <h:inputText value="#{itemBean.itemName.productCode}" /></p>
+            <p>Name: <h:inputText value="#{itemBean.itemName.name}" /></p>
+            <p>
+                <h:commandButton value="add" action="#{itemBean.add}" />
+                <h:commandButton value="reset" action="#{itemBean.resetAdd}" />
+            </p>
+        </h:form>
+    </h:panelGroup>
+
+    <h:panelGroup rendered="#{itemBean.edit}">
+        <h3>Edit student #{itemBean.itemName.productCode}</h3>
+        <h:form>
+            <p>Name: <h:inputText value="#{itemBean.itemName.name}" /></p>
+            <p>
+                <h:commandButton value="save" action="#{itemBean.saveEdit}" />
+                <h:commandButton value="cancel" action="#{itemBean.cancelEdit}" />
+            </p>
+        </h:form>
+    </h:panelGroup>
+    <p>
+        <a href="#{appUrlStore.baseUrl}">Go back to index</a>
+    </p>
+
+
 </h:body>
 </html>

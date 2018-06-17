@@ -9,6 +9,13 @@ public class MovieNameDto extends ItemNameDto {
     private String description;
     private String distributor;
 
+    public MovieNameDto() {
+    }
+
+    public MovieNameDto(String name, String productCode) {
+        super(name, productCode);
+    }
+
     public String getDirector() {
         return director;
     }
@@ -49,4 +56,8 @@ public class MovieNameDto extends ItemNameDto {
         this.distributor = distributor;
     }
 
+    @Override
+    public MovieNameDto clone() throws CloneNotSupportedException {
+        return new MovieNameDto(name, productCode);
+    }
 }

@@ -1,7 +1,10 @@
 package com.mikehawek.web;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
 
@@ -9,18 +12,24 @@ import com.mikehawek.business.dto.ItemNameDto;
 import com.mikehawek.business.dto.MovieNameDto;
 import com.mikehawek.business.facade.ItemNameFacade;
 
-@Named("itemBean")
-@javax.enterprise.context.RequestScoped
-public class ItemBean {
+@Named
+@javax.enterprise.context.SessionScoped
+public class ItemBean implements Serializable {
     @EJB
     private com.mikehawek.business.facade.ItemNameFacade itemNameFacade;
 
     private String name;
     private ItemNameDto itemName;
     private ItemNameDto beforeEditItemName;
+    boolean edit;
+
+    @PostConstruct
+    public void init() {
+        itemName = new ItemNameDto();
+    }
 
     public void add() {
-        // DAO save the add
+        itemNameFacade.addItemName(this.itemName);
         itemName = new MovieNameDto();
     }
 
@@ -32,25 +41,27 @@ public class ItemBean {
         return itemNameFacade.listItemNames();
     }
 
- /*   public void edit(ItemNameDto item) {
+    public void edit(ItemNameDto item) throws CloneNotSupportedException {
         beforeEditItemName = item.clone();
         this.itemName = item;
+        edit = true;
     }
 
     public void cancelEdit() {
         this.itemName.restore(beforeEditItemName);
         this.itemName = new ItemNameDto();
+        edit = false;
     }
 
     public void saveEdit() {
-        // DAO save the edit
+        itemNameFacade.editItemName(this.itemName);
         this.itemName = new ItemNameDto();
+        edit = false;
     }
 
-    public void delete(ItemNameDto item) throws IOException {
-        // DAO save the delete
-        itemName.remove(item);
-    }*/
+    public void delete(String productCode) throws IOException {
+        itemNameFacade.deleteItemName(productCode);
+    }
 
     public String getName() {
         return name;
@@ -69,10 +80,26 @@ public class ItemBean {
     }
 
     public List<ItemNameDto> getItemNames() {
-        return itemNameFacade.listItemNames();
+        List<ItemNameDto> list = itemNameFacade.listItemNames();
+        return list;
     }
 
     public void setItemNames(List<ItemNameDto> itemNames) {
-        //this.itemNames = itemNames;
+    }
+
+    public boolean isEdit() {
+        return edit;
+    }
+
+    public void setEdit(boolean edit) {
+        this.edit = edit;
+    }
+
+    public ItemNameDto getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(ItemNameDto itemName) {
+        this.itemName = itemName;
     }
 }

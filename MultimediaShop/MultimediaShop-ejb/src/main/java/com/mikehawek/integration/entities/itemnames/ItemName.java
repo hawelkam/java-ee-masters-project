@@ -38,11 +38,9 @@ import com.mikehawek.integration.entities.Item;
 public class ItemName implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    protected Long id;
 
     protected String name;
+    @Id
     @Column(name = "product_code")
     protected String productCode;
     protected double price;
@@ -56,14 +54,6 @@ public class ItemName implements Serializable {
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private List<Item> items = new ArrayList<>();
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
     
     public String getName() {
         return name;
@@ -104,7 +94,7 @@ public class ItemName implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        hash += (productCode != null ? productCode.hashCode() : 0);
         return hash;
     }
 
@@ -115,15 +105,15 @@ public class ItemName implements Serializable {
             return false;
         }
         ItemName other = (ItemName) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        /*if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
-        }
+        }*/
         return true;
     }
 
     @Override
     public String toString() {
-        return "com.mikehawek.integration.entities.itemnames.ItemName[ id=" + id + " ]";
+        return "com.mikehawek.integration.entities.itemnames.ItemName[ id=" + productCode + " ]";
     }
     
 }

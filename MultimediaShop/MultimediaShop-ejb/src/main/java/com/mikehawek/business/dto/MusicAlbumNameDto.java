@@ -30,4 +30,13 @@ public class MusicAlbumNameDto extends ItemNameDto {
 
     public MusicAlbumNameDto() {
     }
+
+    public MusicAlbumNameDto(String name, String productCode) {
+        super(name, productCode);
+    }
+
+    @Override
+    public MusicAlbumNameDto clone() throws CloneNotSupportedException {
+        return new MusicAlbumNameDto(name, productCode);
+    }
 }

@@ -53,7 +53,7 @@ public class ItemNameDao {
             predicates.add(cb.equal(itemNameRoot.get("name"), searchCriteria.getName()));
         }
         if (searchCriteria.getProductCode() != null) {
-            predicates.add(cb.equal(itemNameRoot.get("product_code"), searchCriteria.getProductCode()));
+            predicates.add(cb.equal(itemNameRoot.get("productCode"), searchCriteria.getProductCode()));
         }
         if (searchCriteria.getType() != null) {
             predicates.add(cb.equal(itemNameRoot.get("dtype"), searchCriteria.getType()));
