@@ -59,12 +59,11 @@ public class ItemNameFacade extends AbstractFacade<ItemNameDto> {
     public List<ItemNameDto> searchItemNames(ItemNameSearchCriteria searchCriteria) {
         List<ItemName> itemNames = dao.findItemNames(searchCriteria);
         return itemNames.stream()
-                .map(in -> ItemFactory.createItemNameDto(in))
+                .map(ItemFactory::createItemNameDto)
                 .collect(Collectors.toList());
     }
 
     public void editItemName(ItemNameDto editedItem) {
-        ItemName itemToEdit = getEntityManager().find(ItemName.class, editedItem.getProductCode());
         ItemName item = ItemFactory.createItemName(editedItem);
         getEntityManager().merge(item);
     }
@@ -77,7 +76,7 @@ public class ItemNameFacade extends AbstractFacade<ItemNameDto> {
     public List<ItemNameDto> listItemNames() {
         List<ItemName> itemNames = dao.findItemNames(new ItemNameSearchCriteria());
         return itemNames.stream()
-                .map(in -> ItemFactory.createItemNameDto(in))
+                .map(ItemFactory::createItemNameDto)
                 .collect(Collectors.toList());
     }
 }
