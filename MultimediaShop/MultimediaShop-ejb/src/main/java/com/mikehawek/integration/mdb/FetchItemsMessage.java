@@ -51,7 +51,9 @@ public class FetchItemsMessage implements MessageListener {
             if (message instanceof ObjectMessage) {
                 msg = (ObjectMessage) message;
                 ItemName item = (ItemName) msg.getObject();
-                dao.save(item);
+                if (item != null)
+                    dao.save(item);
+                message.acknowledge();
             }
         } catch (JMSException e) {
             e.printStackTrace();

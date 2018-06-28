@@ -24,10 +24,10 @@ public class Order {
     /*@ManyToOne(fetch = FetchType.LAZY)
     private Customer buyer;*/
 
-    @OneToMany(mappedBy = "order",
+    /*@OneToMany(mappedBy = "order",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
-    private List<Item> items = new ArrayList<>();
+    private List<Item> items = new ArrayList<>();*/
 
     /*public Customer getBuyer() {
         return buyer;
@@ -37,11 +37,11 @@ public class Order {
         this.buyer = buyer;
     }*/
 
-    public List<Item> getItems() {
+    /*public List<Item> getItems() {
         return items;
     }
 
     public void setItems(List<Item> items) {
         this.items = items;
-    }
+    }*/
 }

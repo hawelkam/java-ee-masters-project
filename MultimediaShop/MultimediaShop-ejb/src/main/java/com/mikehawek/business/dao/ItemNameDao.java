@@ -64,6 +64,7 @@ public class ItemNameDao {
     }
 
     public void save(Object object) {
-        em.persist(object);
+        if(object != null)
+            em.persist(object);
     }
 }

@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.mikehawek.business.enums.ItemStatus;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 @Entity
@@ -19,11 +20,14 @@ public class Item {
     @ManyToOne(fetch = FetchType.LAZY)
     private ItemName itemName;
 
-    @ManyToOne
-    private Order order;
+    /*@ManyToOne
+    private Order order;*/
 
-    @Column(name = "IS_AVAILABLE")
-    private boolean isAvailable;
+    /*@ManyToOne(fetch = FetchType.LAZY)
+    private Basket basket;
+*/
+    @Column(name = "STATUS")
+    private ItemStatus status;
 
     public ItemName getItemName() {
         return itemName;
@@ -33,15 +37,27 @@ public class Item {
         this.itemName = itemName;
     }
 
-    public boolean isAvailable() { return isAvailable; }
+   /* public Basket getBasket() {
+        return basket;
+    }
 
-    public void setAvailable(boolean available) { isAvailable = available; }
+    public void setBasket(Basket basket) {
+        this.basket = basket;
+    }*/
 
-    public Order getOrder() {
+    public ItemStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ItemStatus status) {
+        this.status = status;
+    }
+
+    /*public Order getOrder() {
         return order;
     }
 
     public void setOrder(Order order) {
         this.order = order;
-    }
+    }*/
 }

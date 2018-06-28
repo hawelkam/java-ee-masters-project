@@ -1,16 +1,15 @@
 package com.mikehawek.integration.entities;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.xml.registry.infomodel.User;
 
 @Entity
 public class Customer {
@@ -28,10 +27,9 @@ public class Customer {
         this.id = id;
     }
 
-    /*@OneToMany(mappedBy = "buyer",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    private List<Order> orders = new ArrayList<>();*/
+    @OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL,
+            mappedBy = "customer")
+    private Basket basket;
 
     @Basic
     @Column(name = "first_name")
@@ -53,12 +51,12 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    /*public List<Order> getOrders() {
-        return orders;
+    /*public Basket getBasket() {
+        return basket;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }*/
 
     @Override
