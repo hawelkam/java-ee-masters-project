@@ -15,19 +15,17 @@ public class Item {
     @Id
     @GeneratedValue
     @Column(name = "ITEM_ID")
-    private int id;
+    private String barCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private ItemName itemName;
 
-    /*@ManyToOne
-    private Order order;*/
-
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    private Basket basket;
-*/
     @Column(name = "STATUS")
     private ItemStatus status;
+
+    public String getBarCode() { return barCode; }
+
+    public void setBarCode(String barCode) { this.barCode = barCode; }
 
     public ItemName getItemName() {
         return itemName;
@@ -37,14 +35,6 @@ public class Item {
         this.itemName = itemName;
     }
 
-   /* public Basket getBasket() {
-        return basket;
-    }
-
-    public void setBasket(Basket basket) {
-        this.basket = basket;
-    }*/
-
     public ItemStatus getStatus() {
         return status;
     }
@@ -52,12 +42,4 @@ public class Item {
     public void setStatus(ItemStatus status) {
         this.status = status;
     }
-
-    /*public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }*/
 }

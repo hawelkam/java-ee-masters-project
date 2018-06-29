@@ -21,16 +21,19 @@ public class ItemBean implements Serializable {
     private String name;
     private ItemNameDto itemName;
     private ItemNameDto beforeEditItemName;
+    private List<ItemNameDto> itemNames;
     boolean edit;
 
     @PostConstruct
     public void init() {
-        itemName = new ItemNameDto();
+        itemName = new MovieNameDto();
     }
 
     public void add() {
         itemNameFacade.addItemName(this.itemName);
+        setItemNames(itemNameFacade.listItemNames());
         itemName = new MovieNameDto();
+
     }
 
     public void resetAdd() {
@@ -80,11 +83,12 @@ public class ItemBean implements Serializable {
     }
 
     public List<ItemNameDto> getItemNames() {
-        List<ItemNameDto> list = itemNameFacade.listItemNames();
-        return list;
+        itemNames = itemNameFacade.listItemNames();
+        return itemNames;
     }
 
     public void setItemNames(List<ItemNameDto> itemNames) {
+        this.itemNames = itemNames;
     }
 
     public boolean isEdit() {

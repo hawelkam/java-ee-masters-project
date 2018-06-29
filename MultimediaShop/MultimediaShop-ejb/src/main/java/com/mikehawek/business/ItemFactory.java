@@ -1,9 +1,13 @@
 package com.mikehawek.business;
 
+import java.util.stream.Collectors;
+
+import com.mikehawek.business.dto.ItemDto;
 import com.mikehawek.business.dto.ItemNameDto;
 import com.mikehawek.business.dto.MovieNameDto;
 import com.mikehawek.business.dto.MusicAlbumNameDto;
 import com.mikehawek.business.dto.VideoGameNameDto;
+import com.mikehawek.integration.entities.Item;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 import com.mikehawek.integration.entities.itemnames.MovieName;
 import com.mikehawek.integration.entities.itemnames.MusicAlbumName;
@@ -23,7 +27,9 @@ public class ItemFactory {
         movieName.setPrice(dto.getPrice());
         movieName.setProductCode(dto.getProductCode());
         movieName.setReleaseDate(dto.getReleaseDate());
-        //add Mapping for Items
+        if(dto.getItems() != null) {
+            movieName.setItems(dto.getItems().stream().map(i -> createItem(i)).collect(Collectors.toList()));
+        }
         return movieName;
     }
 
@@ -38,6 +44,9 @@ public class ItemFactory {
         videoGameName.setPrice(dto.getPrice());
         videoGameName.setProductCode(dto.getProductCode());
         videoGameName.setReleaseDate(dto.getReleaseDate());
+        if(dto.getItems() != null) {
+            videoGameName.setItems(dto.getItems().stream().map(i -> createItem(i)).collect(Collectors.toList()));
+        }
         return videoGameName;
     }
 
@@ -50,6 +59,9 @@ public class ItemFactory {
         musicAlbumName.setPrice(dto.getPrice());
         musicAlbumName.setProductCode(dto.getProductCode());
         musicAlbumName.setReleaseDate(dto.getReleaseDate());
+        if(dto.getItems() != null) {
+            musicAlbumName.setItems(dto.getItems().stream().map(i -> createItem(i)).collect(Collectors.toList()));
+        }
         return musicAlbumName;
     }
 
@@ -76,6 +88,9 @@ public class ItemFactory {
         videoGameName.setPrice(entity.getPrice());
         videoGameName.setProductCode(entity.getProductCode());
         videoGameName.setReleaseDate(entity.getReleaseDate());
+        if(entity.getItems() != null) {
+            videoGameName.setItems(entity.getItems().stream().map(i -> createItemDto(i)).collect(Collectors.toList()));
+        }
         return videoGameName;
     }
 
@@ -88,6 +103,9 @@ public class ItemFactory {
         musicAlbumName.setPrice(entity.getPrice());
         musicAlbumName.setProductCode(entity.getProductCode());
         musicAlbumName.setReleaseDate(entity.getReleaseDate());
+        if(entity.getItems() != null) {
+            musicAlbumName.setItems(entity.getItems().stream().map(i -> createItemDto(i)).collect(Collectors.toList()));
+        }
         return musicAlbumName;
     }
 
@@ -103,7 +121,9 @@ public class ItemFactory {
         movieName.setPrice(entity.getPrice());
         movieName.setProductCode(entity.getProductCode());
         movieName.setReleaseDate(entity.getReleaseDate());
-        //add Mapping for Items
+        if(entity.getItems() != null) {
+            movieName.setItems(entity.getItems().stream().map(i -> createItemDto(i)).collect(Collectors.toList()));
+        }
         return movieName;
     }
 
@@ -117,5 +137,21 @@ public class ItemFactory {
         } else {
             return null;
         }
+    }
+
+    public static Item createItem(ItemDto dto) {
+        Item item = new Item();
+        item.setItemName(createItemName(dto.getItemNameDto()));
+        item.setStatus(dto.getStatus());
+        item.setBarCode(dto.getBarCode());
+        return item;
+    }
+
+    public static ItemDto createItemDto(Item item) {
+        ItemDto dto = new ItemDto();
+        dto.setItemNameDto(createItemNameDto(item.getItemName()));
+        dto.setStatus(dto.getStatus());
+        dto.setBarCode(dto.getBarCode());
+        return dto;
     }
 }

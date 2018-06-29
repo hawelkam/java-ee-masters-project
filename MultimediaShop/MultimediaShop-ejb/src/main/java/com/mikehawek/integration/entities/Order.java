@@ -6,9 +6,9 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,30 +18,30 @@ import javax.persistence.Table;
 public class Order {
     @Id
     @GeneratedValue
-    @Column(name = "ITEM_ID")
+    @Column(name = "ORDER_ID")
     private int id;
 
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    private Customer buyer;*/
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ITEM_ID")
+    private List<Item> items = new ArrayList<>();
 
-    /*@OneToMany(mappedBy = "order",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    private List<Item> items = new ArrayList<>();*/
-
-    /*public Customer getBuyer() {
-        return buyer;
-    }
-
-    public void setBuyer(Customer buyer) {
-        this.buyer = buyer;
-    }*/
-
-    /*public List<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
     public void setItems(List<Item> items) {
         this.items = items;
-    }*/
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "CUSTOMER_ID")
+    private Customer customer;
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }

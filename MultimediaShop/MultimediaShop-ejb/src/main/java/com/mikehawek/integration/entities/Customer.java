@@ -1,5 +1,8 @@
 package com.mikehawek.integration.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,14 +11,16 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.xml.registry.infomodel.User;
 
 @Entity
 public class Customer {
     private int id;
     private String firstName;
     private String lastName;
+    private String address;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,6 +36,10 @@ public class Customer {
             mappedBy = "customer")
     private Basket basket;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ORDER_ID")
+    private List<Order> orders = new ArrayList<>();
+
     @Basic
     @Column(name = "first_name")
     public String getFirstName() {
@@ -42,6 +51,16 @@ public class Customer {
     }
 
     @Basic
+    @Column(name = "address")
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Basic
     @Column(name = "last_name")
     public String getLastName() {
         return lastName;
@@ -50,14 +69,6 @@ public class Customer {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-    /*public Basket getBasket() {
-        return basket;
-    }
-
-    public void setBasket(Basket basket) {
-        this.basket = basket;
-    }*/
 
     @Override
     public boolean equals(Object o) {
