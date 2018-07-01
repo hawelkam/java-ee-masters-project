@@ -50,13 +50,10 @@ public class ItemNameDao {
             predicates.add(cb.equal(itemNameRoot.get("medium"), searchCriteria.getMedium()));
         }
         if (searchCriteria.getName() != null) {
-            predicates.add(cb.equal(itemNameRoot.get("name"), searchCriteria.getName()));
+            predicates.add(cb.like(itemNameRoot.get("name"), "%" + searchCriteria.getName() + "%"));
         }
         if (searchCriteria.getProductCode() != null) {
-            predicates.add(cb.equal(itemNameRoot.get("productCode"), searchCriteria.getProductCode()));
-        }
-        if (searchCriteria.getType() != null) {
-            predicates.add(cb.equal(itemNameRoot.get("dtype"), searchCriteria.getType()));
+            predicates.add(cb.like(itemNameRoot.get("productCode"), "%" + searchCriteria.getProductCode() + "%"));
         }
         cq.select(itemNameRoot).where(predicates.toArray(new Predicate[]{}));
 

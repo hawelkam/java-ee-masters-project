@@ -1,5 +1,7 @@
 package com.mikehawek.integration.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,7 +13,7 @@ import com.mikehawek.business.enums.ItemStatus;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 @Entity
-public class Item {
+public class Item implements Serializable {
     @Id
     @GeneratedValue
     @Column(name = "ITEM_ID")

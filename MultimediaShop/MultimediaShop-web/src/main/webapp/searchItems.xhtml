@@ -17,14 +17,6 @@
         <h:form>
             <p>Product Code: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.productCode}" /></p>
             <p>Name: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.name}" /></p>
-            <p>Type:
-                <h:selectOneMenu value="#{itemSearchModelBean.itemNameSearchCriteria.type}">
-                    <f:selectItem itemValue="" />
-                    <f:selectItem itemValue="Movie" />
-                    <f:selectItem itemValue="Video Game" />
-                    <f:selectItem itemValue="Music Album" />
-                </h:selectOneMenu>
-            </p>
             <p>Medium:
                 <h:selectOneMenu value="#{itemSearchModelBean.itemNameSearchCriteria.medium}">
                     <f:selectItem itemValue="" />

@@ -5,7 +5,6 @@ import com.mikehawek.business.enums.Medium;
 public class ItemNameSearchCriteria {
     private String productCode;
     private String name;
-    private String type;
     private Medium medium;
 
     public String getProductCode() {
@@ -22,14 +21,6 @@ public class ItemNameSearchCriteria {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public Medium getMedium() {
