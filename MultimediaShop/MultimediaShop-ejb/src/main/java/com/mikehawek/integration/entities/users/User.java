@@ -1,26 +1,28 @@
-package com.mikehawek.integration.entities;
+package com.mikehawek.integration.entities.users;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
 
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 @Entity
-public class Customer {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String address;
+@Table(name = "users")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public class User implements Serializable {
+    protected int id;
+    protected String firstName;
+    protected String lastName;
+    protected String address;
+    protected String login;
+    protected String password;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,14 +33,6 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
-
-    @OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL,
-            mappedBy = "customer")
-    private Basket basket;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ORDER_ID")
-    private List<Order> orders = new ArrayList<>();
 
     @Basic
     @Column(name = "first_name")
@@ -66,8 +60,16 @@ public class Customer {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getLogin() { return login; }
+
+    public void setLogin(String login) { this.login = login; }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -75,11 +77,11 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Customer customer = (Customer) o;
+        User user = (User) o;
 
-        if (id != customer.id) return false;
-        if (firstName != null ? !firstName.equals(customer.firstName) : customer.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(customer.lastName) : customer.lastName != null) return false;
+        if (id != user.id) return false;
+        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
+        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
 
         return true;
     }

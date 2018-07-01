@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.mikehawek.integration.entities.users.Customer;
+
 @Entity
 @Table(name = "orders")
 public class Order {

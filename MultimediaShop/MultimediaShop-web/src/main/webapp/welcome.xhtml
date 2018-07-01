@@ -9,12 +9,12 @@
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
 <h:head>
-    <title>JSF 2.0 Hello World</title>
+    <title>Welcome!</title>
 </h:head>
 <h:body bgcolor="white">
-    <h3><h:outputText value="#{msg.welcome_msg}" /></h3>
-    <h4><h:outputText value="#{msg.greeting_text}" />
-        #{itemBean.name}
-        <h:outputText value="#{msg.sign}" /></h4>
+    <h:form>
+        <p><h:commandButton value="Customer login" action="customerLogin" /></p>
+        <p><h:commandButton value="Employee login" action="employeeLogin" /></p>
+    </h:form>
 </h:body>
 </html>

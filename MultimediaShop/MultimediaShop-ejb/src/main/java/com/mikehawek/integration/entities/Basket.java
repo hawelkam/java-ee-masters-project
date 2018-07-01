@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.mikehawek.integration.entities.users.Customer;
+
 @Entity
 public class Basket {
     @Id
