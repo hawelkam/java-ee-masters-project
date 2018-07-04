@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.mikehawek.business.enums.ItemStatus;
+import com.mikehawek.business.enums.OrderStatus;
 import com.mikehawek.integration.entities.users.Customer;
 
 @Entity
@@ -26,6 +28,9 @@ public class Order {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "ITEM_ID")
     private List<Item> items = new ArrayList<>();
+
+    @Column(name = "STATUS")
+    private OrderStatus status;
 
     public List<Item> getItems() {
         return items;

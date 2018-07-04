@@ -14,42 +14,49 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.mikehawek.business.ItemFactory;
+import com.mikehawek.business.UserFactory;
 import com.mikehawek.business.criteria.ItemNameSearchCriteria;
-import com.mikehawek.business.dao.ItemNameDao;
-import com.mikehawek.business.dto.ItemDto;
-import com.mikehawek.business.dto.ItemNameDto;
+import com.mikehawek.business.dao.ItemManagement.ItemNameDao;
+import com.mikehawek.business.dao.UserManagement.UserDao;
+import com.mikehawek.business.dto.ItemManagement.ItemDto;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.dto.UserManagement.UserDto;
 import com.mikehawek.integration.entities.itemnames.ItemName;
-import com.mikehawek.integration.producer.AddItemProducer;
+import com.mikehawek.integration.entities.users.User;
+import com.mikehawek.integration.producer.ItemNameManagementProducer;
 
 /**
  *
  * @author Hawek
  */
 @Stateless
-public class ItemNameFacade extends AbstractFacade<ItemNameDto> {
+public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
 
     @PersistenceContext(unitName = "DBConnection")
     private EntityManager em;
 
     @Inject
-    private AddItemProducer addItemProducer;
+    private ItemNameManagementProducer itemNameManagementProducer;
 
     @Inject
-    private ItemNameDao dao;
+    private ItemNameDao itemNameDao;
+
+    @Inject
+    private UserDao userDao;
 
     @Override
     protected EntityManager getEntityManager() {
         return em;
     }
 
-    public ItemNameFacade() {
+    public MultimediaShopFacade() {
         super(ItemNameDto.class);
 
     }
 
     public void addItemName(ItemNameDto itemToAdd) {
         //validate dto
-        addItemProducer.sendAddItemMessage(itemToAdd);
+        itemNameManagementProducer.sendAddItemMessage(itemToAdd);
     }
 
     public void addItem(ItemDto itemDto) {
@@ -57,7 +64,7 @@ public class ItemNameFacade extends AbstractFacade<ItemNameDto> {
     }
 
     public List<ItemNameDto> searchItemNames(ItemNameSearchCriteria searchCriteria) {
-        List<ItemName> itemNames = dao.findItemNames(searchCriteria);
+        List<ItemName> itemNames = itemNameDao.findItemNames(searchCriteria);
         return itemNames.stream()
                 .map(ItemFactory::createItemNameDto)
                 .collect(Collectors.toList());
@@ -69,14 +76,30 @@ public class ItemNameFacade extends AbstractFacade<ItemNameDto> {
     }
 
     public void deleteItemName(String productCode) {
-        ItemName itemToDelete = getEntityManager().find(ItemName.class, productCode);
-        getEntityManager().remove(itemToDelete);
+        itemNameManagementProducer.sendDeleteItemNameMessage(productCode);
     }
 
     public List<ItemNameDto> listItemNames() {
-        List<ItemName> itemNames = dao.findItemNames(new ItemNameSearchCriteria());
+        List<ItemName> itemNames = itemNameDao.findItemNames(new ItemNameSearchCriteria());
         return itemNames.stream()
                 .map(ItemFactory::createItemNameDto)
                 .collect(Collectors.toList());
+    }
+
+    public UserDto createUser(UserDto dto) {
+        if (userDao.findUserWithLogin(dto.getLogin()).size() != 0) {
+            return null;
+        }
+        User user = UserFactory.createUser(dto);
+        userDao.save(user);
+        return dto;
+    }
+
+    public UserDto login(String login, String password) {
+        List<User> users = userDao.findUserWithCredentials(login, password);
+        if (users.size() == 0) {
+            return null;
+        }
+        return UserFactory.createUser(users.get(0));
     }
 }

@@ -11,7 +11,7 @@ import javax.jms.Session;
 import javax.jms.Topic;
 
 import com.mikehawek.business.ItemFactory;
-import com.mikehawek.business.dto.ItemDto;
+import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.integration.entities.Item;
 
 public class ItemManagementProducer {

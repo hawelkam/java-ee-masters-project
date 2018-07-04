@@ -8,15 +8,15 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
 
-import com.mikehawek.business.dto.ItemNameDto;
-import com.mikehawek.business.dto.MovieNameDto;
-import com.mikehawek.business.facade.ItemNameFacade;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.dto.ItemManagement.MovieNameDto;
+import com.mikehawek.business.facade.MultimediaShopFacade;
 
 @Named
 @javax.enterprise.context.SessionScoped
 public class ItemBean implements Serializable {
     @EJB
-    private com.mikehawek.business.facade.ItemNameFacade itemNameFacade;
+    private MultimediaShopFacade multimediaShopFacade;
 
     private String name;
     private ItemNameDto itemName;
@@ -30,8 +30,8 @@ public class ItemBean implements Serializable {
     }
 
     public void add() {
-        itemNameFacade.addItemName(this.itemName);
-        setItemNames(itemNameFacade.listItemNames());
+        multimediaShopFacade.addItemName(this.itemName);
+        setItemNames(multimediaShopFacade.listItemNames());
         itemName = new MovieNameDto();
 
     }
@@ -41,7 +41,7 @@ public class ItemBean implements Serializable {
     }
 
     public List<ItemNameDto> listItems() {
-        return itemNameFacade.listItemNames();
+        return multimediaShopFacade.listItemNames();
     }
 
     public void edit(ItemNameDto item) throws CloneNotSupportedException {
@@ -57,13 +57,13 @@ public class ItemBean implements Serializable {
     }
 
     public void saveEdit() {
-        itemNameFacade.editItemName(this.itemName);
+        multimediaShopFacade.editItemName(this.itemName);
         this.itemName = new ItemNameDto();
         edit = false;
     }
 
     public void delete(String productCode) throws IOException {
-        itemNameFacade.deleteItemName(productCode);
+        multimediaShopFacade.deleteItemName(productCode);
     }
 
     public String getName() {
@@ -74,16 +74,16 @@ public class ItemBean implements Serializable {
         this.name = name;
     }
 
-    public ItemNameFacade getItemNameFacade() {
-        return itemNameFacade;
+    public MultimediaShopFacade getMultimediaShopFacade() {
+        return multimediaShopFacade;
     }
 
-    public void setItemNameFacade(ItemNameFacade itemNameFacade) {
-        this.itemNameFacade = itemNameFacade;
+    public void setMultimediaShopFacade(MultimediaShopFacade multimediaShopFacade) {
+        this.multimediaShopFacade = multimediaShopFacade;
     }
 
     public List<ItemNameDto> getItemNames() {
-        itemNames = itemNameFacade.listItemNames();
+        itemNames = multimediaShopFacade.listItemNames();
         return itemNames;
     }
 

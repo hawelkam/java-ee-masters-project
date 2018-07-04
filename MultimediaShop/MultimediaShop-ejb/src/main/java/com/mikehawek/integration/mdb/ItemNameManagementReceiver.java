@@ -14,8 +14,9 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
+import javax.jms.TextMessage;
 
-import com.mikehawek.business.dao.ItemNameDao;
+import com.mikehawek.business.dao.ItemManagement.ItemNameDao;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 /**
@@ -33,7 +34,7 @@ import com.mikehawek.integration.entities.itemnames.ItemName;
     ,
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic")
 })
-public class FetchItemsMessage implements MessageListener {
+public class ItemNameManagementReceiver implements MessageListener {
     
     @Resource
     private MessageDrivenContext mdc;
@@ -41,18 +42,23 @@ public class FetchItemsMessage implements MessageListener {
     @Inject
     private ItemNameDao dao;
     
-    public FetchItemsMessage() {
+    public ItemNameManagementReceiver() {
     }
     
     @Override
     public void onMessage(Message message) {
-        ObjectMessage msg = null;
         try {
             if (message instanceof ObjectMessage) {
-                msg = (ObjectMessage) message;
+                ObjectMessage msg = (ObjectMessage) message;
                 ItemName item = (ItemName) msg.getObject();
                 if (item != null)
                     dao.save(item);
+                message.acknowledge();
+            } else if (message instanceof TextMessage) {
+                TextMessage msg = (TextMessage) message;
+                String id = msg.getText();
+                if (id != null)
+                    dao.deleteItemName(id);
                 message.acknowledge();
             }
         } catch (JMSException e) {

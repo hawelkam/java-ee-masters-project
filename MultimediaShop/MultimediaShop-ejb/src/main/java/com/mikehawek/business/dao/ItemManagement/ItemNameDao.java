@@ -1,4 +1,4 @@
-package com.mikehawek.business.dao;
+package com.mikehawek.business.dao.ItemManagement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,12 @@ public class ItemNameDao {
 
     public void deleteItemName(ItemName itemName) {
         em.remove(itemName);
+    }
+
+    public void deleteItemName(String productCode) {
+        ItemName item = em.find(ItemName.class, productCode);
+        if (item != null)
+            em.remove(item);
     }
 
     public List<ItemName> findItemNameByProductCode(String productCode) {

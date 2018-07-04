@@ -1,4 +1,4 @@
-package com.mikehawek.business.dao;
+package com.mikehawek.business.dao.ItemManagement;
 
 import java.util.List;
 

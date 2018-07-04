@@ -1,4 +1,4 @@
-package com.mikehawek.business.dto;
+package com.mikehawek.business.dto.ItemManagement;
 
 import java.io.Serializable;
 import java.util.Date;

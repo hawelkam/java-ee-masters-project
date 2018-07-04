@@ -10,7 +10,7 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
 
-import com.mikehawek.business.dao.ItemDao;
+import com.mikehawek.business.dao.ItemManagement.ItemDao;
 import com.mikehawek.integration.entities.Item;
 
 @MessageDriven(activationConfig = {

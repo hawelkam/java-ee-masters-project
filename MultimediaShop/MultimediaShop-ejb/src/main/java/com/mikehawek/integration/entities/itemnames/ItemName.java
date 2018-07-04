@@ -43,7 +43,9 @@ public class ItemName implements Serializable {
     @Id
     @Column(name = "product_code")
     protected String productCode;
+
     protected double price;
+
     @Enumerated(EnumType.STRING)
     protected Medium medium;
 

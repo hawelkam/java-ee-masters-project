@@ -1,4 +1,4 @@
-package com.mikehawek.business.dto;
+package com.mikehawek.business.dto.ItemManagement;
 
 import com.mikehawek.business.enums.GameGenre;
 import com.mikehawek.business.enums.GamePlatform;

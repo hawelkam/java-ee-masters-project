@@ -9,15 +9,15 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 
 import com.mikehawek.business.criteria.ItemNameSearchCriteria;
-import com.mikehawek.business.dto.ItemNameDto;
-import com.mikehawek.business.facade.ItemNameFacade;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.facade.MultimediaShopFacade;
 
 @Named
 @javax.enterprise.context.SessionScoped
 public class ItemSearchModelBean implements Serializable{
 
     @EJB
-    private com.mikehawek.business.facade.ItemNameFacade itemNameFacade;
+    private MultimediaShopFacade multimediaShopFacade;
 
     private ItemNameSearchCriteria itemNameSearchCriteria;
 
@@ -29,7 +29,7 @@ public class ItemSearchModelBean implements Serializable{
     }
 
     public void search() {
-        searchResult = itemNameFacade.searchItemNames(this.itemNameSearchCriteria);
+        searchResult = multimediaShopFacade.searchItemNames(this.itemNameSearchCriteria);
         return;
     }
 
@@ -38,12 +38,12 @@ public class ItemSearchModelBean implements Serializable{
         this.searchResult = new ArrayList<>();
     }
 
-    public ItemNameFacade getItemNameFacade() {
-        return itemNameFacade;
+    public MultimediaShopFacade getMultimediaShopFacade() {
+        return multimediaShopFacade;
     }
 
-    public void setItemNameFacade(ItemNameFacade itemNameFacade) {
-        this.itemNameFacade = itemNameFacade;
+    public void setMultimediaShopFacade(MultimediaShopFacade multimediaShopFacade) {
+        this.multimediaShopFacade = multimediaShopFacade;
     }
 
     public ItemNameSearchCriteria getItemNameSearchCriteria() {

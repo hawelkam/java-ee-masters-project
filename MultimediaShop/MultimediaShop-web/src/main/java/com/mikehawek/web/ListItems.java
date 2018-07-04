@@ -17,7 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mikehawek.business.dto.ItemNameDto;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.facade.MultimediaShopFacade;
 
 /**
  *
@@ -27,7 +28,7 @@ import com.mikehawek.business.dto.ItemNameDto;
 public class ListItems extends HttpServlet {
 
     @EJB
-    private com.mikehawek.business.facade.ItemNameFacade itemNameFacade;
+    private MultimediaShopFacade multimediaShopFacade;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,7 +51,7 @@ public class ListItems extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet ListItems at " + request.getContextPath() + "</h1>");
-            List items = itemNameFacade.listItemNames();
+            List items = multimediaShopFacade.listItemNames();
             for (Iterator it = items.iterator(); it.hasNext();) {
                 ItemNameDto elem = (ItemNameDto) it.next();
                 out.println(" <b>"+elem.getName()+" </b><br />");

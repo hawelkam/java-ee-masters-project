@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <h:outputStylesheet library="style" name="commonStyle.css" />
+    <title>Welcome to MultimediaShop!</title>
+</h:head>
+<h:body>
+<h3><h:outputText value="Please log in:" /></h3>
+<h:form>
+    <p>Login: <h:inputText id="login" value="#{customerLoginBean.login}"></h:inputText></p>
+    <p>Password: <h:inputSecret id="password" value="#{customerLoginBean.password}"></h:inputSecret></p>
+    <p><h:commandButton value="Log in" action="#{customerLoginBean.performLogin}"></h:commandButton>
+        <h:commandButton value="Create user" action="#{customerLoginBean.showNewUserDialog}"></h:commandButton></p>
+</h:form>
+
+    <h:panelGroup rendered="#{customerLoginBean.edit}">
+        <h3>Create new user:</h3>
+        <h:form>
+            <p>First name: <h:inputText value="#{customerLoginBean.newUser.firstName}" /></p>
+            <p>Last name: <h:inputText value="#{customerLoginBean.newUser.lastName}" /></p>
+            <p>Address: <h:inputText value="#{customerLoginBean.newUser.address}" /></p>
+            <p>Login: <h:inputText value="#{customerLoginBean.newUser.login}" /></p>
+            <p>Password: <h:inputSecret value="#{customerLoginBean.newUser.password}" /></p>
+            <p>
+                <h:commandButton value="Create" action="#{customerLoginBean.saveEdit}" />
+                <h:commandButton value="Cancel" action="#{customerLoginBean.cancelEdit}" />
+            </p>
+        </h:form>
+    </h:panelGroup>
+</h:body>
+</html>

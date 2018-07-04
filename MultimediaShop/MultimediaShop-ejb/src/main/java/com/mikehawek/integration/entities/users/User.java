@@ -62,10 +62,14 @@ public class User implements Serializable {
 
     public void setLastName(String lastName) { this.lastName = lastName; }
 
+    @Basic
+    @Column(name = "login")
     public String getLogin() { return login; }
 
     public void setLogin(String login) { this.login = login; }
 
+    @Basic
+    @Column(name = "password")
     public String getPassword() { return password; }
 
     public void setPassword(String password) {

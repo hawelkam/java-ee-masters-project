@@ -8,14 +8,15 @@ import javax.jms.JMSException;
 import javax.jms.MessageProducer;
 import javax.jms.ObjectMessage;
 import javax.jms.Session;
+import javax.jms.TextMessage;
 import javax.jms.Topic;
 
 import com.mikehawek.business.ItemFactory;
-import com.mikehawek.business.dto.ItemNameDto;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 @Stateless
-public class AddItemProducer {
+public class ItemNameManagementProducer {
     @Resource(lookup = "jms/FetchItemsMessageFactory")
     private ConnectionFactory connectionFactory;
 
@@ -32,6 +33,24 @@ public class AddItemProducer {
             ItemName itemName = ItemFactory.createItemName(itemNameDto);
 
             message.setObject(itemName);
+            messageProducer.send(message);
+            messageProducer.close();
+            connection.close();
+
+        } catch (JMSException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void sendDeleteItemNameMessage(String id) {
+        try {
+            Connection connection = connectionFactory.createConnection();
+            Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+            MessageProducer messageProducer = session.createProducer(topic);
+
+            TextMessage message = session.createTextMessage();
+
+            message.setText(id);
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

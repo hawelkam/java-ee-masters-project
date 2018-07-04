@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
@@ -12,47 +13,50 @@
     <title>JSF 2.0 Greeting</title>
 </h:head>
 <h:body>
-    <h:panelGroup>
-        <h3>Search:</h3>
-        <h:form>
-            <p>Product Code: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.productCode}" /></p>
-            <p>Name: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.name}" /></p>
-            <p>Medium:
-                <h:selectOneMenu value="#{itemSearchModelBean.itemNameSearchCriteria.medium}">
-                    <f:selectItem itemValue="" />
-                    <f:selectItem itemValue="DVD" />
-                    <f:selectItem itemValue="CD" />
-                    <f:selectItem itemValue="Blu-ray" />
-                    <f:selectItem itemValue="Vinyl" />
-                    <f:selectItem itemValue="Digital" />
-                </h:selectOneMenu>
-            </p>
+    <ui:composition template="template/commonLayout.xhtml">
+        <ui:define name="content">
+            <h:panelGroup>
+                <h3>Search:</h3>
+                <h:form>
+                    <p>Product Code: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.productCode}" /></p>
+                    <p>Name: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.name}" /></p>
+                    <p>Medium:
+                        <h:selectOneMenu value="#{itemSearchModelBean.itemNameSearchCriteria.medium}">
+                            <f:selectItem itemValue="" />
+                            <f:selectItem itemValue="DVD" />
+                            <f:selectItem itemValue="CD" />
+                            <f:selectItem itemValue="Blu-ray" />
+                            <f:selectItem itemValue="Vinyl" />
+                            <f:selectItem itemValue="Digital" />
+                        </h:selectOneMenu>
+                    </p>
+
+                    <p>
+                        <h:commandButton value="Search" action="#{itemSearchModelBean.search}" />
+                        <h:commandButton value="Reset" action="#{itemSearchModelBean.resetSearch}" />
+                    </p>
+                </h:form>
+            </h:panelGroup>
+
+            <h3>Found:</h3>
+            <h:form rendered="#{not empty itemSearchModelBean.searchResult}">
+                <h:dataTable value="#{itemSearchModelBean.searchResult}" var="item">
+                    <h:column><f:facet name="header">Product code</f:facet>#{item.productCode}</h:column>
+                    <h:column><f:facet name="header">Name</f:facet>#{item.name}</h:column>
+                    <h:column>
+                        <h:commandButton value="Edit" action="#{itemBean.edit(item)}" />
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="Delete" action="#{itemBean.delete(item.productCode)}" />
+                    </h:column>
+                </h:dataTable>
+            </h:form>
 
             <p>
-                <h:commandButton value="Search" action="#{itemSearchModelBean.search}" />
-                <h:commandButton value="Reset" action="#{itemSearchModelBean.resetSearch}" />
+                <a href="index.xhtml">Go back to index</a>
             </p>
-        </h:form>
-    </h:panelGroup>
-
-    <h3>Found:</h3>
-    <h:form rendered="#{not empty itemSearchModelBean.searchResult}">
-        <h:dataTable value="#{itemSearchModelBean.searchResult}" var="item">
-            <h:column><f:facet name="header">Product code</f:facet>#{item.productCode}</h:column>
-            <h:column><f:facet name="header">Name</f:facet>#{item.name}</h:column>
-            <h:column>
-                <h:commandButton value="Edit" action="#{itemBean.edit(item)}" />
-            </h:column>
-            <h:column>
-                <h:commandButton value="Delete" action="#{itemBean.delete(item.productCode)}" />
-            </h:column>
-        </h:dataTable>
-    </h:form>
-
-    <p>
-        <a href="#{appUrlStore.baseUrl}">Go back to index</a>
-    </p>
-
+        </ui:define>
+    </ui:composition>
 
 </h:body>
 </html>

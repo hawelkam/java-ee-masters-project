@@ -9,12 +9,13 @@
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
 <h:head>
+    <h:outputStylesheet library="style" name="commonStyle.css" />
     <title>Welcome!</title>
 </h:head>
 <h:body bgcolor="white">
     <h:form>
-        <p><h:commandButton value="Customer login" action="customerLogin" /></p>
-        <p><h:commandButton value="Employee login" action="employeeLogin" /></p>
+        <p><h:commandButton value="Customer login" action="shop/customerLogin" /></p>
+        <p><h:commandButton value="Employee login" action="storeManagement/employeeLogin" /></p>
     </h:form>
 </h:body>
 </html>

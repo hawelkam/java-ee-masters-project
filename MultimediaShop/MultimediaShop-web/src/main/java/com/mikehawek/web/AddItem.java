@@ -15,8 +15,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mikehawek.business.dto.ItemNameDto;
-import com.mikehawek.business.dto.MovieNameDto;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.dto.ItemManagement.MovieNameDto;
+import com.mikehawek.business.dto.ItemManagement.MusicAlbumNameDto;
+import com.mikehawek.business.dto.ItemManagement.VideoGameNameDto;
+import com.mikehawek.business.facade.MultimediaShopFacade;
 
 /**
  *
@@ -26,7 +29,7 @@ import com.mikehawek.business.dto.MovieNameDto;
 public class AddItem extends HttpServlet {
 
     @EJB
-    private com.mikehawek.business.facade.ItemNameFacade itemNameFacade;
+    private MultimediaShopFacade multimediaShopFacade;
 
 
     /**
@@ -43,11 +46,25 @@ public class AddItem extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String name=request.getParameter("name");
         String productCode=request.getParameter("productCode");
+        String medium=request.getParameter("itemType");
         if (name != null && productCode != null) {
-            ItemNameDto dto = new MovieNameDto();
+            ItemNameDto dto;
+            switch (medium) {
+                case "VideoGame":
+                    dto = new VideoGameNameDto();
+                    break;
+                case "MusicAlbum":
+                    dto = new MusicAlbumNameDto();
+                    break;
+                case "Movie":
+                default:
+                    dto = new MovieNameDto();
+                    break;
+
+            }
             dto.setProductCode(productCode);
             dto.setName(name);
-            itemNameFacade.addItemName(dto);
+            multimediaShopFacade.addItemName(dto);
             response.sendRedirect("ListItems");
         }
         try (PrintWriter out = response.getWriter()) {

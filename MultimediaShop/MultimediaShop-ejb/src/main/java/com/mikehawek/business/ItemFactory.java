@@ -2,11 +2,11 @@ package com.mikehawek.business;
 
 import java.util.stream.Collectors;
 
-import com.mikehawek.business.dto.ItemDto;
-import com.mikehawek.business.dto.ItemNameDto;
-import com.mikehawek.business.dto.MovieNameDto;
-import com.mikehawek.business.dto.MusicAlbumNameDto;
-import com.mikehawek.business.dto.VideoGameNameDto;
+import com.mikehawek.business.dto.ItemManagement.ItemDto;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.dto.ItemManagement.MovieNameDto;
+import com.mikehawek.business.dto.ItemManagement.MusicAlbumNameDto;
+import com.mikehawek.business.dto.ItemManagement.VideoGameNameDto;
 import com.mikehawek.integration.entities.Item;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 import com.mikehawek.integration.entities.itemnames.MovieName;

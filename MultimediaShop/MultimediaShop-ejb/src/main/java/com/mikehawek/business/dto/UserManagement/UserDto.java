@@ -1,4 +1,4 @@
-package com.mikehawek.business.dto;
+package com.mikehawek.business.dto.UserManagement;
 
 import java.io.Serializable;
 
