@@ -16,9 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
-import com.mikehawek.business.dto.ItemManagement.MovieNameDto;
-import com.mikehawek.business.dto.ItemManagement.MusicAlbumNameDto;
-import com.mikehawek.business.dto.ItemManagement.VideoGameNameDto;
 import com.mikehawek.business.facade.MultimediaShopFacade;
 
 /**
@@ -48,20 +45,7 @@ public class AddItem extends HttpServlet {
         String productCode=request.getParameter("productCode");
         String medium=request.getParameter("itemType");
         if (name != null && productCode != null) {
-            ItemNameDto dto;
-            switch (medium) {
-                case "VideoGame":
-                    dto = new VideoGameNameDto();
-                    break;
-                case "MusicAlbum":
-                    dto = new MusicAlbumNameDto();
-                    break;
-                case "Movie":
-                default:
-                    dto = new MovieNameDto();
-                    break;
-
-            }
+            ItemNameDto dto = new ItemNameDto();
             dto.setProductCode(productCode);
             dto.setName(name);
             multimediaShopFacade.addItemName(dto);

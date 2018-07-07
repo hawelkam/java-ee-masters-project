@@ -7,19 +7,19 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import com.mikehawek.business.dto.UserManagement.CustomerDto;
+import com.mikehawek.business.dto.UserManagement.EmployeeDto;
 import com.mikehawek.business.dto.UserManagement.UserDto;
 
 @Named
 @javax.enterprise.context.SessionScoped
-public class CustomerLoginBean implements Serializable {
+public class EmployeeLoginBean implements Serializable {
     @EJB
     private com.mikehawek.business.facade.MultimediaShopFacade multimediaShopFacade;
 
     private String login;
     private String password;
-    private CustomerDto loggedUser;
-    private CustomerDto newUser = new CustomerDto();
+    private EmployeeDto loggedUser;
+    private EmployeeDto newUser = new EmployeeDto();
     boolean edit;
 
     public String getLogin() {
@@ -38,33 +38,36 @@ public class CustomerLoginBean implements Serializable {
         this.password = password;
     }
 
-    public UserDto getLoggedUser() {
+    public EmployeeDto getLoggedUser() {
         return loggedUser;
     }
 
-    public void setLoggedUser(CustomerDto loggedUser) {
+    public void setLoggedUser(EmployeeDto loggedUser) {
         this.loggedUser = loggedUser;
     }
 
     public String performLogin() {
-        loggedUser = (CustomerDto) multimediaShopFacade.login(login, password);
-        if (loggedUser == null) {
+        UserDto user = multimediaShopFacade.login(login, password);
+        if (user != null && user instanceof EmployeeDto ) {
+            loggedUser = (EmployeeDto) user;
+            return "employeeIndex";
+        } else {
+            loggedUser = null;
             FacesContext.getCurrentInstance().addMessage(
                     null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "User not found!", ""));
             return null;
         }
-        return "/index.xhtml";
     }
 
     public void cancelEdit() {
-        this.newUser = new CustomerDto();
+        this.newUser = new EmployeeDto();
         edit = false;
     }
 
     public void saveEdit() {
-        loggedUser = (CustomerDto) multimediaShopFacade.createUser(this.newUser);
-        this.newUser = new CustomerDto();
+        loggedUser = (EmployeeDto) multimediaShopFacade.createUser(this.newUser);
+        this.newUser = new EmployeeDto();
         edit = false;
     }
 
@@ -80,11 +83,11 @@ public class CustomerLoginBean implements Serializable {
         this.edit = edit;
     }
 
-    public UserDto getNewUser() {
+    public EmployeeDto getNewUser() {
         return newUser;
     }
 
-    public void setNewUser(CustomerDto newUser) {
+    public void setNewUser(EmployeeDto newUser) {
         this.newUser = newUser;
     }
 }

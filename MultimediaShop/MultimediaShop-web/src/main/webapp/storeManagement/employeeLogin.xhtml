@@ -12,24 +12,24 @@
 <h:body>
     <h3><h:outputText value="Please log in with your MultimediaShop credentials:" /></h3>
     <h:form>
-        <p>Login: <h:inputText id="login" value="#{customerLoginBean.login}"></h:inputText></p>
-        <p>Password: <h:inputSecret id="password" value="#{customerLoginBean.password}"></h:inputSecret></p>
-        <p><h:commandButton value="Log in" action="#{customerLoginBean.performLogin}"></h:commandButton>
-            <h:commandButton value="Create user" action="TBD"></h:commandButton></p>
+        <p>Login: <h:inputText id="login" value="#{employeeLoginBean.login}"></h:inputText></p>
+        <p>Password: <h:inputSecret id="password" value="#{employeeLoginBean.password}"></h:inputSecret></p>
+        <p><h:commandButton value="Log in" action="#{employeeLoginBean.performLogin}"></h:commandButton>
+            <h:commandButton value="Create user" action="#{employeeLoginBean.showNewUserDialog}"></h:commandButton></p>
     </h:form>
 
-    <h:panelGroup rendered="#{customerLoginBean.edit}">
+    <h:panelGroup rendered="#{employeeLoginBean.edit}">
         <h3>Create new user:</h3>
         <h:form>
-            <p>First name: <h:inputText value="#{customerLoginBean.newUser.firstName}" /></p>
-            <p>Last name: <h:inputText value="#{customerLoginBean.newUser.lastName}" /></p>
-            <p>Address: <h:inputText value="#{customerLoginBean.newUser.address}" /></p>
-            <p>Login: <h:inputText value="#{customerLoginBean.newUser.login}" /></p>
-            <p>Password: <h:inputSecret value="#{customerLoginBean.newUser.password}" /></p>
-            <p>Employee ID: <h:inputText value="#{customerLoginBean.newUser}" /></p>
+            <p>First name: <h:inputText value="#{employeeLoginBean.newUser.firstName}" /></p>
+            <p>Last name: <h:inputText value="#{employeeLoginBean.newUser.lastName}" /></p>
+            <p>Address: <h:inputText value="#{employeeLoginBean.newUser.address}" /></p>
+            <p>Login: <h:inputText value="#{employeeLoginBean.newUser.login}" /></p>
+            <p>Password: <h:inputSecret value="#{employeeLoginBean.newUser.password}" /></p>
+            <p>Employee ID: <h:inputText value="#{employeeLoginBean.newUser.employeeId}" /></p>
             <p>
-                <h:commandButton value="Create" action="#{customerLoginBean.saveEdit}" />
-                <h:commandButton value="Cancel" action="#{customerLoginBean.cancelEdit}" />
+                <h:commandButton value="Create" action="#{employeeLoginBean.saveEdit}" />
+                <h:commandButton value="Cancel" action="#{employeeLoginBean.cancelEdit}" />
             </p>
         </h:form>
     </h:panelGroup>

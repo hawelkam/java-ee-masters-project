@@ -9,9 +9,18 @@ body{
     background-repeat: repeat-x;
     background-position: top;
     background-color: #f7fcf8;
+    margin-left:auto;
+    margin-right:auto;
 }
-div, h1, h2, h3, h4, p, form, label, input, textarea, img, span{
+h1, h2, h3, h4, p, form, label, input, textarea, img, span{
     margin:0; padding:0;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 5px solid blue;
+    padding: 10px;
 }
 
 ul {

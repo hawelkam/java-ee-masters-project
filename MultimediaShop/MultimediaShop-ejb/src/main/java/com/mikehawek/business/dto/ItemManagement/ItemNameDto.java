@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.mikehawek.business.enums.Medium;
+import com.mikehawek.business.enums.MediumType;
 
 public class ItemNameDto implements Serializable{
     protected String name;
@@ -13,6 +14,10 @@ public class ItemNameDto implements Serializable{
     Medium medium;
     protected Date releaseDate;
     protected List<ItemDto> items;
+    private String description;
+    private String author;
+    private String distributor;
+    private MediumType mediaType;
 
     public ItemNameDto() {
     }
@@ -45,6 +50,38 @@ public class ItemNameDto implements Serializable{
     public List<ItemDto> getItems() { return items; }
 
     public void setItems(List<ItemDto> items) { this.items = items; }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDistributor() {
+        return distributor;
+    }
+
+    public void setDistributor(String distributor) {
+        this.distributor = distributor;
+    }
+
+    public MediumType getMediaType() {
+        return mediaType;
+    }
+
+    public void setMediaType(MediumType mediaType) {
+        this.mediaType = mediaType;
+    }
 
     @Override
     public ItemNameDto clone() throws CloneNotSupportedException {

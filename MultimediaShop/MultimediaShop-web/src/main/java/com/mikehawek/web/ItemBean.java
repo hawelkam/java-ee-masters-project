@@ -9,7 +9,6 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
-import com.mikehawek.business.dto.ItemManagement.MovieNameDto;
 import com.mikehawek.business.facade.MultimediaShopFacade;
 
 @Named
@@ -26,13 +25,13 @@ public class ItemBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        itemName = new MovieNameDto();
+        itemName = new ItemNameDto();
     }
 
     public void add() {
-        multimediaShopFacade.addItemName(this.itemName);
+        multimediaShopFacade.addItemName(itemName);
         setItemNames(multimediaShopFacade.listItemNames());
-        itemName = new MovieNameDto();
+        resetAdd();
 
     }
 

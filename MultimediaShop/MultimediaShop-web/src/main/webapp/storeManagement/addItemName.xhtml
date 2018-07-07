@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:a4j="http://richfaces.org/a4j">
+
+<f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
+
+<h:head>
+    <title>Add new item name</title>
+</h:head>
+<h:body>
+    <ui:composition template="/template/commonLayout.xhtml">
+        <ui:define name="content">
+            <h:panelGroup rendered="#{!itemBean.edit}">
+                <h3>Add item</h3>
+                <div class="center"><h:form>
+                    <p>Product Code: <h:inputText value="#{itemBean.itemName.productCode}" /></p>
+                    <p>Name: <h:inputText value="#{itemBean.itemName.name}" /></p>
+                    <p>Price: <h:inputText value="#{itemBean.itemName.price}" /></p>
+                    <p>Release date: <h:inputText value="#{itemBean.itemName.releaseDate}"><f:convertDateTime pattern="dd-MM-yyyy"/></h:inputText> </p>
+                    <p>Type:
+                        <h:selectOneMenu value="#{itemBean.itemName.mediaType}">
+                            <f:selectItem itemValue="Movie" itemLabel="Movie" />
+                            <f:selectItem itemValue="Music" itemLabel="Music Album" />
+                            <f:selectItem itemValue="Game" itemLabel="Video Game" />
+                        </h:selectOneMenu>
+                    </p>
+                    <p>Medium:
+                        <h:selectOneMenu value="#{itemBean.itemName.medium}">
+                            <f:selectItem itemValue="" />
+                            <f:selectItem itemValue="DVD" />
+                            <f:selectItem itemValue="CD" />
+                            <f:selectItem itemValue="Bluray" />
+                            <f:selectItem itemValue="Vinyl" />
+                            <f:selectItem itemValue="Digital" />
+                        </h:selectOneMenu>
+                    </p>
+                    <p>Author: <h:inputText value="#{itemBean.itemName.author}" /></p>
+                    <p>Description: <h:inputTextarea value="#{itemBean.itemName.description}" /></p>
+                    <p>Distributor: <h:inputText value="#{itemBean.itemName.distributor}" /></p>
+
+                    <p>
+                        <h:commandButton value="Dodaj" action="#{itemBean.add}" />
+                        <h:commandButton value="Wyczyść" action="#{itemBean.resetAdd}" />
+                    </p>
+
+                </h:form></div>
+            </h:panelGroup>
+            <p>
+                <a href="#{appUrlStore.baseUrl}">Go back to index</a>
+            </p>
+        </ui:define>
+
+    </ui:composition>
+
+</h:body>
+</html>

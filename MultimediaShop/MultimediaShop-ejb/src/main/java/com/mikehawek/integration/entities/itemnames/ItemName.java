@@ -26,6 +26,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.mikehawek.business.enums.Medium;
+import com.mikehawek.business.enums.MediumType;
 import com.mikehawek.integration.entities.Item;
 
 /**
@@ -34,7 +35,6 @@ import com.mikehawek.integration.entities.Item;
  */
 @Entity
 @Table(name = "item_name")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class ItemName implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -51,6 +51,19 @@ public class ItemName implements Serializable {
 
     @Temporal(TemporalType.DATE)
     protected Date releaseDate;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "author")
+    private String author;
+
+    @Column(name = "distributor")
+    private String distributor;
+
+    @Column(name = "mediaType")
+    private MediumType mediaType;
+
 
     @OneToMany(mappedBy = "itemName",
             cascade = CascadeType.ALL,
@@ -91,6 +104,38 @@ public class ItemName implements Serializable {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDistributor() {
+        return distributor;
+    }
+
+    public void setDistributor(String distributor) {
+        this.distributor = distributor;
+    }
+
+    public MediumType getMediaType() {
+        return mediaType;
+    }
+
+    public void setMediaType(MediumType mediaType) {
+        this.mediaType = mediaType;
     }
 
     @Override
