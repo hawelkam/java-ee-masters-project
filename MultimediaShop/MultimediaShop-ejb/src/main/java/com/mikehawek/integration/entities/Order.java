@@ -18,7 +18,7 @@ import com.mikehawek.business.enums.OrderStatus;
 import com.mikehawek.integration.entities.users.Customer;
 
 @Entity
-@Table(name = "orders")
+@Table(name = "orders", schema="shop")
 public class Order {
     @Id
     @GeneratedValue

@@ -6,8 +6,11 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 import com.mikehawek.business.facade.MultimediaShopFacade;
 
@@ -23,13 +26,25 @@ public class ItemBean implements Serializable {
     private List<ItemNameDto> itemNames;
     boolean edit;
 
+    private ItemDto item;
+    private ItemDto beforeEditItem;
+    private List<ItemDto> items;
+    boolean specificItemEdit;
+
     @PostConstruct
     public void init() {
         itemName = new ItemNameDto();
+        item = new ItemDto();
     }
 
     public void add() {
-        multimediaShopFacade.addItemName(itemName);
+        boolean result = multimediaShopFacade.addItemName(itemName);
+        if (!result) {
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Item name with code " + itemName.getProductCode() + " already exists!", ""));
+            return;
+        }
         setItemNames(multimediaShopFacade.listItemNames());
         resetAdd();
 
@@ -63,6 +78,43 @@ public class ItemBean implements Serializable {
 
     public void delete(String productCode) throws IOException {
         multimediaShopFacade.deleteItemName(productCode);
+    }
+
+    public void addSpecificItem(ItemNameDto itemName) {
+        this.itemName = itemName;
+        specificItemEdit = true;
+    }
+
+    public void editSpecificItem(ItemDto item) throws CloneNotSupportedException {
+        beforeEditItem = item.clone();
+        this.item = item;
+        specificItemEdit = true;
+    }
+
+    public void cancelSpecificItemEdit() {
+        this.item.restore(beforeEditItem);
+        this.item = new ItemDto();
+        specificItemEdit = false;
+    }
+
+    public void saveSpecificItemEdit() {
+        this.item.setProductCode(this.itemName.getProductCode());
+        this.item.setItemName(this.itemName.getName());
+        multimediaShopFacade.editItem(this.item);
+        this.item = new ItemDto();
+        specificItemEdit = false;
+    }
+
+    public void saveSpecificItemAddition() {
+        this.item.setProductCode(this.itemName.getProductCode());
+        this.item.setItemName(this.itemName.getName());
+        multimediaShopFacade.addItem(this.item);
+        this.item = new ItemDto();
+        specificItemEdit = false;
+    }
+
+    public void deleteSpecificItem(String barCode) throws IOException {
+        multimediaShopFacade.deleteItem(barCode);
     }
 
     public String getName() {
@@ -104,5 +156,29 @@ public class ItemBean implements Serializable {
 
     public void setItemName(ItemNameDto itemName) {
         this.itemName = itemName;
+    }
+
+    public boolean isSpecificItemEdit() {
+        return specificItemEdit;
+    }
+
+    public void setSpecificItemEdit(boolean specificItemEdit) {
+        this.specificItemEdit = specificItemEdit;
+    }
+
+    public ItemDto getItem() {
+        return item;
+    }
+
+    public void setItem(ItemDto item) {
+        this.item = item;
+    }
+
+    public List<ItemDto> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemDto> items) {
+        this.items = items;
     }
 }

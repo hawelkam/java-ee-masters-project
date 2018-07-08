@@ -60,6 +60,11 @@ public class EmployeeLoginBean implements Serializable {
         }
     }
 
+    public String logout() {
+        loggedUser = null;
+        return "/MultimediaShop-web/welcome.xhtml";
+    }
+
     public void cancelEdit() {
         this.newUser = new EmployeeDto();
         edit = false;

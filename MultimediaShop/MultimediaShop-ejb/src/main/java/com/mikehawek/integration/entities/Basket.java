@@ -12,10 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.mikehawek.integration.entities.users.Customer;
 
 @Entity
+@Table(name = "basket", schema="shop")
 public class Basket {
     @Id
     @GeneratedValue

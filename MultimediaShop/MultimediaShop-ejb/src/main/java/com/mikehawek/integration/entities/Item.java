@@ -8,14 +8,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.mikehawek.business.enums.ItemStatus;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 @Entity
+@Table(name = "items", schema="shop")
 public class Item implements Serializable {
     @Id
-    @GeneratedValue
     @Column(name = "ITEM_ID")
     private String barCode;
 

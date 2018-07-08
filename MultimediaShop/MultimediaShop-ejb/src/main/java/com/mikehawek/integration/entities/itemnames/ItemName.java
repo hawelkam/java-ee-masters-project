@@ -34,7 +34,7 @@ import com.mikehawek.integration.entities.Item;
  * @author Hawek
  */
 @Entity
-@Table(name = "item_name")
+@Table(name = "item_name", schema="shop")
 public class ItemName implements Serializable {
 
     private static final long serialVersionUID = 1L;

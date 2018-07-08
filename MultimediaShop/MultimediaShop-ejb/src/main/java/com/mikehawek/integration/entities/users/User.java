@@ -13,7 +13,7 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", schema="shop")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class User implements Serializable {
     protected int id;

@@ -17,7 +17,7 @@ import javax.jms.ObjectMessage;
 import javax.jms.TextMessage;
 
 import com.mikehawek.business.dao.ItemManagement.ItemNameDao;
-import com.mikehawek.integration.entities.itemnames.ItemName;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 
 /**
  *
@@ -50,9 +50,12 @@ public class ItemNameManagementReceiver implements MessageListener {
         try {
             if (message instanceof ObjectMessage) {
                 ObjectMessage msg = (ObjectMessage) message;
-                ItemName item = (ItemName) msg.getObject();
-                if (item != null)
+                ItemNameDto item = (ItemNameDto) msg.getObject();
+                if (item != null && item.isEdited()) {
+                    dao.edit(item);
+                } else if (item != null) {
                     dao.save(item);
+                }
                 message.acknowledge();
             } else if (message instanceof TextMessage) {
                 TextMessage msg = (TextMessage) message;

@@ -18,10 +18,10 @@
             <h:panelGroup>
                 <h3>Search:</h3>
                 <h:form>
-                    <p>Product Code: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.productCode}" /></p>
-                    <p>Name: <h:inputText value="#{itemSearchModelBean.itemNameSearchCriteria.name}" /></p>
+                    <p>Product Code: <h:inputText value="#{itemNameSearchModelBean.itemNameSearchCriteria.productCode}" /></p>
+                    <p>Name: <h:inputText value="#{itemNameSearchModelBean.itemNameSearchCriteria.name}" /></p>
                     <p>Medium:
-                        <h:selectOneMenu value="#{itemSearchModelBean.itemNameSearchCriteria.medium}">
+                        <h:selectOneMenu value="#{itemNameSearchModelBean.itemNameSearchCriteria.medium}">
                             <f:selectItem itemValue="" />
                             <f:selectItem itemValue="DVD" />
                             <f:selectItem itemValue="CD" />
@@ -32,15 +32,15 @@
                     </p>
 
                     <p>
-                        <h:commandButton value="Search" action="#{itemSearchModelBean.search}" />
-                        <h:commandButton value="Reset" action="#{itemSearchModelBean.resetSearch}" />
+                        <h:commandButton value="Search" action="#{itemNameSearchModelBean.search}" />
+                        <h:commandButton value="Reset" action="#{itemNameSearchModelBean.resetSearch}" />
                     </p>
                 </h:form>
             </h:panelGroup>
 
             <h3>Found:</h3>
-            <h:form rendered="#{not empty itemSearchModelBean.searchResult}">
-                <h:dataTable value="#{itemSearchModelBean.searchResult}" var="item">
+            <h:form rendered="#{not empty itemNameSearchModelBean.searchResult}">
+                <h:dataTable value="#{itemNameSearchModelBean.searchResult}" var="item">
                     <h:column><f:facet name="header">Product code</f:facet>#{item.productCode}</h:column>
                     <h:column><f:facet name="header">Name</f:facet>#{item.name}</h:column>
                     <h:column>

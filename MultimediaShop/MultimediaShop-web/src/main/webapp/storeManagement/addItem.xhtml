@@ -13,22 +13,24 @@
     <title>Add new item</title>
 </h:head>
 <h:body>
-    <ui:composition template="/template/commonLayout.xhtml">
+    <ui:composition template="template/commonLayout.xhtml">
         <ui:define name="content">
-            <h:panelGroup rendered="#{!itemBean.edit}">
-                <h3>Add item</h3>
-                <h:form>
-                    <p>Product Code: <h:inputText value="#{itemBean.itemName.productCode}" /></p>
-                    <p>Name: <h:inputText value="#{itemBean.itemName.name}" /></p>
-                    <p>
-                        <h:commandButton value="add" action="#{itemBean.add}" />
-                        <h:commandButton value="reset" action="#{itemBean.resetAdd}" />
-                    </p>
-                </h:form>
-            </h:panelGroup>
-            <p>
-                <a href="#{appUrlStore.baseUrl}">Go back to index</a>
-            </p>
+            <div class="content">
+                <h:panelGroup rendered="#{!itemBean.edit}">
+                    <h3>Add item</h3>
+                    <h:form>
+                        <p>Product Code: <h:inputText value="#{itemBean.itemName.productCode}" /></p>
+                        <p>Name: <h:inputText value="#{itemBean.itemName.name}" /></p>
+                        <p>
+                            <h:commandButton value="add" action="#{itemBean.add}" />
+                            <h:commandButton value="reset" action="#{itemBean.resetAdd}" />
+                        </p>
+                    </h:form>
+                </h:panelGroup>
+                <p>
+                    <a href="employeeIndex.xhtml">Powrót</a>
+                </p>
+            </div>
         </ui:define>
 
     </ui:composition>

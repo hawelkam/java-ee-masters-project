@@ -9,9 +9,10 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
+import javax.jms.TextMessage;
 
 import com.mikehawek.business.dao.ItemManagement.ItemDao;
-import com.mikehawek.integration.entities.Item;
+import com.mikehawek.business.dto.ItemManagement.ItemDto;
 
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/ItemManagement"),
@@ -32,13 +33,21 @@ public class ItemManagementReceiver implements MessageListener {
 
     @Override
     public void onMessage(Message message) {
-        ObjectMessage msg = null;
         try {
             if (message instanceof ObjectMessage) {
-                msg = (ObjectMessage) message;
-                Item item = (Item) msg.getObject();
-                if (item != null)
+                ObjectMessage msg = (ObjectMessage) message;
+                ItemDto item = (ItemDto) msg.getObject();
+                if (item != null && item.isEdited()) {
+                    dao.edit(item);
+                } else if (item != null) {
                     dao.save(item);
+                }
+                message.acknowledge();
+            } else if (message instanceof TextMessage) {
+                TextMessage msg = (TextMessage) message;
+                String id = msg.getText();
+                if (id != null)
+                    dao.deleteItem(id);
                 message.acknowledge();
             }
         } catch (JMSException e) {

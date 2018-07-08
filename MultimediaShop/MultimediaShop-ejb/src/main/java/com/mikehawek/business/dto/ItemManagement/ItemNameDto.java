@@ -19,6 +19,8 @@ public class ItemNameDto implements Serializable{
     private String distributor;
     private MediumType mediaType;
 
+    private boolean isEdited;
+
     public ItemNameDto() {
     }
 
@@ -91,5 +93,13 @@ public class ItemNameDto implements Serializable{
     public void restore(ItemNameDto item) {
         this.productCode = item.getProductCode();
         this.name = item.getName();
+    }
+
+    public boolean isEdited() {
+        return isEdited;
+    }
+
+    public void setEdited(boolean edited) {
+        isEdited = edited;
     }
 }

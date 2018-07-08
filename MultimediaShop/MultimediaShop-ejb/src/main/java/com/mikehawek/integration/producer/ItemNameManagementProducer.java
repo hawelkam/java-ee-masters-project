@@ -11,9 +11,7 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import javax.jms.Topic;
 
-import com.mikehawek.business.ItemFactory;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
-import com.mikehawek.integration.entities.itemnames.ItemName;
 
 @Stateless
 public class ItemNameManagementProducer {
@@ -23,16 +21,15 @@ public class ItemNameManagementProducer {
     @Resource (lookup = "jms/FetchItemsMessage")
     private Topic topic;
 
-    public void sendAddItemMessage(ItemNameDto itemNameDto) {
+    public void sendAddOrUpdateItemNameMessage(ItemNameDto itemNameDto) {
         try {
             Connection connection = connectionFactory.createConnection();
             Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
             MessageProducer messageProducer = session.createProducer(topic);
 
             ObjectMessage message = session.createObjectMessage();
-            ItemName itemName = ItemFactory.createItemName(itemNameDto);
 
-            message.setObject(itemName);
+            message.setObject(itemNameDto);
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

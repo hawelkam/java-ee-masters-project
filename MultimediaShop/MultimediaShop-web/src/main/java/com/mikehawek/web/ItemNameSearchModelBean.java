@@ -8,32 +8,33 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
 
-import com.mikehawek.business.criteria.ItemSearchCriteria;
-import com.mikehawek.business.dto.ItemManagement.ItemDto;
+import com.mikehawek.business.criteria.ItemNameSearchCriteria;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 import com.mikehawek.business.facade.MultimediaShopFacade;
 
 @Named
 @javax.enterprise.context.SessionScoped
-public class ItemSearchModelBean implements Serializable {
+public class ItemNameSearchModelBean implements Serializable{
+
     @EJB
     private MultimediaShopFacade multimediaShopFacade;
 
-    private ItemSearchCriteria itemSearchCriteria;
+    private ItemNameSearchCriteria itemNameSearchCriteria;
 
-    private List<ItemDto> searchResult;
+    private List<ItemNameDto> searchResult;
 
     @PostConstruct
     public void init() {
-        itemSearchCriteria = new ItemSearchCriteria();
+        itemNameSearchCriteria = new ItemNameSearchCriteria();
     }
 
     public void search() {
-        searchResult = multimediaShopFacade.searchItems(this.itemSearchCriteria);
+        searchResult = multimediaShopFacade.searchItemNames(this.itemNameSearchCriteria);
         return;
     }
 
     public void resetSearch() {
-        this.itemSearchCriteria = new ItemSearchCriteria();
+        this.itemNameSearchCriteria = new ItemNameSearchCriteria();
         this.searchResult = new ArrayList<>();
     }
 
@@ -45,19 +46,19 @@ public class ItemSearchModelBean implements Serializable {
         this.multimediaShopFacade = multimediaShopFacade;
     }
 
-    public ItemSearchCriteria getItemSearchCriteria() {
-        return itemSearchCriteria;
+    public ItemNameSearchCriteria getItemNameSearchCriteria() {
+        return itemNameSearchCriteria;
     }
 
-    public void setItemSearchCriteria(ItemSearchCriteria ItemSearchCriteria) {
-        this.itemSearchCriteria = ItemSearchCriteria;
+    public void setItemNameSearchCriteria(ItemNameSearchCriteria itemNameSearchCriteria) {
+        this.itemNameSearchCriteria = itemNameSearchCriteria;
     }
 
-    public List<ItemDto> getSearchResult() {
+    public List<ItemNameDto> getSearchResult() {
         return searchResult;
     }
 
-    public void setSearchResult(List<ItemDto> searchResult) {
+    public void setSearchResult(List<ItemNameDto> searchResult) {
         this.searchResult = searchResult;
     }
 }

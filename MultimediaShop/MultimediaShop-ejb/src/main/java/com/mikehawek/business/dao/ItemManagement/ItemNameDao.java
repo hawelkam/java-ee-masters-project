@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -11,7 +12,10 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import com.mikehawek.business.ItemFactory;
 import com.mikehawek.business.criteria.ItemNameSearchCriteria;
+import com.mikehawek.business.criteria.ItemSearchCriteria;
+import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 @Stateless
@@ -19,6 +23,9 @@ public class ItemNameDao {
 
     @PersistenceContext(unitName = "DBConnection")
     private EntityManager em;
+
+    @Inject
+    private ItemDao dao;
 
     public ItemNameDao() {
     }
@@ -38,7 +45,7 @@ public class ItemNameDao {
         CriteriaQuery cq = cb.createQuery();
         Root<ItemName> itemNameRoot = cq.from(ItemName.class);
 
-        Predicate predicate = cb.equal(itemNameRoot.get("product_code"), productCode);
+        Predicate predicate = cb.equal(itemNameRoot.get("productCode"), productCode);
 
         cq.select(itemNameRoot).where(predicate);
         return em.createQuery(cq).getResultList();
@@ -66,8 +73,18 @@ public class ItemNameDao {
         return em.createQuery(cq).getResultList();
     }
 
-    public void save(Object object) {
-        if(object != null)
-            em.persist(object);
+    public void save(ItemNameDto itemDto) {
+        if(itemDto != null) {
+            ItemName item = ItemFactory.createItemName(itemDto);
+            em.persist(item);
+        }
+    }
+
+    public void edit(ItemNameDto itemDto) {
+        ItemName item = ItemFactory.createItemName(itemDto);
+        ItemSearchCriteria sc = new ItemSearchCriteria();
+        sc.setProductCode(item.getProductCode());
+        item.setItems(dao.findItems(sc));
+        em.merge(item);
     }
 }

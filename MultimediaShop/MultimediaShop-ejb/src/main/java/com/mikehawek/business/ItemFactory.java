@@ -2,12 +2,18 @@ package com.mikehawek.business;
 
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
+
+import com.mikehawek.business.dao.ItemManagement.ItemNameDao;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 import com.mikehawek.integration.entities.Item;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 public class ItemFactory {
+    @Inject
+    private ItemNameDao itemNameDao;
+
     public static ItemNameDto createItemNameDto(ItemName entity) {
         ItemNameDto itemNameDto = new ItemNameDto();
         itemNameDto.setName(entity.getName());
@@ -44,7 +50,10 @@ public class ItemFactory {
 
     public static Item createItem(ItemDto dto) {
         Item item = new Item();
-        item.setItemName(createItemName(dto.getItemNameDto()));
+        ItemNameDto itemNameDto = new ItemNameDto();
+        itemNameDto.setProductCode(dto.getProductCode());
+        itemNameDto.setName(dto.getItemName());
+        item.setItemName(createItemName(itemNameDto));
         item.setStatus(dto.getStatus());
         item.setBarCode(dto.getBarCode());
         return item;
@@ -52,9 +61,10 @@ public class ItemFactory {
 
     public static ItemDto createItemDto(Item item) {
         ItemDto dto = new ItemDto();
-        dto.setItemNameDto(createItemNameDto(item.getItemName()));
-        dto.setStatus(dto.getStatus());
-        dto.setBarCode(dto.getBarCode());
+        dto.setItemName(item.getItemName().getName());
+        dto.setProductCode(item.getItemName().getProductCode());
+        dto.setStatus(item.getStatus());
+        dto.setBarCode(item.getBarCode());
         return dto;
     }
 }
