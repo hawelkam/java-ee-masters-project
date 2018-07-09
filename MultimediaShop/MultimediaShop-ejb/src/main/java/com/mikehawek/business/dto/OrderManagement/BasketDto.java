@@ -1,4 +1,7 @@
 package com.mikehawek.business.dto.OrderManagement;
 
-public class BasketDto {
+import java.io.Serializable;
+
+public class BasketDto implements Serializable {
+
 }

@@ -10,7 +10,7 @@
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
 <h:head>
-    <title>System zarządzania sklepem</title>
+    <title>Sklep z multimediami</title>
 </h:head>
 <h:body>
     <ui:composition template="template/commonLayout.xhtml">
@@ -19,18 +19,16 @@
                 <h:form>
                     <h:panelGrid id="userData" columns="2" border="1" cellpadding="10" cellspacing="1">
                         <f:facet name="header">
-                            <h:outputText value="Witaj #{employeeLoginBean.loggedUser.firstName}!" />
+                            <h:outputText value="Witaj #{customerLoginBean.loggedUser.firstName}!" />
                         </f:facet>
                         <h:outputLabel value="Imię" style="font-weight:bold"/>
-                        <h:outputLabel value="#{employeeLoginBean.loggedUser.firstName}"/>
+                        <h:outputLabel value="#{customerLoginBean.loggedUser.firstName}"/>
                         <h:outputLabel value="Nazwisko" style="font-weight:bold"/>
-                        <h:outputLabel value="#{employeeLoginBean.loggedUser.lastName}"/>
+                        <h:outputLabel value="#{customerLoginBean.loggedUser.lastName}"/>
                         <h:outputLabel value="Adres" style="font-weight:bold"/>
-                        <h:outputLabel value="#{employeeLoginBean.loggedUser.address}"/>
+                        <h:outputLabel value="#{customerLoginBean.loggedUser.address}"/>
                         <h:outputLabel value="Login" style="font-weight:bold"/>
-                        <h:outputLabel value="#{employeeLoginBean.loggedUser.login}"/>
-                        <h:outputLabel value="Identyfikator pracownika" style="font-weight:bold"/>
-                        <h:outputLabel value="#{employeeLoginBean.loggedUser.employeeId}"/>
+                        <h:outputLabel value="#{customerLoginBean.loggedUser.login}"/>
                     </h:panelGrid>
                 </h:form>
             </div>

@@ -11,6 +11,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import com.mikehawek.integration.entities.users.Customer;
 import com.mikehawek.integration.entities.users.User;
 
 @Stateless
@@ -26,6 +27,17 @@ public class UserDao {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery cq = cb.createQuery();
         Root<User> userRoot = cq.from(User.class);
+
+        Predicate predicate = cb.equal(userRoot.get("login"), login);
+
+        cq.select(userRoot).where(predicate);
+        return em.createQuery(cq).getResultList();
+    }
+
+    public List<Customer> findCustomerWithLogin(String login) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery cq = cb.createQuery();
+        Root<User> userRoot = cq.from(Customer.class);
 
         Predicate predicate = cb.equal(userRoot.get("login"), login);
 

@@ -1,6 +1,7 @@
 package com.mikehawek.integration.entities;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,9 +13,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-import com.mikehawek.business.enums.ItemStatus;
-import com.mikehawek.business.enums.OrderStatus;
 import com.mikehawek.integration.entities.users.Customer;
 
 @Entity
@@ -30,7 +31,12 @@ public class Order {
     private List<Item> items = new ArrayList<>();
 
     @Column(name = "STATUS")
-    private OrderStatus status;
+    private String status;
+
+    private double value;
+
+    @Temporal(TemporalType.DATE)
+    private Date placementDate;
 
     public List<Item> getItems() {
         return items;
@@ -50,5 +56,37 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
+
+    public Date getPlacementDate() {
+        return placementDate;
+    }
+
+    public void setPlacementDate(Date placementDate) {
+        this.placementDate = placementDate;
     }
 }

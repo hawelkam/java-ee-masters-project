@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import com.mikehawek.business.criteria.ItemNameSearchCriteria;
@@ -30,6 +32,11 @@ public class ItemNameSearchModelBean implements Serializable{
 
     public void search() {
         searchResult = multimediaShopFacade.searchItemNames(this.itemNameSearchCriteria);
+        if (searchResult == null || searchResult.size() == 0) {
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nie znaleziono żadnego przedmiotu spełniającego podane kryteria!", ""));
+        }
         return;
     }
 

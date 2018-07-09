@@ -47,14 +47,17 @@ public class CustomerLoginBean implements Serializable {
     }
 
     public String performLogin() {
-        loggedUser = (CustomerDto) multimediaShopFacade.login(login, password);
-        if (loggedUser == null) {
+        UserDto user = multimediaShopFacade.login(login, password);
+        if (user != null && user instanceof CustomerDto) {
+            loggedUser = (CustomerDto) user;
+            return "customerIndex";
+        } else {
+            loggedUser = null;
             FacesContext.getCurrentInstance().addMessage(
                     null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "User not found!", ""));
             return null;
         }
-        return "/index.xhtml";
     }
 
     public void cancelEdit() {

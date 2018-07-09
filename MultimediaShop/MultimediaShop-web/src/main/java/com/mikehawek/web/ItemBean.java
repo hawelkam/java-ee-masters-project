@@ -98,16 +98,14 @@ public class ItemBean implements Serializable {
     }
 
     public void saveSpecificItemEdit() {
-        this.item.setProductCode(this.itemName.getProductCode());
-        this.item.setItemName(this.itemName.getName());
+        this.item.setItemNameDto(this.itemName);
         multimediaShopFacade.editItem(this.item);
         this.item = new ItemDto();
         specificItemEdit = false;
     }
 
     public void saveSpecificItemAddition() {
-        this.item.setProductCode(this.itemName.getProductCode());
-        this.item.setItemName(this.itemName.getName());
+        this.item.setItemNameDto(this.itemName);
         multimediaShopFacade.addItem(this.item);
         this.item = new ItemDto();
         specificItemEdit = false;
@@ -180,5 +178,9 @@ public class ItemBean implements Serializable {
 
     public void setItems(List<ItemDto> items) {
         this.items = items;
+    }
+
+    public String getAvailability(ItemNameDto itemNameDto) {
+        return multimediaShopFacade.checkAvailability(itemNameDto.getProductCode());
     }
 }

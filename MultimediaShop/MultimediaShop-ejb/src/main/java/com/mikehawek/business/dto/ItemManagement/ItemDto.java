@@ -5,19 +5,17 @@ import java.io.Serializable;
 import com.mikehawek.business.enums.ItemStatus;
 
 public class ItemDto  implements Serializable{
-    String itemName;
-    String productCode;
     String barCode;
     ItemStatus status;
+    ItemNameDto itemNameDto;
 
     boolean isEdited;
 
     public ItemDto() {
     }
 
-    public ItemDto(String name, String productCode, String barCode, ItemStatus status) {
-        this.itemName = name;
-        this.productCode = productCode;
+    public ItemDto(ItemNameDto itemNameDto, String barCode, ItemStatus status) {
+        this.itemNameDto = itemNameDto;
         this.barCode = barCode;
         this.status = status;
     }
@@ -36,22 +34,6 @@ public class ItemDto  implements Serializable{
         this.status = status;
     }
 
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public String getProductCode() {
-        return productCode;
-    }
-
-    public void setProductCode(String productCode) {
-        this.productCode = productCode;
-    }
-
     public boolean isEdited() {
         return isEdited;
     }
@@ -60,15 +42,22 @@ public class ItemDto  implements Serializable{
         isEdited = edited;
     }
 
+    public ItemNameDto getItemNameDto() {
+        return itemNameDto;
+    }
+
+    public void setItemNameDto(ItemNameDto itemNameDto) {
+        this.itemNameDto = itemNameDto;
+    }
+
     @Override
     public ItemDto clone() throws CloneNotSupportedException {
-        return new ItemDto(productCode, itemName, barCode, status);
+        return new ItemDto(itemNameDto, barCode, status);
     }
 
     public void restore(ItemDto item) {
         this.barCode = item.getBarCode();
         this.status = item.getStatus();
-        this.itemName = item.getItemName();
-        this.productCode = item.getProductCode();
+        this.itemNameDto = item.getItemNameDto();
     }
 }

@@ -5,6 +5,7 @@
  */
 package com.mikehawek.business.facade;
 
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,12 +23,16 @@ import com.mikehawek.business.dao.ItemManagement.ItemNameDao;
 import com.mikehawek.business.dao.UserManagement.UserDao;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.dto.OrderManagement.OrderDto;
 import com.mikehawek.business.dto.UserManagement.UserDto;
+import com.mikehawek.business.enums.ItemStatus;
+import com.mikehawek.business.enums.OrderStatus;
 import com.mikehawek.integration.entities.Item;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 import com.mikehawek.integration.entities.users.User;
 import com.mikehawek.integration.producer.ItemManagementProducer;
 import com.mikehawek.integration.producer.ItemNameManagementProducer;
+import com.mikehawek.integration.producer.OrderManagementProducer;
 
 /**
  *
@@ -44,6 +49,9 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
 
     @Inject
     private ItemManagementProducer itemManagementProducer;
+
+    @Inject
+    private OrderManagementProducer orderManagementProducer;
 
     @Inject
     private ItemNameDao itemNameDao;
@@ -87,6 +95,7 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
         if(existingNames == null || existingNames.size() == 0) {
             return;
         }
+        editedItem.setItemNameDto(ItemFactory.createItemNameDtoWithoutItems(existingNames.get(0).getItemName()));
         editedItem.setEdited(true);
         itemManagementProducer.sendAddOrUpdateItemMessage(editedItem);
     }
@@ -144,5 +153,35 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
 
     public void deleteItem(String barCode) {
         itemManagementProducer.sendDeleteItemMessage(barCode);
+    }
+
+    public String checkAvailability(String productCode) {
+        ItemSearchCriteria sc = new ItemSearchCriteria();
+        sc.setProductCode(productCode);
+        sc.setStatus(ItemStatus.Available);
+        boolean isAvailable = itemDao.findItems(sc).size() > 0;
+        return isAvailable ? "Dostępny" : "Niedostępny";
+    }
+
+    public ItemDto findFirstAvailable(ItemNameDto itemNameDto) {
+        ItemSearchCriteria sc = new ItemSearchCriteria();
+        sc.setProductCode(itemNameDto.getProductCode());
+        sc.setStatus(ItemStatus.Available);
+        if (itemDao.findItems(sc).size() != 0) {
+            Item item = itemDao.findItems(sc).get(0);
+            return ItemFactory.createItemDto(item);
+        }
+        return null;
+
+    }
+
+    public void placeOrder(List<ItemDto> basket, double value, String customerId) {
+        OrderDto dto = new OrderDto();
+        dto.setPlacementDate(new Date());
+        dto.setStatus(OrderStatus.Placed);
+        dto.setValue(value);
+        dto.setCustomerLogin(customerId);
+        dto.setItems(basket);
+        orderManagementProducer.sendAddOrUpdateOrderMessage(dto);
     }
 }

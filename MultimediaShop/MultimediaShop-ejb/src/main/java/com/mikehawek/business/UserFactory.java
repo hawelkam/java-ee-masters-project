@@ -1,8 +1,11 @@
 package com.mikehawek.business;
 
+import java.util.ArrayList;
+
 import com.mikehawek.business.dto.UserManagement.CustomerDto;
 import com.mikehawek.business.dto.UserManagement.EmployeeDto;
 import com.mikehawek.business.dto.UserManagement.UserDto;
+import com.mikehawek.integration.entities.Basket;
 import com.mikehawek.integration.entities.users.Customer;
 import com.mikehawek.integration.entities.users.Employee;
 import com.mikehawek.integration.entities.users.User;
@@ -70,5 +73,12 @@ public class UserFactory {
         dto.setPassword(user.getPassword());
         dto.setEmployeeId(user.getEmployeeId());
         return dto;
+    }
+
+    public static Basket createBasket(Customer user) {
+        Basket basket = new Basket();
+        basket.setCustomer(user);
+        basket.setItems(new ArrayList<>());
+        return basket;
     }
 }

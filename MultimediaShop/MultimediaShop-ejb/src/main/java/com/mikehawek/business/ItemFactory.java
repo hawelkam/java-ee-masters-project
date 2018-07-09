@@ -2,42 +2,60 @@ package com.mikehawek.business;
 
 import java.util.stream.Collectors;
 
-import javax.inject.Inject;
-
-import com.mikehawek.business.dao.ItemManagement.ItemNameDao;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
+import com.mikehawek.business.enums.ItemStatus;
+import com.mikehawek.business.enums.Medium;
+import com.mikehawek.business.enums.MediumType;
 import com.mikehawek.integration.entities.Item;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 public class ItemFactory {
-    @Inject
-    private ItemNameDao itemNameDao;
 
     public static ItemNameDto createItemNameDto(ItemName entity) {
         ItemNameDto itemNameDto = new ItemNameDto();
         itemNameDto.setName(entity.getName());
         itemNameDto.setProductCode(entity.getProductCode());
         itemNameDto.setPrice(entity.getPrice());
-        itemNameDto.setMedium(entity.getMedium());
+        if (entity.getMedium() != null)
+            itemNameDto.setMedium(Medium.valueOf(entity.getMedium()));
         itemNameDto.setReleaseDate(entity.getReleaseDate());
         itemNameDto.setDescription(entity.getDescription());
         itemNameDto.setAuthor(entity.getAuthor());
         itemNameDto.setDistributor(entity.getDistributor());
-        itemNameDto.setMediaType(entity.getMediaType());
+        if (entity.getMediaType() != null)
+            itemNameDto.setMediaType(MediumType.valueOf(entity.getMediaType()));
         if(entity.getItems() != null) {
             itemNameDto.setItems(entity.getItems().stream().map(i -> createItemDto(i)).collect(Collectors.toList()));
         }
         return itemNameDto;
     }
 
+    public static ItemNameDto createItemNameDtoWithoutItems(ItemName entity) {
+        ItemNameDto itemNameDto = new ItemNameDto();
+        itemNameDto.setName(entity.getName());
+        itemNameDto.setProductCode(entity.getProductCode());
+        itemNameDto.setPrice(entity.getPrice());
+        if (entity.getMedium() != null)
+            itemNameDto.setMedium(Medium.valueOf(entity.getMedium()));
+        itemNameDto.setReleaseDate(entity.getReleaseDate());
+        itemNameDto.setDescription(entity.getDescription());
+        itemNameDto.setAuthor(entity.getAuthor());
+        itemNameDto.setDistributor(entity.getDistributor());
+        if (entity.getMediaType() != null)
+            itemNameDto.setMediaType(MediumType.valueOf(entity.getMediaType()));
+        return itemNameDto;
+    }
+
     public static ItemName createItemName(ItemNameDto itemNameDto) {
         ItemName itemName = new ItemName();
         itemName.setDescription(itemNameDto.getDescription());
-        itemName.setMediaType(itemNameDto.getMediaType());
         itemName.setDistributor(itemNameDto.getDistributor());
         itemName.setAuthor(itemNameDto.getAuthor());
-        itemName.setMedium(itemNameDto.getMedium());
+        if (itemNameDto.getMediaType() != null)
+            itemName.setMediaType(itemNameDto.getMediaType().toString());
+        if (itemNameDto.getMedium() != null)
+            itemName.setMedium(itemNameDto.getMedium().toString());
         itemName.setName(itemNameDto.getName());
         itemName.setPrice(itemNameDto.getPrice());
         itemName.setProductCode(itemNameDto.getProductCode());
@@ -50,20 +68,18 @@ public class ItemFactory {
 
     public static Item createItem(ItemDto dto) {
         Item item = new Item();
-        ItemNameDto itemNameDto = new ItemNameDto();
-        itemNameDto.setProductCode(dto.getProductCode());
-        itemNameDto.setName(dto.getItemName());
-        item.setItemName(createItemName(itemNameDto));
-        item.setStatus(dto.getStatus());
+        item.setItemName(createItemName(dto.getItemNameDto()));
+        if (dto.getStatus() != null)
+            item.setStatus(dto.getStatus().toString());
         item.setBarCode(dto.getBarCode());
         return item;
     }
 
     public static ItemDto createItemDto(Item item) {
         ItemDto dto = new ItemDto();
-        dto.setItemName(item.getItemName().getName());
-        dto.setProductCode(item.getItemName().getProductCode());
-        dto.setStatus(item.getStatus());
+        dto.setItemNameDto(createItemNameDtoWithoutItems(item.getItemName()));
+        if (item.getStatus() != null)
+            dto.setStatus(ItemStatus.valueOf(item.getStatus()));
         dto.setBarCode(item.getBarCode());
         return dto;
     }

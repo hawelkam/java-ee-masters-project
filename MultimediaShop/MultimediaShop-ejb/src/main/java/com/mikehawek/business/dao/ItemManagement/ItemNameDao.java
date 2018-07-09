@@ -60,7 +60,7 @@ public class ItemNameDao {
         List<Predicate> predicates = new ArrayList<Predicate>();
 
         if (searchCriteria.getMedium() != null) {
-            predicates.add(cb.equal(itemNameRoot.get("medium"), searchCriteria.getMedium()));
+            predicates.add(cb.equal(itemNameRoot.get("medium"), searchCriteria.getMedium().toString()));
         }
         if (searchCriteria.getName() != null) {
             predicates.add(cb.like(itemNameRoot.get("name"), "%" + searchCriteria.getName() + "%"));

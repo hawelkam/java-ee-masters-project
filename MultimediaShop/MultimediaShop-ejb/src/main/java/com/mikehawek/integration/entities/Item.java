@@ -4,8 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -24,7 +25,7 @@ public class Item implements Serializable {
     private ItemName itemName;
 
     @Column(name = "STATUS")
-    private ItemStatus status;
+    private String status;
 
     public String getBarCode() { return barCode; }
 
@@ -38,11 +39,11 @@ public class Item implements Serializable {
         this.itemName = itemName;
     }
 
-    public ItemStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(ItemStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }

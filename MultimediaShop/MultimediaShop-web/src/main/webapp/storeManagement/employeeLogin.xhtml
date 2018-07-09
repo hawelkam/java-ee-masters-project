@@ -7,20 +7,20 @@
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
     <h:outputStylesheet library="style" name="commonStyle.css" />
-    <title>MultimediaShop Employee Portal Login Site</title>
+    <title>MultimediaShop - portal pracownika</title>
 </h:head>
 <h:body>
     <div class="content">
-        <h3><h:outputText value="Please log in with your MultimediaShop credentials:" /></h3>
+        <h3><h:outputText value="Zaloguj się:" /></h3>
         <h:form>
             <p>Login: <h:inputText id="login" value="#{employeeLoginBean.login}"></h:inputText></p>
-            <p>Password: <h:inputSecret id="password" value="#{employeeLoginBean.password}"></h:inputSecret></p>
-            <p><h:commandButton value="Log in" action="#{employeeLoginBean.performLogin}"></h:commandButton>
-                <h:commandButton value="Create user" action="#{employeeLoginBean.showNewUserDialog}"></h:commandButton></p>
+            <p>Hasło: <h:inputSecret id="password" value="#{employeeLoginBean.password}"></h:inputSecret></p>
+            <p><h:commandButton value="Zaloguj" action="#{employeeLoginBean.performLogin}"></h:commandButton>
+                <h:commandButton value="Utwórz konto" action="#{employeeLoginBean.showNewUserDialog}"></h:commandButton></p>
         </h:form>
 
         <h:panelGroup rendered="#{employeeLoginBean.edit}">
-            <h3>Create new user:</h3>
+            <h3>Utwórz nowego użytkownika:</h3>
             <h:form>
                 <p>First name: <h:inputText value="#{employeeLoginBean.newUser.firstName}" /></p>
                 <p>Last name: <h:inputText value="#{employeeLoginBean.newUser.lastName}" /></p>

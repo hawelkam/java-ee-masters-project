@@ -46,8 +46,7 @@ public class ItemName implements Serializable {
 
     protected double price;
 
-    @Enumerated(EnumType.STRING)
-    protected Medium medium;
+    protected String medium;
 
     @Temporal(TemporalType.DATE)
     protected Date releaseDate;
@@ -62,7 +61,7 @@ public class ItemName implements Serializable {
     private String distributor;
 
     @Column(name = "mediaType")
-    private MediumType mediaType;
+    private String mediaType;
 
 
     @OneToMany(mappedBy = "itemName",
@@ -90,9 +89,9 @@ public class ItemName implements Serializable {
 
     public void setPrice(double price) { this.price = price; }
 
-    public Medium getMedium() { return medium; }
+    public String getMedium() { return medium; }
 
-    public void setMedium(Medium medium) { this.medium = medium; }
+    public void setMedium(String medium) { this.medium = medium; }
 
     public Date getReleaseDate() { return releaseDate; }
 
@@ -130,11 +129,11 @@ public class ItemName implements Serializable {
         this.distributor = distributor;
     }
 
-    public MediumType getMediaType() {
+    public String getMediaType() {
         return mediaType;
     }
 
-    public void setMediaType(MediumType mediaType) {
+    public void setMediaType(String mediaType) {
         this.mediaType = mediaType;
     }
 

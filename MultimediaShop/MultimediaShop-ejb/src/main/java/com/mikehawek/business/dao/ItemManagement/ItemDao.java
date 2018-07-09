@@ -54,7 +54,7 @@ public class ItemDao {
     public void save(ItemDto itemDto) {
         if(itemDto != null) {
             Item item = ItemFactory.createItem(itemDto);
-            item.setItemName(dao.findItemNameByProductCode(itemDto.getProductCode()).get(0));
+            item.setItemName(dao.findItemNameByProductCode(itemDto.getItemNameDto().getProductCode()).get(0));
             em.persist(item);
         }
     }
@@ -72,6 +72,9 @@ public class ItemDao {
         if (searchCriteria.getProductCode() != null && !searchCriteria.getProductCode().isEmpty()) {
             predicates.add(cb.equal(itemRoot.get("itemName").get("productCode"), searchCriteria.getProductCode()));
         }
+        if (searchCriteria.getStatus() != null) {
+            predicates.add(cb.equal(itemRoot.get("status"), searchCriteria.getStatus().toString()));
+        }
         cq.select(itemRoot).where(predicates.toArray(new Predicate[]{}));
 
         return em.createQuery(cq).getResultList();
@@ -79,7 +82,9 @@ public class ItemDao {
 
     public void edit(ItemDto itemDto) {
         Item item = ItemFactory.createItem(itemDto);
-        item.setItemName(dao.findItemNameByProductCode(itemDto.getProductCode()).get(0));
-        em.merge(item);
+        if (itemDto.getItemNameDto().getProductCode() != null) {
+            item.setItemName(dao.findItemNameByProductCode(itemDto.getItemNameDto().getProductCode()).get(0));
+            em.merge(item);
+        }
     }
 }
