@@ -3,42 +3,21 @@ package com.mikehawek.business;
 import java.util.stream.Collectors;
 
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
+import com.mikehawek.business.enums.OrderStatus;
 import com.mikehawek.integration.entities.Order;
 
 public class OrderFactory {
 
     public static OrderDto createOrderDto(Order entity) {
         OrderDto orderDto = new OrderDto();
-        /*orderDto.setName(entity.getName());
-        orderDto.setProductCode(entity.getProductCode());
-        orderDto.setPrice(entity.getPrice());
-        if (entity.getMedium() != null)
-            orderDto.setMedium(Medium.valueOf(entity.getMedium()));
-        orderDto.setReleaseDate(entity.getReleaseDate());
-        orderDto.setDescription(entity.getDescription());
-        orderDto.setAuthor(entity.getAuthor());
-        orderDto.setDistributor(entity.getDistributor());
-        if (entity.getMediaType() != null)
-            orderDto.setMediaType(MediumType.valueOf(entity.getMediaType()));
+        orderDto.setCustomerLogin(entity.getCustomer().getLogin());
+        orderDto.setValue(entity.getValue());
+        orderDto.setStatus(OrderStatus.valueOf(entity.getStatus()));
+        orderDto.setId(entity.getId());
+        orderDto.setPlacementDate(entity.getPlacementDate());
         if(entity.getItems() != null) {
-            orderDto.setItems(entity.getItems().stream().map(i -> createItemDto(i)).collect(Collectors.toList()));
-        }*/
-        return orderDto;
-    }
-
-    public static OrderDto createItemNameDtoWithoutItems(Order entity) {
-        OrderDto orderDto = new OrderDto();
-        /*orderDto.setName(entity.getName());
-        orderDto.setProductCode(entity.getProductCode());
-        orderDto.setPrice(entity.getPrice());
-        if (entity.getMedium() != null)
-            orderDto.setMedium(Medium.valueOf(entity.getMedium()));
-        orderDto.setReleaseDate(entity.getReleaseDate());
-        orderDto.setDescription(entity.getDescription());
-        orderDto.setAuthor(entity.getAuthor());
-        orderDto.setDistributor(entity.getDistributor());
-        if (entity.getMediaType() != null)
-            orderDto.setMediaType(MediumType.valueOf(entity.getMediaType()));*/
+            orderDto.setItems(entity.getItems().stream().map(i -> ItemFactory.createItemDto(i)).collect(Collectors.toList()));
+        }
         return orderDto;
     }
 

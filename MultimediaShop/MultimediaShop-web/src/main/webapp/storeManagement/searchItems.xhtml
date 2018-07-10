@@ -40,6 +40,7 @@
                         <h:column><f:facet name="header">Nazwa</f:facet>#{item.itemNameDto.name}</h:column>
                         <h:column><f:facet name="header">Kod egzemplarza</f:facet>#{item.barCode}</h:column>
                         <h:column><f:facet name="header">Status</f:facet>#{item.status}</h:column>
+                        <h:column><f:facet name="header">Nr zamówienia</f:facet>#{item.orderId}</h:column>
                         <h:column>
                             <h:commandButton value="Edytuj" action="#{itemBean.editSpecificItem(item)}" />
                         </h:column>

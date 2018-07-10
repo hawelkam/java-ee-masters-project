@@ -13,8 +13,10 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.mikehawek.business.OrderFactory;
+import com.mikehawek.business.dao.ItemManagement.ItemDao;
 import com.mikehawek.business.dao.UserManagement.UserDao;
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
+import com.mikehawek.integration.entities.Item;
 import com.mikehawek.integration.entities.Order;
 
 @Stateless
@@ -24,6 +26,9 @@ public class OrderDao {
 
     @Inject
     private UserDao userDao;
+
+    @Inject
+    private ItemDao itemDao;
 
     public OrderDao() {
     }
@@ -55,7 +60,13 @@ public class OrderDao {
             Order order = OrderFactory.createOrder(orderDto);
             order.setCustomer(userDao.findCustomerWithLogin(orderDto.getCustomerLogin()).get(0));
             em.persist(order);
+            order.getItems().forEach(i -> updateItemWithOrder(i, order));
         }
+    }
+
+    private void updateItemWithOrder(Item item, Order order) {
+        item.setOrder(order);
+        em.merge(item);
     }
 
     public List<Order> findOrders(String customerLogin) {

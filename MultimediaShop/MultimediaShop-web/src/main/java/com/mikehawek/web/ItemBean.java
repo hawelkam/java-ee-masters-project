@@ -10,6 +10,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 import com.mikehawek.business.facade.MultimediaShopFacade;
@@ -38,7 +39,7 @@ public class ItemBean implements Serializable {
     }
 
     public void add() {
-        System.out.println("ADD ITEMNAME OPERATION START: " + System.nanoTime());
+        LoggingSupport.logTimeToConsole("ADD ITEMNAME OPERATION START");
         boolean result = multimediaShopFacade.addItemName(itemName);
         if (!result) {
             FacesContext.getCurrentInstance().addMessage(
@@ -99,7 +100,7 @@ public class ItemBean implements Serializable {
     }
 
     public void saveSpecificItemEdit() {
-        System.out.println("EDIT ITEM OPERATION START: " + System.nanoTime());
+        LoggingSupport.logTimeToConsole("EDIT ITEM OPERATION START");
         this.item.setItemNameDto(this.itemName);
         multimediaShopFacade.editItem(this.item);
         this.item = new ItemDto();
@@ -114,7 +115,7 @@ public class ItemBean implements Serializable {
     }
 
     public void deleteSpecificItem(String barCode) throws IOException {
-        System.out.println("DELETE ITEM OPERATION START: " + System.nanoTime());
+        LoggingSupport.logTimeToConsole("DELETE ITEM OPERATION START");
         multimediaShopFacade.deleteItem(barCode);
     }
 

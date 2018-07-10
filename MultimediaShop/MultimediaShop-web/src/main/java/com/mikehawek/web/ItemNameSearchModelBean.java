@@ -25,6 +25,9 @@ public class ItemNameSearchModelBean implements Serializable{
 
     private List<ItemNameDto> searchResult;
 
+    private boolean detailsEnabled;
+    private ItemNameDto details;
+
     @PostConstruct
     public void init() {
         itemNameSearchCriteria = new ItemNameSearchCriteria();
@@ -67,5 +70,31 @@ public class ItemNameSearchModelBean implements Serializable{
 
     public void setSearchResult(List<ItemNameDto> searchResult) {
         this.searchResult = searchResult;
+    }
+
+    public void enableDetails(ItemNameDto itemNameDto) {
+        this.details = itemNameDto;
+        this.detailsEnabled = true;
+    }
+
+    public void disableDetails() {
+        this.details = new ItemNameDto();
+        this.detailsEnabled = false;
+    }
+
+    public boolean isDetailsEnabled() {
+        return detailsEnabled;
+    }
+
+    public void setDetailsEnabled(boolean detailsEnabled) {
+        this.detailsEnabled = detailsEnabled;
+    }
+
+    public ItemNameDto getDetails() {
+        return details;
+    }
+
+    public void setDetails(ItemNameDto details) {
+        this.details = details;
     }
 }

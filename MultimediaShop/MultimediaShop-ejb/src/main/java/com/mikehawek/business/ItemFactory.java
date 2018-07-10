@@ -81,6 +81,9 @@ public class ItemFactory {
         if (item.getStatus() != null)
             dto.setStatus(ItemStatus.valueOf(item.getStatus()));
         dto.setBarCode(item.getBarCode());
+        if (item.getOrder() != null ) {
+            dto.setOrderId(item.getOrder().getId());
+        }
         return dto;
     }
 }

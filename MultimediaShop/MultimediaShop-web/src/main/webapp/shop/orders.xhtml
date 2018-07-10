@@ -20,16 +20,16 @@
                     <f:facet name="header">
                         <h:outputText value="Twój koszyk" />
                     </f:facet>
-                    <h:dataTable value="#{orders.listOrders}" var="order" columns="11" border="1" cellpadding="10" cellspacing="1">
-                        <h:column><f:facet name="header">Kod produktu</f:facet>#{order.id}</h:column>
-                        <h:column><f:facet name="header">Nazwa</f:facet>#{order.value}</h:column>
-                        <h:column><f:facet name="header">Typ</f:facet>#{order.status}</h:column>
-                        <h:column><f:facet name="header">Nośnik</f:facet>#{order.placmentDate}</h:column>
+                    <h:dataTable value="#{orderBean.listOrders(customerLoginBean.login)}" var="order" columns="11" border="1" cellpadding="10" cellspacing="1">
+                        <h:column><f:facet name="header">Identyfikator zamówienia</f:facet>#{order.id}</h:column>
+                        <h:column><f:facet name="header">Wartość</f:facet>#{order.value}</h:column>
+                        <h:column><f:facet name="header">Status</f:facet>#{order.status}</h:column>
+                        <h:column><f:facet name="header">Data złożenia zamówienia</f:facet>#{order.placementDate}</h:column>
                         <h:column>
-                            <h:commandButton value="Szczegóły" action="#{basketBean.removeFromBasket(item)}" />
+                            <h:commandButton value="Szczegóły" action="#{orderBean.orderDetails(order)}" />
                         </h:column>
                         <h:column>
-                            <h:commandButton value="Anuluj zamówienie" action="#{basketBean.removeFromBasket(item)}" />
+                            <h:commandButton value="Anuluj zamówienie" action="#{orderBean.cancelOrder(order)}" />
                         </h:column>
                     </h:dataTable>
                 </h:form>

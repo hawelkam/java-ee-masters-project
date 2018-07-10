@@ -15,11 +15,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.mikehawek.business.ItemFactory;
+import com.mikehawek.business.OrderFactory;
 import com.mikehawek.business.UserFactory;
 import com.mikehawek.business.criteria.ItemNameSearchCriteria;
 import com.mikehawek.business.criteria.ItemSearchCriteria;
 import com.mikehawek.business.dao.ItemManagement.ItemDao;
 import com.mikehawek.business.dao.ItemManagement.ItemNameDao;
+import com.mikehawek.business.dao.OrderManagement.OrderDao;
 import com.mikehawek.business.dao.UserManagement.UserDao;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
@@ -28,6 +30,7 @@ import com.mikehawek.business.dto.UserManagement.UserDto;
 import com.mikehawek.business.enums.ItemStatus;
 import com.mikehawek.business.enums.OrderStatus;
 import com.mikehawek.integration.entities.Item;
+import com.mikehawek.integration.entities.Order;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 import com.mikehawek.integration.entities.users.User;
 import com.mikehawek.integration.producer.ItemManagementProducer;
@@ -61,6 +64,9 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
 
     @Inject
     private UserDao userDao;
+
+    @Inject
+    private OrderDao orderDao;
 
     @Override
     protected EntityManager getEntityManager() {
@@ -183,5 +189,16 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
         dto.setCustomerLogin(customerId);
         dto.setItems(basket);
         orderManagementProducer.sendAddOrUpdateOrderMessage(dto);
+    }
+
+    public List<OrderDto> listOrders(String customerId) {
+        List<Order> orders = orderDao.findOrders(customerId);
+        return orders.stream()
+                .map(OrderFactory::createOrderDto)
+                .collect(Collectors.toList());
+    }
+
+    public void cancelOrder(OrderDto order) {
+        orderDao.edit(order);
     }
 }

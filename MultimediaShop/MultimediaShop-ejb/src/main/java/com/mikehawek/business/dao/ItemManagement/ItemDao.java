@@ -13,6 +13,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.mikehawek.business.ItemFactory;
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.criteria.ItemSearchCriteria;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.integration.entities.Item;
@@ -37,7 +38,7 @@ public class ItemDao {
         Item item = em.find(Item.class, barCode);
         if (item != null)
             em.remove(item);
-        System.out.println("DELETE ITEM OPERATION FINISH: " + System.nanoTime());
+        LoggingSupport.logTimeToConsole("DELETE ITEM OPERATION FINISH");
 
     }
 
@@ -87,7 +88,7 @@ public class ItemDao {
         if (itemDto.getItemNameDto().getProductCode() != null) {
             item.setItemName(dao.findItemNameByProductCode(itemDto.getItemNameDto().getProductCode()).get(0));
             em.merge(item);
-            System.out.println("EDIT ITEM OPERATION FINISH: " + System.nanoTime());
+            LoggingSupport.logTimeToConsole("EDIT ITEM OPERATION FINISH");
         }
     }
 }

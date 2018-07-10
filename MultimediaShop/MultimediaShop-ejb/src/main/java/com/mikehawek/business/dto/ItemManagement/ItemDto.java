@@ -8,6 +8,7 @@ public class ItemDto  implements Serializable{
     String barCode;
     ItemStatus status;
     ItemNameDto itemNameDto;
+    int orderId;
 
     boolean isEdited;
 
@@ -48,6 +49,14 @@ public class ItemDto  implements Serializable{
 
     public void setItemNameDto(ItemNameDto itemNameDto) {
         this.itemNameDto = itemNameDto;
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
     @Override

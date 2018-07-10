@@ -26,8 +26,8 @@ public class Order {
     @Column(name = "ORDER_ID")
     private int id;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ITEM_ID")
+    @OneToMany(mappedBy = "order",
+            cascade = CascadeType.MERGE)
     private List<Item> items = new ArrayList<>();
 
     @Column(name = "STATUS")

@@ -27,6 +27,9 @@ public class Item implements Serializable {
     @Column(name = "STATUS")
     private String status;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Order order;
+
     public String getBarCode() { return barCode; }
 
     public void setBarCode(String barCode) { this.barCode = barCode; }
@@ -46,4 +49,8 @@ public class Item implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public Order getOrder() { return order; }
+
+    public void setOrder(Order order) { this.order = order; }
 }

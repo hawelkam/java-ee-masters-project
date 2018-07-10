@@ -54,7 +54,7 @@
                         <h:column><f:facet name="header">Cena</f:facet>#{item.price}</h:column>
                         <h:column><f:facet name="header">Dostępność</f:facet>#{itemBean.getAvailability(item)}</h:column>
                         <h:column>
-                            <h:commandButton value="Szczegóły" action="#{itemBean.showDetails(item)}" />
+                            <h:commandButton value="Szczegóły" action="#{itemNameSearchModelBean.enableDetails(item)}" />
                         </h:column>
                         <h:column>
                             <h:commandButton value="Dodaj do koszyka" action="#{basketBean.add(item)}" />
@@ -62,7 +62,35 @@
                     </h:dataTable>
                 </h:form>
 
-                <!--ADD DETAILS PANEL -->
+                <h:form rendered="#{itemNameSearchModelBean.detailsEnabled}">
+                    <h:panelGrid id="editItem" columns="2" border="1" cellpadding="10" cellspacing="1" >
+                        <f:facet name="header">
+                            <h3>Szczegóły przedmiotu #{itemNameSearchModelBean.details.productCode}: #{itemNameSearchModelBean.details.name}</h3>
+                        </f:facet>
+                        <h:outputLabel value="Kod produktu" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.productCode}"/>
+                        <h:outputLabel value="Nazwa" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.name}"/>
+                        <h:outputLabel value="Cena" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.price}"/>
+                        <h:outputLabel value="Nośnik" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.medium}"/>
+                        <h:outputLabel value="Data premiery" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.releaseDate}"/>
+                        <h:outputLabel value="Opis" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.description}"/>
+                        <h:outputLabel value="Autor" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.author}"/>
+                        <h:outputLabel value="Dystrybutor" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.distributor}"/>
+                        <h:outputLabel value="Typ" style="font-weight:bold"/>
+                        <h:outputText value="#{itemNameSearchModelBean.details.mediaType}"/>
+                        <h:outputLabel value="Dostępność" style="font-weight:bold"/>
+                        <h:outputText value="#{itemBean.getAvailability(itemNameSearchModelBean.details)}"/>
+                        <h:commandButton value="Dodaj do koszyka" action="#{basketBean.add(itemNameSearchModelBean.details)}" />
+                        <h:commandButton value="Anuluj" action="#{itemNameSearchModelBean.disableDetails}" />
+                    </h:panelGrid>
+                </h:form>
 
                 <p>
                     <a href="customerIndex.xhtml">Powrót</a>
