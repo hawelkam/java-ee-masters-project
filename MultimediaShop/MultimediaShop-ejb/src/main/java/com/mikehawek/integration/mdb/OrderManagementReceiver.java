@@ -36,6 +36,7 @@ public class OrderManagementReceiver implements MessageListener {
             if (message instanceof ObjectMessage) {
                 ObjectMessage msg = (ObjectMessage) message;
                 OrderDto order = (OrderDto) msg.getObject();
+                System.out.println("OrderManagementReceiver: Received message with order " + order.getId());
                 if (order != null && order.isEdited()) {
                     dao.edit(order);
                 } else if (order != null) {

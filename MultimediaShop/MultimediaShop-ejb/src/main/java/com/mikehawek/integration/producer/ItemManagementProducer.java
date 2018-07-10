@@ -30,6 +30,7 @@ public class ItemManagementProducer {
             ObjectMessage message = session.createObjectMessage();
 
             message.setObject(itemDto);
+            System.out.println("ItemManagementProducer: Sending message with item " + itemDto.getBarCode());
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

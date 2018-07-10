@@ -77,6 +77,7 @@ public class ItemNameDao {
         if(itemDto != null) {
             ItemName item = ItemFactory.createItemName(itemDto);
             em.persist(item);
+            System.out.println("ADD ITEMNAME OPERATION FINISHED: " + System.nanoTime());
         }
     }
 

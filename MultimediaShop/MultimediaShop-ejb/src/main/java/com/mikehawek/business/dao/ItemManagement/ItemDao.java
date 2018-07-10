@@ -37,6 +37,8 @@ public class ItemDao {
         Item item = em.find(Item.class, barCode);
         if (item != null)
             em.remove(item);
+        System.out.println("DELETE ITEM OPERATION FINISH: " + System.nanoTime());
+
     }
 
     public List<Item> findItemByBarCode(String barCode) {
@@ -85,6 +87,7 @@ public class ItemDao {
         if (itemDto.getItemNameDto().getProductCode() != null) {
             item.setItemName(dao.findItemNameByProductCode(itemDto.getItemNameDto().getProductCode()).get(0));
             em.merge(item);
+            System.out.println("EDIT ITEM OPERATION FINISH: " + System.nanoTime());
         }
     }
 }

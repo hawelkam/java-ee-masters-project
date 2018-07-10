@@ -76,5 +76,6 @@ public class OrderDao {
         Order order = OrderFactory.createOrder(orderDto);
         order.setCustomer(userDao.findCustomerWithLogin(orderDto.getCustomerLogin()).get(0));
         em.merge(order);
+        System.out.println("EDIT ORDER OPERATION FINISH: " + System.nanoTime());
     }
 }

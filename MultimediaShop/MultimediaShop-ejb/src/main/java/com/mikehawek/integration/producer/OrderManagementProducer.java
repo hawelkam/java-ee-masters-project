@@ -29,6 +29,7 @@ public class OrderManagementProducer {
             ObjectMessage message = session.createObjectMessage();
 
             message.setObject(orderDto);
+            System.out.println("OrderManagementProducer: Sending message with order " + orderDto.getId());
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

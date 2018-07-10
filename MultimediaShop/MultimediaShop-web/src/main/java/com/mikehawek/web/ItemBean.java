@@ -38,6 +38,7 @@ public class ItemBean implements Serializable {
     }
 
     public void add() {
+        System.out.println("ADD ITEMNAME OPERATION START: " + System.nanoTime());
         boolean result = multimediaShopFacade.addItemName(itemName);
         if (!result) {
             FacesContext.getCurrentInstance().addMessage(
@@ -98,6 +99,7 @@ public class ItemBean implements Serializable {
     }
 
     public void saveSpecificItemEdit() {
+        System.out.println("EDIT ITEM OPERATION START: " + System.nanoTime());
         this.item.setItemNameDto(this.itemName);
         multimediaShopFacade.editItem(this.item);
         this.item = new ItemDto();
@@ -112,6 +114,7 @@ public class ItemBean implements Serializable {
     }
 
     public void deleteSpecificItem(String barCode) throws IOException {
+        System.out.println("DELETE ITEM OPERATION START: " + System.nanoTime());
         multimediaShopFacade.deleteItem(barCode);
     }
 

@@ -51,6 +51,7 @@ public class ItemNameManagementReceiver implements MessageListener {
             if (message instanceof ObjectMessage) {
                 ObjectMessage msg = (ObjectMessage) message;
                 ItemNameDto item = (ItemNameDto) msg.getObject();
+                System.out.println("ItemNameManagementReceiver: Received message with itemName " + item.getProductCode());
                 if (item != null && item.isEdited()) {
                     dao.edit(item);
                 } else if (item != null) {
