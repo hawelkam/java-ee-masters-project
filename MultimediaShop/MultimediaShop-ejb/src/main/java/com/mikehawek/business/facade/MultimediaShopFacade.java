@@ -198,7 +198,7 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
                 .collect(Collectors.toList());
     }
 
-    public void cancelOrder(OrderDto order) {
-        orderDao.edit(order);
+    public void cancelOrder(int id) {
+        orderDao.cancelOrder(id);
     }
 }

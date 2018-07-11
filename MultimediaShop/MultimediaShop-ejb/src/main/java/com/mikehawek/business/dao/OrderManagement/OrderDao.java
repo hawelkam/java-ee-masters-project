@@ -16,6 +16,7 @@ import com.mikehawek.business.OrderFactory;
 import com.mikehawek.business.dao.ItemManagement.ItemDao;
 import com.mikehawek.business.dao.UserManagement.UserDao;
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
+import com.mikehawek.business.enums.OrderStatus;
 import com.mikehawek.integration.entities.Item;
 import com.mikehawek.integration.entities.Order;
 
@@ -88,5 +89,12 @@ public class OrderDao {
         order.setCustomer(userDao.findCustomerWithLogin(orderDto.getCustomerLogin()).get(0));
         em.merge(order);
         System.out.println("EDIT ORDER OPERATION FINISH: " + System.nanoTime());
+    }
+
+    public void cancelOrder(int id) {
+        Order order = findOrderById(id).get(0);
+        order.setStatus(OrderStatus.Cancelled.toString());
+        em.merge(order);
+        System.out.println("CANCEL ORDER OPERATION FINISH: " + System.nanoTime());
     }
 }
