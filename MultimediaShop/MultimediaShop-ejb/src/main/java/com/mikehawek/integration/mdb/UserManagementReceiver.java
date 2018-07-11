@@ -12,23 +12,25 @@ import javax.jms.ObjectMessage;
 
 import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dao.OrderManagement.OrderDao;
+import com.mikehawek.business.dao.UserManagement.UserDao;
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
+import com.mikehawek.business.dto.UserManagement.UserDto;
 
 @MessageDriven(activationConfig = {
-        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/OrderManagement"),
-        @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/OrderManagement"),
+        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/UserManagement"),
+        @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/UserManagement"),
         @ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),
-        @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "jms/OrderManagement"),
+        @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "jms/UserManagement"),
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic")
 })
-public class OrderManagementReceiver implements MessageListener {
+public class UserManagementReceiver implements MessageListener {
     @Resource
     private MessageDrivenContext mdc;
 
     @Inject
-    private OrderDao dao;
+    private UserDao dao;
 
-    public OrderManagementReceiver() {
+    public UserManagementReceiver() {
     }
 
     @Override
@@ -36,12 +38,10 @@ public class OrderManagementReceiver implements MessageListener {
         try {
             if (message instanceof ObjectMessage) {
                 ObjectMessage msg = (ObjectMessage) message;
-                OrderDto order = (OrderDto) msg.getObject();
-                LoggingSupport.logTimeToConsole("OrderManagementReceiver: Received message with order " + order.getId());
-                if (order != null && order.isEdited()) {
-                    dao.edit(order);
-                } else if (order != null) {
-                    dao.save(order);
+                UserDto user = (UserDto) msg.getObject();
+                LoggingSupport.logTimeToConsole("OrderManagementReceiver: Received message with user " + user.getLogin());
+                if (user != null) {
+                    dao.save(user);
                 }
                 message.acknowledge();
             }

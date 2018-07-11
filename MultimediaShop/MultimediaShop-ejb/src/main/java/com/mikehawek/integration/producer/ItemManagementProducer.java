@@ -11,6 +11,7 @@ import javax.jms.Session;
 import javax.jms.TextMessage;
 import javax.jms.Topic;
 
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 
 @Stateless
@@ -30,7 +31,7 @@ public class ItemManagementProducer {
             ObjectMessage message = session.createObjectMessage();
 
             message.setObject(itemDto);
-            System.out.println("ItemManagementProducer: Sending message with item " + itemDto.getBarCode());
+            LoggingSupport.logTimeToConsole("ItemManagementProducer: Sending message with item " + itemDto.getBarCode());
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

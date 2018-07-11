@@ -12,16 +12,17 @@ import javax.jms.Topic;
 
 import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
+import com.mikehawek.business.dto.UserManagement.UserDto;
 
 @Stateless
-public class OrderManagementProducer {
-    @Resource(lookup = "jms/OrderManagementFactory")
+public class UserManagementProducer {
+    @Resource(lookup = "jms/UserManagementFactory")
     private ConnectionFactory connectionFactory;
 
-    @Resource (lookup = "jms/OrderManagement")
+    @Resource (lookup = "jms/UserManagement")
     private Topic topic;
 
-    public void sendAddOrUpdateOrderMessage(OrderDto orderDto) {
+    public void sendAddUserMessage(UserDto userDto) {
         try {
             Connection connection = connectionFactory.createConnection();
             Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
@@ -29,8 +30,8 @@ public class OrderManagementProducer {
 
             ObjectMessage message = session.createObjectMessage();
 
-            message.setObject(orderDto);
-            LoggingSupport.logTimeToConsole("OrderManagementProducer: Sending message with order " + orderDto.getId());
+            message.setObject(userDto);
+            LoggingSupport.logTimeToConsole("UserManagementProducer: Sending message with user " + userDto.getLogin());
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

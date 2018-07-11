@@ -11,6 +11,7 @@ import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
 import javax.jms.TextMessage;
 
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dao.ItemManagement.ItemDao;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 
@@ -37,7 +38,7 @@ public class ItemManagementReceiver implements MessageListener {
             if (message instanceof ObjectMessage) {
                 ObjectMessage msg = (ObjectMessage) message;
                 ItemDto item = (ItemDto) msg.getObject();
-                System.out.println("ItemManagementReceiver: Received message with item " + item.getBarCode());
+                LoggingSupport.logTimeToConsole("ItemManagementReceiver: Received message with item " + item.getBarCode());
                 if (item != null && item.isEdited()) {
                     dao.edit(item);
                 } else if (item != null) {
