@@ -4,14 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.mikehawek.business.enums.ItemStatus;
 import com.mikehawek.integration.entities.itemnames.ItemName;
 
 @Entity
@@ -21,7 +18,7 @@ public class Item implements Serializable {
     @Column(name = "ITEM_ID")
     private String barCode;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private ItemName itemName;
 
     @Column(name = "STATUS")

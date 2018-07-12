@@ -199,6 +199,6 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
     }
 
     public void cancelOrder(int id) {
-        orderDao.cancelOrder(id);
+        orderManagementProducer.sendCancelOrderMessage(Integer.toString(id));
     }
 }

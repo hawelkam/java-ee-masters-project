@@ -9,6 +9,7 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.ObjectMessage;
+import javax.jms.TextMessage;
 
 import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dao.OrderManagement.OrderDao;
@@ -43,6 +44,12 @@ public class OrderManagementReceiver implements MessageListener {
                 } else if (order != null) {
                     dao.save(order);
                 }
+                message.acknowledge();
+            } else if (message instanceof TextMessage) {
+                TextMessage msg = (TextMessage) message;
+                String id = msg.getText();
+                if (id != null)
+                    dao.cancelOrder(Integer.valueOf(id));
                 message.acknowledge();
             }
         } catch (JMSException e) {
