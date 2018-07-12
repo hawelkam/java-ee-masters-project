@@ -16,7 +16,7 @@ import com.mikehawek.business.dao.ItemManagement.ItemDao;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 
 @MessageDriven(activationConfig = {
-        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/ItemManagement"),
+        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/ItemManagement1"),
         @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/ItemManagement"),
         @ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),
         @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "jms/ItemManagement"),
@@ -44,13 +44,11 @@ public class ItemManagementReceiver implements MessageListener {
                 } else if (item != null) {
                     dao.save(item);
                 }
-                message.acknowledge();
             } else if (message instanceof TextMessage) {
                 TextMessage msg = (TextMessage) message;
                 String id = msg.getText();
                 if (id != null)
                     dao.deleteItem(id);
-                message.acknowledge();
             }
         } catch (JMSException e) {
             e.printStackTrace();

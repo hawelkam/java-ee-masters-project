@@ -36,6 +36,7 @@ import com.mikehawek.integration.entities.users.User;
 import com.mikehawek.integration.producer.ItemManagementProducer;
 import com.mikehawek.integration.producer.ItemNameManagementProducer;
 import com.mikehawek.integration.producer.OrderManagementProducer;
+import com.mikehawek.integration.producer.UserManagementProducer;
 
 /**
  *
@@ -55,6 +56,9 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
 
     @Inject
     private OrderManagementProducer orderManagementProducer;
+
+    @Inject
+    private UserManagementProducer userManagementProducer;
 
     @Inject
     private ItemNameDao itemNameDao;
@@ -144,8 +148,7 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
         if (userDao.findUserWithLogin(dto.getLogin()).size() != 0) {
             return null;
         }
-        User user = UserFactory.createUser(dto);
-        userDao.save(user);
+        userManagementProducer.sendAddUserMessage(dto);
         return dto;
     }
 

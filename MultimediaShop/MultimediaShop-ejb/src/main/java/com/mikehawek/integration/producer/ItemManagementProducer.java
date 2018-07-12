@@ -25,7 +25,7 @@ public class ItemManagementProducer {
     public void sendAddOrUpdateItemMessage(ItemDto itemDto) {
         try {
             Connection connection = connectionFactory.createConnection();
-            Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             MessageProducer messageProducer = session.createProducer(topic);
 
             ObjectMessage message = session.createObjectMessage();

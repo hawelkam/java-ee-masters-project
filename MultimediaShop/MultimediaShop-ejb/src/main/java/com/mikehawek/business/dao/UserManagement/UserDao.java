@@ -11,6 +11,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import com.mikehawek.business.UserFactory;
+import com.mikehawek.business.dto.UserManagement.UserDto;
 import com.mikehawek.integration.entities.users.Customer;
 import com.mikehawek.integration.entities.users.User;
 
@@ -60,8 +62,10 @@ public class UserDao {
         return em.createQuery(cq).getResultList();
     }
 
-    public void save(Object object) {
-        if(object != null)
-            em.persist(object);
+    public void save(UserDto dto) {
+        if(dto != null) {
+            User user = UserFactory.createUser(dto);
+            em.persist(user);
+        }
     }
 }

@@ -16,7 +16,7 @@ import com.mikehawek.business.dao.OrderManagement.OrderDao;
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
 
 @MessageDriven(activationConfig = {
-        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/OrderManagement"),
+        @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/OrderManagement1"),
         @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/OrderManagement"),
         @ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),
         @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "jms/OrderManagement"),
@@ -50,7 +50,6 @@ public class OrderManagementReceiver implements MessageListener {
                 String id = msg.getText();
                 if (id != null)
                     dao.cancelOrder(Integer.valueOf(id));
-                message.acknowledge();
             }
         } catch (JMSException e) {
             e.printStackTrace();

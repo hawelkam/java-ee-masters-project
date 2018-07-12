@@ -24,7 +24,7 @@ import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
  * @author Hawek
  */
 @MessageDriven(activationConfig = {
-    @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/FetchItemsMessage")
+    @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/FetchItemsMessage1")
     ,
         @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/FetchItemsMessage")
     ,
@@ -57,13 +57,11 @@ public class ItemNameManagementReceiver implements MessageListener {
                 } else if (item != null) {
                     dao.save(item);
                 }
-                message.acknowledge();
             } else if (message instanceof TextMessage) {
                 TextMessage msg = (TextMessage) message;
                 String id = msg.getText();
                 if (id != null)
                     dao.deleteItemName(id);
-                message.acknowledge();
             }
         } catch (JMSException e) {
             e.printStackTrace();

@@ -11,7 +11,6 @@ import javax.jms.Session;
 import javax.jms.Topic;
 
 import com.mikehawek.business.LoggingSupport;
-import com.mikehawek.business.dto.OrderManagement.OrderDto;
 import com.mikehawek.business.dto.UserManagement.UserDto;
 
 @Stateless
@@ -25,7 +24,7 @@ public class UserManagementProducer {
     public void sendAddUserMessage(UserDto userDto) {
         try {
             Connection connection = connectionFactory.createConnection();
-            Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+            Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             MessageProducer messageProducer = session.createProducer(topic);
 
             ObjectMessage message = session.createObjectMessage();
