@@ -44,7 +44,6 @@ public class OrderManagementReceiver implements MessageListener {
                 } else if (order != null) {
                     dao.save(order);
                 }
-                message.acknowledge();
             } else if (message instanceof TextMessage) {
                 TextMessage msg = (TextMessage) message;
                 String id = msg.getText();

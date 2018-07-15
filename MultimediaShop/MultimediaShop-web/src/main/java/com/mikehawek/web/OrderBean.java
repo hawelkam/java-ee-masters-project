@@ -7,6 +7,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
 import com.mikehawek.business.enums.ItemStatus;
@@ -24,7 +25,10 @@ public class OrderBean implements Serializable {
     private OrderDto details;
 
     public List<OrderDto> listOrders(String customerId) {
-        return multimediaShopFacade.listOrders(customerId);
+        LoggingSupport.logTimeToConsole("LIST ORDERS START");
+        List<OrderDto> orders = multimediaShopFacade.listOrders(customerId);
+        LoggingSupport.logTimeToConsole("LIST ORDERS FINISH");
+        return orders;
     }
 
     public boolean isDetailsEnabled() {
@@ -49,6 +53,7 @@ public class OrderBean implements Serializable {
     }
 
     public void cancelOrder(OrderDto order) {
+        LoggingSupport.logTimeToConsole("CANCEL ORDER START");
         order.getItems().forEach(this::changeStatusToAvailable);
         multimediaShopFacade.cancelOrder(order.getId());
     }

@@ -11,6 +11,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
 import com.mikehawek.business.enums.ItemStatus;
@@ -74,6 +75,7 @@ public class BasketBean implements Serializable {
     }
 
     public void placeOrder(String customerId) {
+        LoggingSupport.logTimeToConsole("PLACE ORDER START");
         this.basket.stream().forEach(this::changeStatusToOrdered);
         multimediaShopFacade.placeOrder(basket, value, customerId);
         this.basket.clear();

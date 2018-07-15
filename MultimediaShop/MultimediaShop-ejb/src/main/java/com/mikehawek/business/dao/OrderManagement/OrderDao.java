@@ -12,6 +12,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.OrderFactory;
 import com.mikehawek.business.dao.ItemManagement.ItemDao;
 import com.mikehawek.business.dao.UserManagement.UserDao;
@@ -88,13 +89,13 @@ public class OrderDao {
         Order order = OrderFactory.createOrder(orderDto);
         order.setCustomer(userDao.findCustomerWithLogin(orderDto.getCustomerLogin()).get(0));
         em.merge(order);
-        System.out.println("EDIT ORDER OPERATION FINISH: " + System.nanoTime());
+        LoggingSupport.logTimeToConsole("EDIT ORDER OPERATION FINISH: " + System.nanoTime());
     }
 
     public void cancelOrder(int id) {
         Order order = findOrderById(id).get(0);
         order.setStatus(OrderStatus.Cancelled.toString());
         em.merge(order);
-        System.out.println("CANCEL ORDER OPERATION FINISH: " + System.nanoTime());
+        LoggingSupport.logTimeToConsole("CANCEL ORDER OPERATION FINISH: " + System.nanoTime());
     }
 }

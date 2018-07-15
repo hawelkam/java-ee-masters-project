@@ -13,6 +13,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.mikehawek.business.ItemFactory;
+import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.criteria.ItemNameSearchCriteria;
 import com.mikehawek.business.criteria.ItemSearchCriteria;
 import com.mikehawek.business.dto.ItemManagement.ItemNameDto;
@@ -77,7 +78,7 @@ public class ItemNameDao {
         if(itemDto != null) {
             ItemName item = ItemFactory.createItemName(itemDto);
             em.persist(item);
-            System.out.println("ADD ITEMNAME OPERATION FINISHED: " + System.nanoTime());
+            LoggingSupport.logTimeToConsole("ADD ITEMNAME OPERATION FINISHED: " + System.nanoTime());
         }
     }
 
