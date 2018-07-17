@@ -1,0 +1,1913 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MultimediaShop-ear:ear" />
+    </artifacts-to-build>
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/searchItems.xhtml" line="40" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8547917a-a543-4ee3-be76-87d1b2664037" name="Default" comment="Various updates">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MultimediaShop/.idea/artifacts/MultimediaShop_web_war_exploded.xml" afterPath="$PROJECT_DIR$/../MultimediaShop/.idea/artifacts/MultimediaShop_web_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../MultimediaShop/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../MultimediaShop/.idea/compiler.xml" />
+    </list>
+    <ignored path="$PROJECT_DIR$/MultimediaShop-ejb/target/" />
+    <ignored path="$PROJECT_DIR$/MultimediaShop-ear/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/MultimediaShop-web/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/MultimediaShop$Glassfish_Deploy.coverage" NAME="Glassfish Deploy Coverage Results" MODIFIED="1531392719195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="MultimediaShop@localhost" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="MultimediaShop@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="MultimediaShop" type="e3449647:DbNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MultimediaShopFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/facade/MultimediaShopFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2550">
+              <caret line="188" column="33" lean-forward="false" selection-start-line="188" selection-start-column="33" selection-end-line="188" selection-end-column="33" />
+              <folding>
+                <element signature="e#6302#6303#0" expanded="true" />
+                <element signature="e#6342#6343#0" expanded="true" />
+                <marker date="1531674830365" expanded="true" signature="4309:4363" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserManagementReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/UserManagementReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/resources/META-INF/persistence.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="104" lean-forward="false" selection-start-line="15" selection-start-column="104" selection-end-line="15" selection-end-column="104" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/OrderManagement/OrderDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1122">
+              <caret line="87" column="16" lean-forward="false" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/UserManagement/UserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="662">
+              <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+              <folding>
+                <element signature="e#1820#1831#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customerIndex.xhtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/customerIndex.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerLoginBean.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/CustomerLoginBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="104" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/OrderBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="29" column="59" lean-forward="false" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ItemBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/ItemBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasketBean.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/BasketBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="77" column="61" lean-forward="false" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Enum" />
+        <option value="CSS File" />
+        <option value="XHTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ItemNameFacade</find>
+      <find>FetchItemsMess</find>
+      <find>testJaveEE</find>
+      <find>UserDto</find>
+      <find>beforeEditItemName</find>
+      <find>findItemNameByProductCode</find>
+      <find>ItemSearchCriteria</find>
+      <find>InitialCon</find>
+      <find>CANCEL ORDER OPERATION</find>
+      <find>DELETE ITEM OPERATION S</find>
+      <find>STA</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Hawek &lt;m.hawelka@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/welcome.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/template/commonHeader.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/addItem.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/resources/style/commonStyle.css" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/addItemName.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/ItemManagement/ItemNameDto.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/searchItemNames.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/template/commonLayout.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/customerLogin.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/employeeLogin.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/itemDetails.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/employeeIndex.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/template/commonHeader.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/criteria/ItemSearchCriteria.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/OrderManagement/BasketDto.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/UserFactory.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Customer.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/basket.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/LoggingSupport.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Item.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Order.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/OrderFactory.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/ItemFactory.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/ItemManagement/ItemDto.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/ItemManagement/ItemDao.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/searchItems.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/ItemBean.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/searchItems.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/ItemNameSearchModelBean.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/facade/AbstractFacade.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/enums/OrderStatus.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/OrderManagement/OrderDto.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/itemnames/ItemName.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/orders.xhtml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/ItemManagementProducer.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/ItemNameManagementProducer.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/OrderManagementProducer.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/UserManagementProducer.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/UserManagement/UserDao.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/UserManagementReceiver.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/ItemNameManagementReceiver.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/ItemManagementReceiver.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/ItemManagement/ItemNameDao.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/OrderManagementReceiver.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/OrderManagement/OrderDao.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/BasketBean.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/OrderBean.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/facade/MultimediaShopFacade.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/CustomerLoginBean.java" />
+        <option value="$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/customerIndex.xhtml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-149" />
+    <option name="y" value="-28" />
+    <option name="width" value="1694" />
+    <option name="height" value="1026" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mikehawek" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mikehawek" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mikehawek" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mikehawek" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="UserManagement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mikehawek" type="462c0819:PsiDirectoryNode" />
+              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="facade" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mikehawek" type="462c0819:PsiDirectoryNode" />
+              <item name="integration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="setup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-ejb" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MultimediaShop_standaloneServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MultimediaShop_standaloneServer" type="462c0819:PsiDirectoryNode" />
+              <item name="MultimediaShop-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.16071428" />
+    <property name="project.structure.side.proportion" value="0.3888889" />
+    <property name="settings.editor.selected.configurable" value="Settings.Sequence.Configuration" />
+    <property name="android.sdk.path" value="D:/Android_SDK" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="XHTML File" />
+    <property name="SearchEverywhereHistoryKey" value="ItemD&#9;PSI&#9;JAVA://com.mikehawek.business.dto.ItemManagement.ItemDto&#10;ItemNameDto&#9;FILE&#9;file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/ItemManagement/ItemNameDto.java&#10;Itemname&#9;PSI&#9;JAVA://com.mikehawek.integration.entities.itemnames.ItemName&#10;Medium&#9;FILE&#9;file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/business/enums/Medium.java" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.mikehawek.business" />
+      <recent name="com.mikehawek.business.criteria" />
+      <recent name="com.mikehawek.business.enums" />
+      <recent name="com.mikehawek.business.dto" />
+      <recent name="com.mikehawek.integration.entities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\MGR\git_repo\java-ee-masters-project\MultimediaShop\MultimediaShop-web\src\main\webapp\storeManagement\template" />
+      <recent name="F:\MGR\git_repo\java-ee-masters-project\MultimediaShop\MultimediaShop-web\src\main\webapp\storeManagement" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\MGR\git_repo\java-ee-masters-project\MultimediaShop\MultimediaShop-web\src\main\webapp\shop" />
+      <recent name="F:\MGR\git_repo\java-ee-masters-project\MultimediaShop\MultimediaShop-web\src\main\webapp\storeManagement" />
+      <recent name="F:\MGR\git_repo\java-ee-masters-project\MultimediaShop\MultimediaShop-web\src\main\webapp\resources\style" />
+      <recent name="F:\MGR\git_repo\java-ee-masters-project\MultimediaShop\MultimediaShop-web\src\main\webapp\resources" />
+      <recent name="F:\MGR\git_repo\java-ee-masters-project\MultimediaShop\MultimediaShop-web\src\main\webapp" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="GlassFish Server.Glassfish Deploy">
+    <configuration name="Glassfish Deploy" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.02" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="MultimediaShop-ear:ear">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="DOMAIN" value="domain1" />
+        <option name="PRESERVE" value="false" />
+        <option name="COMPATIBILITY" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="GlassFish" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="MultimediaShop-ear:ear" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="clean install" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/MultimediaShop-ejb" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="GlassFish Server.Glassfish Deploy" />
+      <item index="1" class="java.lang.String" itemvalue="Maven.clean install" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8547917a-a543-4ee3-be76-87d1b2664037" name="Default" comment="" />
+      <created>1528628772440</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1528628772440</updated>
+      <workItem from="1528628775251" duration="43000" />
+      <workItem from="1528633086401" duration="848000" />
+      <workItem from="1528634096299" duration="9740000" />
+      <workItem from="1528743804462" duration="2451000" />
+      <workItem from="1528778807645" duration="5507000" />
+      <workItem from="1528784344101" duration="4816000" />
+      <workItem from="1528801485265" duration="3544000" />
+      <workItem from="1528809303142" duration="752000" />
+      <workItem from="1528810221994" duration="384000" />
+      <workItem from="1529154219971" duration="2421000" />
+      <workItem from="1529161579088" duration="2625000" />
+      <workItem from="1529215750394" duration="4366000" />
+      <workItem from="1529242764491" duration="7842000" />
+      <workItem from="1529750492016" duration="7275000" />
+      <workItem from="1529990010626" duration="1261000" />
+      <workItem from="1530266950889" duration="2829000" />
+      <workItem from="1530437613872" duration="4578000" />
+      <workItem from="1530451337550" duration="3587000" />
+      <workItem from="1530541829106" duration="7065000" />
+      <workItem from="1530717831762" duration="2178000" />
+      <workItem from="1530724530587" duration="5477000" />
+      <workItem from="1530803469558" duration="8523000" />
+      <workItem from="1530982108551" duration="1540000" />
+      <workItem from="1531031546100" duration="13090000" />
+      <workItem from="1531058690214" duration="10469000" />
+      <workItem from="1531143382533" duration="16649000" />
+      <workItem from="1531240154590" duration="6832000" />
+      <workItem from="1531254426686" duration="876000" />
+      <workItem from="1531283016960" duration="1741000" />
+      <workItem from="1531370613121" duration="18368000" />
+      <workItem from="1531660591575" duration="3820000" />
+      <workItem from="1531664779006" duration="968000" />
+      <workItem from="1531753103819" duration="125000" />
+      <workItem from="1531755955307" duration="2568000" />
+      <workItem from="1531847539942" duration="587000" />
+    </task>
+    <task id="LOCAL-00001" summary="Complete rework">
+      <created>1528648506148</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528648506148</updated>
+    </task>
+    <task id="LOCAL-00002" summary="JSF and new entities">
+      <created>1528810532025</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528810532025</updated>
+    </task>
+    <task id="LOCAL-00003" summary="DAO and JSF beginnings">
+      <created>1529164108090</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529164108090</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Search Items implementation">
+      <created>1529254758237</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1529254758237</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Item implementation">
+      <created>1530269718746</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530269718746</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Few minor changes and new topic">
+      <created>1530440438945</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1530440438945</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Login screen dummy">
+      <created>1530454325489</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1530454325489</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Lots of changes">
+      <created>1530729387304</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1530729387304</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Model and doc update">
+      <created>1530729404913</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1530729404913</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Various updates">
+      <created>1530983567746</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1530983567747</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Employee side functionality finished">
+      <created>1531071767816</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1531071767816</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implementation almost finished">
+      <created>1531169508455</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1531169508455</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Various updates">
+      <created>1531255290269</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1531255290269</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Final functionality">
+      <created>1531284751614</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1531284751615</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Small updates">
+      <created>1531388557483</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1531388557483</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Stuff">
+      <created>1531403124978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1531403124978</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Various updates">
+      <created>1531411330806</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1531411330806</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Various updates">
+      <created>1531664410889</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1531664410889</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="166698000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42666668" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995737" sideWeight="0.5135659" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32995737" sideWeight="0.4864341" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="EJB" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="JavaEE:App" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29637527" sideWeight="0.4108527" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hibernate Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Complete rework" />
+    <MESSAGE value="JSF and new entities" />
+    <MESSAGE value="DAO and JSF beginnings" />
+    <MESSAGE value="Search Items implementation" />
+    <MESSAGE value="Item implementation" />
+    <MESSAGE value="Few minor changes and new topic" />
+    <MESSAGE value="Login screen dummy" />
+    <MESSAGE value="Lots of changes" />
+    <MESSAGE value="Model and doc update" />
+    <MESSAGE value="Employee side functionality finished" />
+    <MESSAGE value="Implementation almost finished" />
+    <MESSAGE value="Final functionality" />
+    <MESSAGE value="Small updates" />
+    <MESSAGE value="Stuff" />
+    <MESSAGE value="Various updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Various updates" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/UserManagementReceiver.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="126" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/AddItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/UserManagement/CustomerDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/UserManagement/UserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/OrderManagement/BasketDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Basket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="19" column="31" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/LoggingSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/ItemFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="68" column="28" lean-forward="false" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.mikehawek">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.mikehawek</OriginalElement>
+          <nodes>
+            <node x="" y="">com.mikehawek.web</node>
+            <node x="" y="">com.mikehawek.properties</node>
+            <node x="" y="">com.mikehawek.integration</node>
+            <node x="" y="">com.mikehawek.business</node>
+            <node x="" y="">com.mikehawek.NewSessionBean</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="137.0" y="108.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.mikehawek.business">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.mikehawek.business</OriginalElement>
+          <nodes>
+            <node x="678.0" y="517.0">com.mikehawek.business.dao.ItemManagement</node>
+            <node x="389.5" y="678.0">com.mikehawek.business.UserFactory</node>
+            <node x="928.7169584357084" y="678.0">com.mikehawek.business.dao.OrderManagement</node>
+            <node x="1161.6208257770754" y="957.0">com.mikehawek.integration.mdb</node>
+            <node x="1208.8669584357085" y="313.0">com.mikehawek.business.dto.OrderManagement</node>
+            <node x="676.0166591104087" y="302.0">com.mikehawek.business.LoggingSupport</node>
+            <node x="1270.6169584357085" y="110.0">com.mikehawek.business.dto.ItemManagement</node>
+            <node x="890.2865267052763" y="517.0">com.mikehawek.business.OrderFactory</node>
+            <node x="10.5" y="280.0">com.mikehawek.business.criteria.ItemNameSearchCriteria</node>
+            <node x="1365.7281933719428" y="517.0">com.mikehawek.integration.producer</node>
+            <node x="596.5" y="667.0">com.mikehawek.business.facade.AbstractFacade</node>
+            <node x="787.9967203404703" y="0.0">com.mikehawek.business.enums</node>
+            <node x="1136.7281933719428" y="517.0">com.mikehawek.business.dto.UserManagement</node>
+            <node x="491.0166591104086" y="869.0">com.mikehawek.business.facade.MultimediaShopFacade</node>
+            <node x="209.5" y="280.0">com.mikehawek.business.criteria.ItemSearchCriteria</node>
+            <node x="470.0" y="506.0">com.mikehawek.business.dao.UserManagement.UserDao</node>
+            <node x="894.412492443742" y="110.0">com.mikehawek.integration.entities</node>
+            <node x="1060.1679241741745" y="313.0">com.mikehawek.business.ItemFactory</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.facade.AbstractFacade">
+              <point x="11.777777777777828" y="-103.0" />
+              <point x="714.7944368881865" y="759.0" />
+              <point x="687.0" y="759.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.ItemManagement" target="com.mikehawek.business.ItemFactory">
+              <point x="50.28571428571428" y="-15.0" />
+              <point x="816.2857142857142" y="426.0" />
+              <point x="1079.0012575075077" y="426.0" />
+              <point x="-37.666666666666686" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.integration.producer">
+              <point x="176.66666666666669" y="-103.0" />
+              <point x="879.6833257770753" y="829.0" />
+              <point x="1430.2281933719428" y="829.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.dto.ItemManagement">
+              <point x="200.22222222222223" y="-103.0" />
+              <point x="903.2388813326309" y="839.0" />
+              <point x="1505.2281933719428" y="839.0" />
+              <point x="1505.2281933719428" y="250.0" />
+              <point x="1422.6169584357085" y="250.0" />
+              <point x="64.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dto.OrderManagement" target="com.mikehawek.business.dto.ItemManagement">
+              <point x="68.25" y="-15.0" />
+              <point x="1368.1169584357085" y="260.0" />
+              <point x="1390.6169584357085" y="260.0" />
+              <point x="32.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.ItemFactory" target="com.mikehawek.business.dto.ItemManagement">
+              <point x="22.600000000000023" y="-15.0" />
+              <point x="1139.2679241741744" y="220.0" />
+              <point x="1326.6169584357085" y="220.0" />
+              <point x="-32.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.ItemManagement" target="com.mikehawek.business.LoggingSupport">
+              <point x="-2.8421709430404007E-14" y="-15.0" />
+              <point x="766.0" y="486.0" />
+              <point x="753.5166591104087" y="486.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="com.mikehawek.business.UserFactory" target="com.mikehawek.integration.entities">
+              <point x="-14.0" y="-15.0" />
+              <point x="431.5" y="230.0" />
+              <point x="948.9541591104087" y="230.0" />
+              <point x="-4.958333333333343" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.ItemManagement" target="com.mikehawek.business.dao.ItemManagement">
+              <point x="-66.0" y="15.0" />
+              <point x="700.0" y="567.0" />
+              <point x="658.0" y="567.0" />
+              <point x="658.0" y="532.0" />
+              <point x="-88.0" y="-0.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dto.OrderManagement" target="com.mikehawek.business.enums">
+              <point x="-22.75" y="-15.0" />
+              <point x="1277.1169584357085" y="200.0" />
+              <point x="1220.1169584357085" y="200.0" />
+              <point x="1220.1169584357085" y="70.0" />
+              <point x="878.4058112495613" y="70.0" />
+              <point x="31.909090909090935" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.UserFactory">
+              <point x="-58.8888888888888" y="-103.0" />
+              <point x="644.1277702215198" y="789.0" />
+              <point x="445.5" y="789.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.dao.OrderManagement">
+              <point x="58.888888888888914" y="-103.0" />
+              <point x="761.9055479992976" y="769.0" />
+              <point x="974.2169584357084" y="769.0" />
+              <point x="-45.5" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.ItemFactory" target="com.mikehawek.business.enums">
+              <point x="0.0" y="-15.0" />
+              <point x="1116.6679241741745" y="90.0" />
+              <point x="857.133083976834" y="90.0" />
+              <point x="10.636363636363626" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.OrderFactory">
+              <point x="35.33333333333337" y="-103.0" />
+              <point x="738.3499924437419" y="759.0" />
+              <point x="918.2169584357084" y="759.0" />
+              <point x="918.2169584357084" y="617.0" />
+              <point x="920.0365267052763" y="617.0" />
+              <point x="-29.75" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.ItemManagement" target="com.mikehawek.integration.entities">
+              <point x="25.142857142857125" y="-15.0" />
+              <point x="791.1428571428571" y="406.0" />
+              <point x="915.0781933719429" y="406.0" />
+              <point x="915.0781933719429" y="240.0" />
+              <point x="958.8708257770754" y="240.0" />
+              <point x="4.958333333333314" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.criteria.ItemSearchCriteria" target="com.mikehawek.business.enums">
+              <point x="39.75" y="-48.0" />
+              <point x="328.75" y="260.0" />
+              <point x="308.9669584357085" y="260.0" />
+              <point x="308.9669584357085" y="90.0" />
+              <point x="835.8603567041067" y="90.0" />
+              <point x="-10.636363636363626" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dto.ItemManagement" target="com.mikehawek.business.enums">
+              <point x="44.0" y="-15.0" />
+              <point x="1402.6169584357085" y="50.0" />
+              <point x="899.6785385222886" y="50.0" />
+              <point x="53.18181818181819" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.integration.producer" target="com.mikehawek.business.dto.ItemManagement">
+              <point x="32.25" y="-15.0" />
+              <point x="1462.4781933719428" y="260.0" />
+              <point x="1406.6169584357085" y="260.0" />
+              <point x="48.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.OrderFactory" target="com.mikehawek.business.dto.OrderManagement">
+              <point x="49.58333333333337" y="-15.0" />
+              <point x="999.3698600386097" y="466.0" />
+              <point x="1236.1669584357085" y="466.0" />
+              <point x="-63.699999999999996" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dto.ItemManagement" target="com.mikehawek.business.dto.ItemManagement">
+              <point x="-64.0" y="15.0" />
+              <point x="1294.6169584357085" y="170.0" />
+              <point x="1240.6169584357085" y="170.0" />
+              <point x="1240.6169584357085" y="125.0" />
+              <point x="-88.0" y="-0.0" />
+            </edge>
+            <edge source="com.mikehawek.integration.mdb" target="com.mikehawek.business.dao.ItemManagement">
+              <point x="-39.75" y="-15.0" />
+              <point x="1174.8708257770754" y="749.0" />
+              <point x="804.2865267052762" y="749.0" />
+              <point x="804.2865267052762" y="617.0" />
+              <point x="788.0" y="617.0" />
+              <point x="22.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.integration.producer" target="com.mikehawek.business.dto.OrderManagement">
+              <point x="-32.25" y="-15.0" />
+              <point x="1397.9781933719428" y="486.0" />
+              <point x="1381.7669584357086" y="486.0" />
+              <point x="81.89999999999995" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.ItemFactory" target="com.mikehawek.integration.entities">
+              <point x="-22.600000000000023" y="-15.0" />
+              <point x="1094.0679241741743" y="240.0" />
+              <point x="1008.4541591104087" y="240.0" />
+              <point x="54.54166666666663" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.ItemManagement" target="com.mikehawek.business.criteria.ItemSearchCriteria">
+              <point x="-25.14285714285718" y="-15.0" />
+              <point x="740.8571428571428" y="466.0" />
+              <point x="348.625" y="466.0" />
+              <point x="59.625" y="48.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.integration.entities">
+              <point x="-82.44444444444434" y="-103.0" />
+              <point x="620.5722146659643" y="799.0" />
+              <point x="379.0" y="799.0" />
+              <point x="379.0" y="210.0" />
+              <point x="929.1208257770754" y="210.0" />
+              <point x="-24.791666666666657" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.ItemManagement" target="com.mikehawek.business.criteria.ItemNameSearchCriteria">
+              <point x="-75.42857142857147" y="-15.0" />
+              <point x="690.5714285714286" y="486.0" />
+              <point x="159.66666666666663" y="486.0" />
+              <point x="59.66666666666663" y="48.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.OrderManagement" target="com.mikehawek.integration.entities">
+              <point x="36.39999999999998" y="-15.0" />
+              <point x="1056.1169584357085" y="617.0" />
+              <point x="1041.4179241741742" y="617.0" />
+              <point x="1041.4179241741742" y="260.0" />
+              <point x="988.6208257770754" y="260.0" />
+              <point x="34.708333333333314" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.UserFactory" target="com.mikehawek.business.dto.UserManagement">
+              <point x="14.0" y="-15.0" />
+              <point x="459.5" y="627.0" />
+              <point x="1165.8948600386095" y="627.0" />
+              <point x="-58.33333333333334" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.dto.UserManagement">
+              <point x="106.0" y="-103.0" />
+              <point x="809.0166591104087" y="789.0" />
+              <point x="1283.625" y="789.0" />
+              <point x="1283.625" y="637.0" />
+              <point x="1282.5615267052763" y="637.0" />
+              <point x="58.33333333333337" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.integration.mdb" target="com.mikehawek.business.dto.OrderManagement">
+              <point x="13.25" y="-15.0" />
+              <point x="1227.8708257770754" y="819.0" />
+              <point x="1355.2281933719428" y="819.0" />
+              <point x="1355.2281933719428" y="486.0" />
+              <point x="1363.5669584357083" y="486.0" />
+              <point x="63.69999999999993" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.integration.entities" target="com.mikehawek.integration.entities">
+              <point x="-44.625" y="15.0" />
+              <point x="909.287492443742" y="170.0" />
+              <point x="864.412492443742" y="170.0" />
+              <point x="864.412492443742" y="125.0" />
+              <point x="-59.5" y="-0.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.OrderManagement" target="com.mikehawek.business.OrderFactory">
+              <point x="0.0" y="-15.0" />
+              <point x="1019.7169584357084" y="587.0" />
+              <point x="979.5365267052763" y="587.0" />
+              <point x="29.75" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.OrderManagement" target="com.mikehawek.business.dao.UserManagement.UserDao">
+              <point x="-72.80000000000001" y="-15.0" />
+              <point x="946.9169584357085" y="607.0" />
+              <point x="596.0" y="607.0" />
+              <point x="42.0" y="26.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.OrderManagement" target="com.mikehawek.business.dao.ItemManagement">
+              <point x="-36.400000000000034" y="-15.0" />
+              <point x="983.3169584357084" y="597.0" />
+              <point x="832.0" y="597.0" />
+              <point x="66.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.criteria.ItemNameSearchCriteria">
+              <point x="-176.66666666666652" y="-103.0" />
+              <point x="526.3499924437422" y="839.0" />
+              <point x="64.46695843570842" y="839.0" />
+              <point x="64.46695843570842" y="486.0" />
+              <point x="40.33333333333326" y="486.0" />
+              <point x="-59.66666666666674" y="48.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dto.UserManagement" target="com.mikehawek.business.dto.OrderManagement">
+              <point x="0.0" y="-15.0" />
+              <point x="1224.2281933719428" y="486.0" />
+              <point x="1272.5669584357086" y="486.0" />
+              <point x="-27.300000000000004" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.integration.mdb" target="com.mikehawek.business.dao.OrderManagement">
+              <point x="-13.25" y="-15.0" />
+              <point x="1201.3708257770754" y="739.0" />
+              <point x="1065.2169584357084" y="739.0" />
+              <point x="45.5" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.OrderFactory" target="com.mikehawek.business.ItemFactory">
+              <point x="9.916666666666629" y="-15.0" />
+              <point x="959.7031933719429" y="436.0" />
+              <point x="1116.6679241741745" y="436.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.ItemFactory">
+              <point x="82.44444444444446" y="-103.0" />
+              <point x="785.461103554853" y="779.0" />
+              <point x="1123.7448600386097" y="779.0" />
+              <point x="1123.7448600386097" y="436.0" />
+              <point x="1154.334590840841" y="436.0" />
+              <point x="37.66666666666663" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.enums">
+              <point x="-200.22222222222206" y="-103.0" />
+              <point x="502.79443688818657" y="849.0" />
+              <point x="0.0" y="849.0" />
+              <point x="0.0" y="50.0" />
+              <point x="793.3149021586521" y="50.0" />
+              <point x="-53.18181818181819" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.OrderFactory" target="com.mikehawek.business.enums">
+              <point x="-49.58333333333337" y="-15.0" />
+              <point x="900.2031933719429" y="396.0" />
+              <point x="843.912492443742" y="396.0" />
+              <point x="843.912492443742" y="90.0" />
+              <point x="846.4967203404703" y="90.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.integration.mdb" target="com.mikehawek.business.dto.ItemManagement">
+              <point x="39.75" y="-15.0" />
+              <point x="1254.3708257770754" y="849.0" />
+              <point x="1570.4641806579307" y="849.0" />
+              <point x="1570.4641806579307" y="240.0" />
+              <point x="1438.6169584357085" y="240.0" />
+              <point x="80.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.OrderManagement" target="com.mikehawek.business.dto.OrderManagement">
+              <point x="72.80000000000001" y="-15.0" />
+              <point x="1092.5169584357086" y="647.0" />
+              <point x="1322.2281933719428" y="647.0" />
+              <point x="1322.2281933719428" y="486.0" />
+              <point x="1308.9669584357084" y="486.0" />
+              <point x="9.100000000000023" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.OrderFactory" target="com.mikehawek.integration.entities">
+              <point x="-29.75" y="-15.0" />
+              <point x="920.0365267052763" y="416.0" />
+              <point x="933.2458257770754" y="416.0" />
+              <point x="933.2458257770754" y="250.0" />
+              <point x="968.787492443742" y="250.0" />
+              <point x="14.875" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.dao.ItemManagement">
+              <point x="-11.777777777777715" y="-103.0" />
+              <point x="691.2388813326309" y="769.0" />
+              <point x="586.0" y="769.0" />
+              <point x="586.0" y="617.0" />
+              <point x="744.0" y="617.0" />
+              <point x="-22.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.dao.UserManagement.UserDao">
+              <point x="-35.33333333333326" y="-103.0" />
+              <point x="667.6833257770754" y="779.0" />
+              <point x="512.0" y="779.0" />
+              <point x="-42.0" y="26.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.criteria.ItemSearchCriteria">
+              <point x="-129.55555555555543" y="-103.0" />
+              <point x="573.4611035548533" y="819.0" />
+              <point x="229.44709084084093" y="819.0" />
+              <point x="-59.625" y="48.0" />
+            </edge>
+            <edge source="com.mikehawek.business.dao.ItemManagement" target="com.mikehawek.business.dto.ItemManagement">
+              <point x="75.42857142857144" y="-15.0" />
+              <point x="841.4285714285714" y="446.0" />
+              <point x="1198.3669584357085" y="446.0" />
+              <point x="1198.3669584357085" y="240.0" />
+              <point x="1358.6169584357085" y="240.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.facade.MultimediaShopFacade" target="com.mikehawek.business.dto.OrderManagement">
+              <point x="129.55555555555554" y="-103.0" />
+              <point x="832.5722146659641" y="799.0" />
+              <point x="1333.2281933719428" y="799.0" />
+              <point x="1333.2281933719428" y="476.0" />
+              <point x="1327.1669584357085" y="476.0" />
+              <point x="27.299999999999955" y="15.0" />
+            </edge>
+            <edge source="com.mikehawek.business.criteria.ItemNameSearchCriteria" target="com.mikehawek.business.enums">
+              <point x="44.75" y="-48.0" />
+              <point x="144.75" y="260.0" />
+              <point x="119.96695843570842" y="260.0" />
+              <point x="119.96695843570842" y="70.0" />
+              <point x="814.5876294313795" y="70.0" />
+              <point x="-31.909090909090907" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.7726027397260274" x="-118.0" y="301.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Properties</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/searchItems.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="42" column="94" lean-forward="false" selection-start-line="42" selection-start-column="94" selection-end-line="42" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/storeManagement/searchItemNames.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="95" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/facade/AbstractFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/enums/OrderStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/basket.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="33" column="86" lean-forward="false" selection-start-line="33" selection-start-column="86" selection-end-line="33" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/searchItems.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="61" column="34" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="61" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/ItemNameSearchModelBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="82" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/OrderManagement/OrderDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/OrderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Persistence/JavaeeElement:/89e385b3/DBConnection/MultimediaShop-ejb/jpa/JPA/PersistenceModel">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Persistence</ID>
+          <OriginalElement>JavaeeElement:/89e385b3/DBConnection/MultimediaShop-ejb/jpa/JPA/PersistenceModel</OriginalElement>
+          <nodes>
+            <node x="171.0" y="-15.0">Item#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Item.java</node>
+            <node x="168.0" y="105.0">Order#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Order.java</node>
+            <node x="317.0" y="105.0">Customer#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Customer.java</node>
+            <node x="-5.0" y="-15.0">ItemName#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/itemnames/ItemName.java</node>
+            <node x="491.5" y="105.0">User#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/User.java</node>
+            <node x="326.0" y="-15.0">Basket#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Basket.java</node>
+            <node x="477.0" y="-15.0">Employee#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Employee.java</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="Item#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Item.java" target="ItemName#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/itemnames/ItemName.java">
+              <point x="-29.0" y="-0.0" />
+              <point x="45.0" y="-0.0" />
+            </edge>
+            <edge source="Order#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Order.java" target="Customer#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Customer.java">
+              <point x="0.0" y="15.0" />
+              <point x="200.0" y="200.0" />
+              <point x="360.0" y="200.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Customer#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Customer.java" target="Basket#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Basket.java">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="Item#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Item.java" target="Order#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Order.java">
+              <point x="0.0" y="15.0" />
+              <point x="0.0" y="-15.0" />
+            </edge>
+            <edge source="Basket#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Basket.java" target="Item#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Item.java">
+              <point x="-34.0" y="-0.0" />
+              <point x="29.0" y="-0.0" />
+            </edge>
+            <edge source="Employee#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Employee.java" target="User#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/User.java">
+              <point x="0.0" y="15.0" />
+              <point x="0.0" y="-15.0" />
+            </edge>
+            <edge source="Customer#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Customer.java" target="Order#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Order.java">
+              <point x="-43.0" y="-0.0" />
+              <point x="32.0" y="-0.0" />
+            </edge>
+            <edge source="Customer#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/Customer.java" target="User#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/users/User.java">
+              <point x="43.0" y="-0.0" />
+              <point x="-28.5" y="-0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.5000000000000004" x="11.0" y="-32.0" />
+          <SelectedNodes>
+            <node>Order#file://F:/MGR/git_repo/java-ee-masters-project/MultimediaShop/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/Order.java</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Embeddables</Category>
+            <Category>Superclasses</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/entities/itemnames/ItemName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="68" column="49" lean-forward="false" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dto/ItemManagement/ItemDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/orders.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="66" column="21" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="66" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1317">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/resources/META-INF/glassfish-resources.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/setup/glassfish-resources.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/ItemManagementProducer.java" />
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/OrderManagementProducer.java" />
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/EmployeeLoginBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="73" column="63" lean-forward="false" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/UserFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="13" column="23" lean-forward="false" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/ItemNameManagementReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/ItemManagementReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/UserManagementProducer.java" />
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/ItemManagement/ItemDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/producer/ItemNameManagementProducer.java" />
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/OrderManagementReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/ItemBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/BasketBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="77" column="61" lean-forward="false" selection-start-line="77" selection-start-column="61" selection-end-line="77" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/OrderBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="29" column="59" lean-forward="false" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/ItemManagement/ItemNameDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="76" column="16" lean-forward="false" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/integration/mdb/UserManagementReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/facade/MultimediaShopFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="188" column="33" lean-forward="false" selection-start-line="188" selection-start-column="33" selection-end-line="188" selection-end-column="33" />
+          <folding>
+            <element signature="e#6302#6303#0" expanded="true" />
+            <element signature="e#6342#6343#0" expanded="true" />
+            <marker date="1531674830365" expanded="true" signature="4309:4363" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="104" lean-forward="false" selection-start-line="15" selection-start-column="104" selection-end-line="15" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/OrderManagement/OrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="87" column="16" lean-forward="false" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-ejb/src/main/java/com/mikehawek/business/dao/UserManagement/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+          <folding>
+            <element signature="e#1820#1831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/webapp/shop/customerIndex.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MultimediaShop-web/src/main/java/com/mikehawek/web/CustomerLoginBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="104" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>MultimediaShop-ear:ear</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3888889" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web (MultimediaShop-web)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3888889" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>MultimediaShop-web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3888889" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8 (2)</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.3888889" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

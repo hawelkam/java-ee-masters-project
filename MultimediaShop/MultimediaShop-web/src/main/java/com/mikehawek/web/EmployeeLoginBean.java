@@ -60,9 +60,10 @@ public class EmployeeLoginBean implements Serializable {
         }
     }
 
-    public String logout() {
+    public void logout() {
         loggedUser = null;
-        return "/MultimediaShop-web/welcome.xhtml";
+        login = null;
+        password = null;
     }
 
     public void cancelEdit() {

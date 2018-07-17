@@ -9,8 +9,11 @@
 
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
+<f:metadata>
+    <f:event listener="#{employeeLoginBean.isLoggedIn()}" type="preRenderView"></f:event>
+</f:metadata>
 <h:head>
-    <title>Add new item</title>
+    <title>Dodaj nowy egzemplarz</title>
 </h:head>
 <h:body>
     <ui:composition template="template/commonLayout.xhtml">

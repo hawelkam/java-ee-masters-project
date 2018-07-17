@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
+
+<h:head>
+    <title>System zarządzania sklepem</title>
+</h:head>
+<h:body>
+    <ui:composition template="template/commonLayout.xhtml">
+        <ui:define name="content">
+            <div class="content">
+                <h:form>
+                    <h:panelGrid id="userData" columns="2" border="1" cellpadding="10" cellspacing="1">
+                        <f:facet name="header">
+                            <h:outputText value="Witaj #{employeeLoginBean.loggedUser.firstName}!" />
+                        </f:facet>
+                        <h:outputLabel value="Imię" style="font-weight:bold"/>
+                        <h:outputLabel value="#{employeeLoginBean.loggedUser.firstName}"/>
+                        <h:outputLabel value="Nazwisko" style="font-weight:bold"/>
+                        <h:outputLabel value="#{employeeLoginBean.loggedUser.lastName}"/>
+                        <h:outputLabel value="Adres" style="font-weight:bold"/>
+                        <h:outputLabel value="#{employeeLoginBean.loggedUser.address}"/>
+                        <h:outputLabel value="Login" style="font-weight:bold"/>
+                        <h:outputLabel value="#{employeeLoginBean.loggedUser.login}"/>
+                        <h:outputLabel value="Identyfikator pracownika" style="font-weight:bold"/>
+                        <h:outputLabel value="#{employeeLoginBean.loggedUser.employeeId}"/>
+                    </h:panelGrid>
+                </h:form>
+            </div>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

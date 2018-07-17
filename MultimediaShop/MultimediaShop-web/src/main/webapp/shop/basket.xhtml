@@ -9,8 +9,11 @@
 
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
+<f:metadata>
+    <f:event listener="#{customerLoginBean.isLoggedIn()}" type="preRenderView"></f:event>
+</f:metadata>
 <h:head>
-    <title>JSF 2.0 Greeting</title>
+    <title>Koszyk</title>
 </h:head>
 <h:body>
     <ui:composition template="template/commonLayout.xhtml">

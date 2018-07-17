@@ -6,10 +6,13 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:a4j="http://richfaces.org/a4j">
+>
 
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
+<f:metadata>
+    <f:event listener="#{employeeLoginBean.isLoggedIn()}" type="preRenderView"></f:event>
+</f:metadata>
 <h:head>
     <title>Dodaj nowy przedmiot - MultimediaShop</title>
 </h:head>

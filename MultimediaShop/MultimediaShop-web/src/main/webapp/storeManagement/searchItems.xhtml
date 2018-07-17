@@ -9,6 +9,9 @@
 
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
+<f:metadata>
+    <f:event listener="#{employeeLoginBean.isLoggedIn()}" type="preRenderView"></f:event>
+</f:metadata>
 <h:head>
     <title>Search Items</title>
 </h:head>
