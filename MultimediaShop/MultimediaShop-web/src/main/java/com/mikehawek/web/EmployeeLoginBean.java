@@ -3,6 +3,7 @@ package com.mikehawek.web;
 import java.io.Serializable;
 
 import javax.ejb.EJB;
+import javax.faces.application.ConfigurableNavigationHandler;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
@@ -60,12 +61,6 @@ public class EmployeeLoginBean implements Serializable {
         }
     }
 
-    public void logout() {
-        loggedUser = null;
-        login = null;
-        password = null;
-    }
-
     public void cancelEdit() {
         this.newUser = new EmployeeDto();
         edit = false;
@@ -95,5 +90,23 @@ public class EmployeeLoginBean implements Serializable {
 
     public void setNewUser(EmployeeDto newUser) {
         this.newUser = newUser;
+    }
+
+    public void isLoggedIn() {
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+
+        if(loggedUser == null) {
+            ConfigurableNavigationHandler nav
+                    = (ConfigurableNavigationHandler)
+                    facesContext.getApplication().getNavigationHandler();
+
+            nav.performNavigation("no-access");
+        }
+    }
+
+    public void logout() {
+        loggedUser = null;
+        login = null;
+        password = null;
     }
 }
