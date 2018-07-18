@@ -31,6 +31,7 @@ public class OrderManagementProducer {
             ObjectMessage message = session.createObjectMessage();
 
             message.setObject(orderDto);
+            message.setStringProperty("EntityType", "Order");
             LoggingSupport.logTimeToConsole("OrderManagementProducer: Sending message with order " + orderDto.getId());
             messageProducer.send(message);
             messageProducer.close();
@@ -50,6 +51,7 @@ public class OrderManagementProducer {
             TextMessage message = session.createTextMessage();
 
             message.setText(id);
+            message.setStringProperty("EntityType", "Order");
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

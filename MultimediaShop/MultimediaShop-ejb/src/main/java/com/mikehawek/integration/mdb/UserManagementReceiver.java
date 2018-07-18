@@ -17,9 +17,9 @@ import com.mikehawek.business.dto.UserManagement.UserDto;
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/UserManagement1"),
         @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/UserManagement"),
-        @ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),
         @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "jms/UserManagement"),
-        @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic")
+        @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
+        @ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "EntityType = 'User'")
 })
 public class UserManagementReceiver implements MessageListener {
     @Resource

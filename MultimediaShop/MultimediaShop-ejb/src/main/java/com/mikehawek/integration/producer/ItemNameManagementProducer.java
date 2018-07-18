@@ -31,6 +31,7 @@ public class ItemNameManagementProducer {
             ObjectMessage message = session.createObjectMessage();
 
             message.setObject(itemNameDto);
+            message.setStringProperty("EntityType", "ItemName");
             LoggingSupport.logTimeToConsole("ItemNameManagementProducer: Sending message with itemName " + itemNameDto.getProductCode());
             messageProducer.send(message);
             messageProducer.close();
@@ -50,6 +51,7 @@ public class ItemNameManagementProducer {
             TextMessage message = session.createTextMessage();
 
             message.setText(id);
+            message.setStringProperty("EntityType", "ItemName");
             messageProducer.send(message);
             messageProducer.close();
             connection.close();

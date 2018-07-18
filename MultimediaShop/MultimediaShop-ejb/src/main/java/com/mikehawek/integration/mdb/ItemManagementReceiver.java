@@ -18,9 +18,9 @@ import com.mikehawek.business.dto.ItemManagement.ItemDto;
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(propertyName = "clientId", propertyValue = "jms/ItemManagement1"),
         @ActivationConfigProperty(propertyName = "destinationLookup", propertyValue = "jms/ItemManagement"),
-        @ActivationConfigProperty(propertyName = "subscriptionDurability", propertyValue = "Durable"),
         @ActivationConfigProperty(propertyName = "subscriptionName", propertyValue = "jms/ItemManagement"),
-        @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic")
+        @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic"),
+        @ActivationConfigProperty(propertyName = "messageSelector", propertyValue = "EntityType = 'Item'")
 })
 public class ItemManagementReceiver implements MessageListener {
     @Resource

@@ -30,6 +30,7 @@ public class UserManagementProducer {
             ObjectMessage message = session.createObjectMessage();
 
             message.setObject(userDto);
+            message.setStringProperty("EntityType", "User");
             LoggingSupport.logTimeToConsole("UserManagementProducer: Sending message with user " + userDto.getLogin());
             messageProducer.send(message);
             messageProducer.close();

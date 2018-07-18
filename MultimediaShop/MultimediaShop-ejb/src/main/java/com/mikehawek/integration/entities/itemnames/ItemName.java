@@ -56,7 +56,7 @@ public class ItemName implements Serializable {
     private String mediaType;
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "itemName")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "itemName", orphanRemoval = true)
     private List<Item> items = new ArrayList<>();
 
     public String getName() {
