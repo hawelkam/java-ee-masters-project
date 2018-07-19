@@ -21,7 +21,7 @@
             <div class="content">
                 <h:panelGroup rendered="#{!itemBean.edit}">
                     <h3>Add item</h3>
-                    <h:form>
+                    <h:form id="newItemForm">
                         <p>Product Code: <h:inputText value="#{itemBean.itemName.productCode}" /></p>
                         <p>Name: <h:inputText value="#{itemBean.itemName.name}" /></p>
                         <p>

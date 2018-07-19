@@ -9,9 +9,6 @@
 
 <f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
 
-<f:metadata>
-    <f:event listener="#{customerLoginBean.isLoggedIn()}" type="preRenderView"></f:event>
-</f:metadata>
 <h:head>
     <title>Wyszukiwanie przedmiotów</title>
 </h:head>
@@ -19,17 +16,17 @@
     <ui:composition template="template/commonLayout.xhtml">
         <ui:define name="content">
             <div class="content">
-                <h:form>
+                <h:form id="searchForm">
                     <h:panelGrid id="searchCriteria" columns="2" border="1" cellpadding="10" cellspacing="1">
                         <f:facet name="header">
                             <h:outputText value="Wyszukiwanie przedmiotów" />
                         </f:facet>
                         <h:outputLabel value="Kod produktu" style="font-weight:bold"/>
-                        <h:inputText value="#{itemNameSearchModelBean.itemNameSearchCriteria.productCode}" />
+                        <h:inputText id="productCode" value="#{itemNameSearchModelBean.itemNameSearchCriteria.productCode}" />
                         <h:outputLabel value="Nazwa" style="font-weight:bold"/>
-                        <h:inputText value="#{itemNameSearchModelBean.itemNameSearchCriteria.name}" />
+                        <h:inputText id="name" value="#{itemNameSearchModelBean.itemNameSearchCriteria.name}" />
                         <h:outputLabel value="Nośnik" style="font-weight:bold"/>
-                        <h:selectOneMenu value="#{itemNameSearchModelBean.itemNameSearchCriteria.medium}">
+                        <h:selectOneMenu id="medium" value="#{itemNameSearchModelBean.itemNameSearchCriteria.medium}">
                             <f:selectItem itemValue="" />
                             <f:selectItem itemValue="DVD" />
                             <f:selectItem itemValue="CD" />
@@ -37,16 +34,16 @@
                             <f:selectItem itemValue="Vinyl" />
                             <f:selectItem itemValue="Digital" />
                         </h:selectOneMenu>
-                        <h:commandButton value="Szukaj" action="#{itemNameSearchModelBean.search}" />
+                        <h:commandButton id="search" value="Szukaj" action="#{itemNameSearchModelBean.search}" />
                         <h:commandButton value="Wyczyść" action="#{itemNameSearchModelBean.resetSearch}" />
                     </h:panelGrid>
                 </h:form>
 
-                <h:form rendered="#{not empty itemNameSearchModelBean.searchResult}">
+                <h:form  id="searchResultsForm" rendered="#{not empty itemNameSearchModelBean.searchResult}">
                     <f:facet name="header">
                         <h:outputText value="Wyniki wyszukiwania" />
                     </f:facet>
-                    <h:dataTable value="#{itemNameSearchModelBean.searchResult}" var="item" columns="11" border="1" cellpadding="10" cellspacing="1">
+                    <h:dataTable id="searchResults" value="#{itemNameSearchModelBean.searchResult}" var="item" columns="11" border="1" cellpadding="10" cellspacing="1">
                         <h:column><f:facet name="header">Kod produktu</f:facet>#{item.productCode}</h:column>
                         <h:column><f:facet name="header">Nazwa</f:facet>#{item.name}</h:column>
                         <h:column><f:facet name="header">Typ</f:facet>#{item.mediaType}</h:column>
@@ -57,15 +54,15 @@
                         <h:column><f:facet name="header">Cena</f:facet>#{item.price}</h:column>
                         <h:column><f:facet name="header">Dostępność</f:facet>#{itemBean.getAvailability(item)}</h:column>
                         <h:column>
-                            <h:commandButton value="Szczegóły" action="#{itemNameSearchModelBean.enableDetails(item)}" />
+                            <h:commandButton id="details" value="Szczegóły" action="#{itemNameSearchModelBean.enableDetails(item)}" />
                         </h:column>
                         <h:column>
-                            <h:commandButton value="Dodaj do koszyka" action="#{basketBean.add(item)}" />
+                            <h:commandButton id="addToBasket" value="Dodaj do koszyka" action="#{basketBean.add(item)}" />
                         </h:column>
                     </h:dataTable>
                 </h:form>
 
-                <h:form rendered="#{itemNameSearchModelBean.detailsEnabled}">
+                <h:form  id="itemEditForm" rendered="#{itemNameSearchModelBean.detailsEnabled}">
                     <h:panelGrid id="editItem" columns="2" border="1" cellpadding="10" cellspacing="1" >
                         <f:facet name="header">
                             <h3>Szczegóły przedmiotu #{itemNameSearchModelBean.details.productCode}: #{itemNameSearchModelBean.details.name}</h3>

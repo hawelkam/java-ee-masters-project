@@ -80,6 +80,7 @@ public class ItemBean implements Serializable {
 
     public void delete(String productCode) throws IOException {
         multimediaShopFacade.deleteItemName(productCode);
+        this.itemNames = listItems();
     }
 
     public void addSpecificItem(ItemNameDto itemName) {
@@ -104,6 +105,7 @@ public class ItemBean implements Serializable {
         this.item.setItemNameDto(this.itemName);
         multimediaShopFacade.editItem(this.item);
         this.item = new ItemDto();
+        this.itemNames = listItems();
         specificItemEdit = false;
     }
 

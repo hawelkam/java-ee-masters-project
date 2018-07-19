@@ -19,17 +19,17 @@
     <ui:composition template="template/employeeLayout.xhtml">
         <ui:define name="content">
             <div class="content">
-                <h:form>
+                <h:form id="searchForm">
                     <h:panelGrid id="searchCriteria" columns="2" border="1" cellpadding="10" cellspacing="1">
                         <f:facet name="header">
                             <h:outputText value="Wyszukiwanie przedmiotów" />
                         </f:facet>
                         <h:outputLabel value="Kod produktu" style="font-weight:bold"/>
-                        <h:inputText value="#{itemNameSearchModelBean.itemNameSearchCriteria.productCode}" />
+                        <h:inputText id="searchId" value="#{itemNameSearchModelBean.itemNameSearchCriteria.productCode}" />
                         <h:outputLabel value="Nazwa" style="font-weight:bold"/>
-                        <h:inputText value="#{itemNameSearchModelBean.itemNameSearchCriteria.name}" />
+                        <h:inputText id="searchName" value="#{itemNameSearchModelBean.itemNameSearchCriteria.name}" />
                         <h:outputLabel value="Nośnik" style="font-weight:bold"/>
-                        <h:selectOneMenu value="#{itemNameSearchModelBean.itemNameSearchCriteria.medium}">
+                        <h:selectOneMenu id="searchMedium" value="#{itemNameSearchModelBean.itemNameSearchCriteria.medium}">
                             <f:selectItem itemValue="" />
                             <f:selectItem itemValue="DVD" />
                             <f:selectItem itemValue="CD" />
@@ -37,16 +37,16 @@
                             <f:selectItem itemValue="Vinyl" />
                             <f:selectItem itemValue="Digital" />
                         </h:selectOneMenu>
-                        <h:commandButton value="Szukaj" action="#{itemNameSearchModelBean.search}" />
-                        <h:commandButton value="Wyczyść" action="#{itemNameSearchModelBean.resetSearch}" />
+                        <h:commandButton id="search" value="Szukaj" action="#{itemNameSearchModelBean.search}" />
+                        <h:commandButton id="clear" value="Wyczyść" action="#{itemNameSearchModelBean.resetSearch}" />
                     </h:panelGrid>
                 </h:form>
 
-                <h:form rendered="#{not empty itemNameSearchModelBean.searchResult}">
+                <h:form id="searchResultsForm" rendered="#{not empty itemNameSearchModelBean.searchResult}">
                     <f:facet name="header">
                         <h:outputText value="Wyniki wyszukiwania" />
                     </f:facet>
-                    <h:dataTable value="#{itemNameSearchModelBean.searchResult}" var="item" columns="11" border="1" cellpadding="10" cellspacing="1">
+                    <h:dataTable id="searchResults" value="#{itemNameSearchModelBean.searchResult}" var="item" columns="11" border="1" cellpadding="10" cellspacing="1">
                         <h:column><f:facet name="header">Kod produktu</f:facet>#{item.productCode}</h:column>
                         <h:column><f:facet name="header">Nazwa</f:facet>#{item.name}</h:column>
                         <h:column><f:facet name="header">Typ</f:facet>#{item.mediaType}</h:column>
@@ -56,18 +56,18 @@
                         <h:column><f:facet name="header">Data premiery</f:facet>#{item.releaseDate}</h:column>
                         <h:column><f:facet name="header">Cena</f:facet>#{item.price}</h:column>
                         <h:column>
-                            <h:commandButton value="Dodaj egzemplarz" action="#{itemBean.addSpecificItem(item)}" />
+                            <h:commandButton id="addNewItemButton" value="Dodaj egzemplarz" action="#{itemBean.addSpecificItem(item)}" />
                         </h:column>
                         <h:column>
-                            <h:commandButton value="Edytuj" action="#{itemBean.edit(item)}" />
+                            <h:commandButton id="editItemButton" value="Edytuj" action="#{itemBean.edit(item)}" />
                         </h:column>
                         <h:column>
-                            <h:commandButton value="Usuń" action="#{itemBean.delete(item.productCode)}" />
+                            <h:commandButton id="deleteItemNameButton" value="Usuń" action="#{itemBean.delete(item.productCode)}" />
                         </h:column>
                     </h:dataTable>
                 </h:form>
 
-                <h:form rendered="#{itemBean.edit}">
+                <h:form id="editItemNameForm" rendered="#{itemBean.edit}">
                     <h:panelGrid id="editItemName" columns="2" border="1" cellpadding="10" cellspacing="1">
                         <f:facet name="header">
                             <h3>Edycja przedmiotu #{itemBean.itemName.productCode}: #{itemBean.itemName.name}</h3>
@@ -80,7 +80,7 @@
                     </h:panelGrid>
                 </h:form>
 
-                <h:form rendered="#{itemBean.specificItemEdit}">
+                <h:form id="addItemForm" rendered="#{itemBean.specificItemEdit}">
                     <h:panelGrid id="editItem" columns="2" border="1" cellpadding="10" cellspacing="1" >
                         <f:facet name="header">
                             <h3>Dodaj nowy egzemplarz przedmiotu #{itemBean.itemName.productCode}: #{itemBean.itemName.name}</h3>
@@ -93,8 +93,8 @@
                             <f:selectItem itemValue="Ordered" itemLabel="Sprzedany"/>
                             <f:selectItem itemValue="InBasket" itemLabel="W koszyku"/>
                         </h:selectOneMenu>
-                        <h:commandButton value="Dodaj" action="#{itemBean.saveSpecificItemAddition}" />
-                        <h:commandButton value="Anuluj" action="#{itemBean.cancelSpecificItemEdit}" />
+                        <h:commandButton id="add" value="Dodaj" action="#{itemBean.saveSpecificItemAddition}" />
+                        <h:commandButton id="cancel" value="Anuluj" action="#{itemBean.cancelSpecificItemEdit}" />
                     </h:panelGrid>
                 </h:form>
 

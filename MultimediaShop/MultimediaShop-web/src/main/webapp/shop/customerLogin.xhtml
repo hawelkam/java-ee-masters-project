@@ -3,7 +3,6 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
-      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
     <h:outputStylesheet library="style" name="commonStyle.css" />
@@ -12,24 +11,24 @@
 <h:body>
     <div class="content">
         <h3><h:outputText value="Please log in:" /></h3>
-        <h:form>
+        <h:form id="loginForm">
             <p>Login: <h:inputText id="login" value="#{customerLoginBean.login}"></h:inputText></p>
             <p>Hasło: <h:inputSecret id="password" value="#{customerLoginBean.password}"></h:inputSecret></p>
-            <p><h:commandButton value="Zaloguj" action="#{customerLoginBean.performLogin}"></h:commandButton>
-                <h:commandButton value="Utwórz użytkownika" action="#{customerLoginBean.showNewUserDialog}"></h:commandButton></p>
+            <p><h:commandButton id="performLogin" value="Zaloguj" action="#{customerLoginBean.performLogin}"></h:commandButton>
+                <h:commandButton id="createNewUser" value="Utwórz użytkownika" action="#{customerLoginBean.showNewUserDialog}"></h:commandButton></p>
         </h:form>
 
         <h:panelGroup rendered="#{customerLoginBean.edit}">
             <h3>Utwórz nowego użytkownika:</h3>
-            <h:form>
-                <p>Imię: <h:inputText value="#{customerLoginBean.newUser.firstName}" /></p>
-                <p>Nazwisko: <h:inputText value="#{customerLoginBean.newUser.lastName}" /></p>
-                <p>Adres: <h:inputText value="#{customerLoginBean.newUser.address}" /></p>
-                <p>Login: <h:inputText value="#{customerLoginBean.newUser.login}" /></p>
-                <p>Hasło: <h:inputSecret value="#{customerLoginBean.newUser.password}" /></p>
+            <h:form  id="newUserForm">
+                <p>Imię: <h:inputText id="firstName" value="#{customerLoginBean.newUser.firstName}" /></p>
+                <p>Nazwisko: <h:inputText id="lastName" value="#{customerLoginBean.newUser.lastName}" /></p>
+                <p>Adres: <h:inputText id="address" value="#{customerLoginBean.newUser.address}" /></p>
+                <p>Login: <h:inputText id="newLogin" value="#{customerLoginBean.newUser.login}" /></p>
+                <p>Hasło: <h:inputSecret id="newPassword" value="#{customerLoginBean.newUser.password}" /></p>
                 <p>
-                    <h:commandButton value="Utwórz" action="#{customerLoginBean.saveEdit}" />
-                    <h:commandButton value="Anuluj" action="#{customerLoginBean.cancelEdit}" />
+                    <h:commandButton id="createUser" value="Utwórz" action="#{customerLoginBean.saveEdit}" />
+                    <h:commandButton id="cancel" value="Anuluj" action="#{customerLoginBean.cancelEdit}" />
                 </p>
             </h:form>
         </h:panelGroup>

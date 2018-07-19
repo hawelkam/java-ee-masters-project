@@ -20,7 +20,7 @@
     <ui:composition template="template/employeeLayout.xhtml">
         <ui:define name="content">
             <div class="content">
-                <h:form>
+                <h:form id="newItemnameForm">
                     <h:panelGrid id="userData" columns="2" border="1" cellpadding="10" cellspacing="1">
                         <f:facet name="header">
                             <h:outputText value="Dodaj przedmiot" />
@@ -35,7 +35,7 @@
                         <h:inputText id="price" value="#{itemBean.itemName.price}" required="true"/>
 
                         <h:outputLabel value="Data premiery" style="font-weight:bold"/>
-                        <h:inputText value="#{itemBean.itemName.releaseDate}"><f:convertDateTime pattern="dd-MM-yyyy"/></h:inputText>
+                        <h:inputText id="releaseDate" value="#{itemBean.itemName.releaseDate}"><f:convertDateTime pattern="dd-MM-yyyy"/></h:inputText>
 
                         <h:outputLabel value="Typ" style="font-weight:bold"/>
                         <h:selectOneMenu id="type" value="#{itemBean.itemName.mediaType}" required="true">
@@ -60,10 +60,10 @@
                         <h:inputTextarea id="description" value="#{itemBean.itemName.description}" required="true"/>
 
                         <h:outputLabel value="Dystrybutor" style="font-weight:bold"/>
-                        <h:inputText value="#{itemBean.itemName.distributor}" />
+                        <h:inputText id="distributor" value="#{itemBean.itemName.distributor}" />
 
-                        <h:commandButton value="Dodaj" action="#{itemBean.add}" />
-                        <h:commandButton value="Wyczyść" action="#{itemBean.resetAdd}" />
+                        <h:commandButton id="addButton" value="Dodaj" action="#{itemBean.add}" />
+                        <h:commandButton id="clearButton" value="Wyczyść" action="#{itemBean.resetAdd}" />
                     </h:panelGrid>
                 </h:form>
                 <p>

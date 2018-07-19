@@ -19,7 +19,7 @@
     <ui:composition template="template/commonLayout.xhtml">
         <ui:define name="content">
             <div class="content">
-                <h:form>
+                <h:form  id="userInfo">
                     <h:panelGrid id="userData" columns="2" border="1" cellpadding="10" cellspacing="1">
                         <f:facet name="header">
                             <h:outputText value="Witaj #{customerLoginBean.loggedUser.firstName}!" />

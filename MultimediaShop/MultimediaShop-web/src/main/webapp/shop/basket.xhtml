@@ -19,7 +19,7 @@
     <ui:composition template="template/commonLayout.xhtml">
         <ui:define name="content">
             <div class="content">
-                <h:form>
+                <h:form  id="basketForm">
                     <f:facet name="header">
                         <h:outputText value="Twój koszyk" />
                     </f:facet>
@@ -34,7 +34,7 @@
                         </h:column>
                     </h:dataTable>
                     <f:facet name="value">Wartość koszyka: #{basketBean.calculateValue}</f:facet>
-                    <h:commandButton value="Złóż zamówienie" action="#{basketBean.placeOrder(customerLoginBean.loggedUser.login)}" />
+                    <h:commandButton id="placeOrder" value="Złóż zamówienie" action="#{basketBean.placeOrder(customerLoginBean.loggedUser.login)}" />
                     <h:commandButton value="Wyczyść koszyk" action="#{basketBean.clean}" />
                 </h:form>
 
