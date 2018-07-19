@@ -2,14 +2,12 @@ package com.mikehawek.web;
 
 import java.io.Serializable;
 
-import javax.annotation.PreDestroy;
 import javax.ejb.EJB;
 import javax.faces.application.ConfigurableNavigationHandler;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dto.UserManagement.EmployeeDto;
 import com.mikehawek.business.dto.UserManagement.UserDto;
 

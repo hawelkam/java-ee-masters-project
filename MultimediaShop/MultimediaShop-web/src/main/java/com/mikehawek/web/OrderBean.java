@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
+import javax.faces.annotation.ManagedProperty;
 import javax.inject.Named;
 
 import com.mikehawek.business.LoggingSupport;
 import com.mikehawek.business.dto.ItemManagement.ItemDto;
 import com.mikehawek.business.dto.OrderManagement.OrderDto;
+import com.mikehawek.business.dto.UserManagement.CustomerDto;
 import com.mikehawek.business.enums.ItemStatus;
 import com.mikehawek.business.facade.MultimediaShopFacade;
 
@@ -20,6 +22,9 @@ public class OrderBean implements Serializable {
     private MultimediaShopFacade multimediaShopFacade;
 
     private List<OrderDto> orders = new ArrayList<>();
+
+    @ManagedProperty("#{customerLoginBean.loggedUser}")
+    private CustomerDto customer;
 
     private boolean detailsEnabled;
     private OrderDto details;
@@ -64,4 +69,6 @@ public class OrderBean implements Serializable {
         this.details = new OrderDto();
         this.detailsEnabled = false;
     }
+
+
 }
