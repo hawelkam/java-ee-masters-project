@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MultimediaShop.iml" filepath="$PROJECT_DIR$/MultimediaShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultimediaShop-ear/MultimediaShop-ear.iml" filepath="$PROJECT_DIR$/MultimediaShop-ear/MultimediaShop-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultimediaShop-ejb/MultimediaShop-ejb.iml" filepath="$PROJECT_DIR$/MultimediaShop-ejb/MultimediaShop-ejb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultimediaShop-web/MultimediaShop-web.iml" filepath="$PROJECT_DIR$/MultimediaShop-web/MultimediaShop-web.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:loadBundle basename="com.mikehawek.properties.messages" var="msg" />
+
+<f:metadata>
+    <f:event listener="#{employeeLoginBean.isLoggedIn()}" type="preRenderView"></f:event>
+</f:metadata>
+<h:head>
+    <title>Wyszukiwarka produktów - MultimediaShop</title>
+</h:head>
+<h:body>
+    <ui:composition template="template/employeeLayout.xhtml">
+        <ui:define name="content">
+            <div class="content">
+                <h:form id="searchForm">
+                    <h:panelGrid id="searchCriteria" columns="2" border="1" cellpadding="10" cellspacing="1">
+                        <f:facet name="header">
+                            <h:outputText value="Wyszukiwanie przedmiotów" />
+                        </f:facet>
+                        <h:outputLabel value="Kod produktu" style="font-weight:bold"/>
+                        <h:inputText id="searchId" value="#{itemNameSearchModelBean.itemNameSearchCriteria.productCode}" />
+                        <h:outputLabel value="Nazwa" style="font-weight:bold"/>
+                        <h:inputText id="searchName" value="#{itemNameSearchModelBean.itemNameSearchCriteria.name}" />
+                        <h:outputLabel value="Nośnik" style="font-weight:bold"/>
+                        <h:selectOneMenu id="searchMedium" value="#{itemNameSearchModelBean.itemNameSearchCriteria.medium}">
+                            <f:selectItem itemValue="" />
+                            <f:selectItem itemValue="DVD" />
+                            <f:selectItem itemValue="CD" />
+                            <f:selectItem itemValue="Bluray" />
+                            <f:selectItem itemValue="Vinyl" />
+                            <f:selectItem itemValue="Digital" />
+                        </h:selectOneMenu>
+                        <h:commandButton id="search" value="Szukaj" action="#{itemNameSearchModelBean.search}" />
+                        <h:commandButton id="clear" value="Wyczyść" action="#{itemNameSearchModelBean.resetSearch}" />
+                    </h:panelGrid>
+                </h:form>
+
+                <h:form id="searchResultsForm" rendered="#{not empty itemNameSearchModelBean.searchResult}">
+                    <f:facet name="header">
+                        <h:outputText value="Wyniki wyszukiwania" />
+                    </f:facet>
+                    <h:dataTable id="searchResults" value="#{itemNameSearchModelBean.searchResult}" var="item" columns="11" border="1" cellpadding="10" cellspacing="1">
+                        <h:column><f:facet name="header">Kod produktu</f:facet>#{item.productCode}</h:column>
+                        <h:column><f:facet name="header">Nazwa</f:facet>#{item.name}</h:column>
+                        <h:column><f:facet name="header">Typ</f:facet>#{item.mediaType}</h:column>
+                        <h:column><f:facet name="header">Nośnik</f:facet>#{item.medium}</h:column>
+                        <h:column><f:facet name="header">Autor</f:facet>#{item.author}</h:column>
+                        <h:column><f:facet name="header">Dystrybutor</f:facet>#{item.distributor}</h:column>
+                        <h:column><f:facet name="header">Data premiery</f:facet>#{item.releaseDate}</h:column>
+                        <h:column><f:facet name="header">Cena</f:facet>#{item.price}</h:column>
+                        <h:column>
+                            <h:commandButton id="addNewItemButton" value="Dodaj egzemplarz" action="#{itemBean.addSpecificItem(item)}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton id="editItemButton" value="Edytuj" action="#{itemBean.edit(item)}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton id="deleteItemNameButton" value="Usuń" action="#{itemBean.delete(item.productCode)}" />
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+
+                <h:form id="editItemNameForm" rendered="#{itemBean.edit}">
+                    <h:panelGrid id="editItemName" columns="2" border="1" cellpadding="10" cellspacing="1">
+                        <f:facet name="header">
+                            <h3>Edycja przedmiotu #{itemBean.itemName.productCode}: #{itemBean.itemName.name}</h3>
+                        </f:facet>
+                        <h:outputLabel value="Nazwa" style="font-weight:bold"/>
+                        <h:inputText value="#{itemBean.itemName.name}"/>
+
+                        <h:commandButton value="Zapisz zmiany" action="#{itemBean.saveEdit}" />
+                        <h:commandButton value="Anuluj" action="#{itemBean.cancelEdit}" />
+                    </h:panelGrid>
+                </h:form>
+
+                <h:form id="addItemForm" rendered="#{itemBean.specificItemEdit}">
+                    <h:panelGrid id="editItem" columns="2" border="1" cellpadding="10" cellspacing="1" >
+                        <f:facet name="header">
+                            <h3>Dodaj nowy egzemplarz przedmiotu #{itemBean.itemName.productCode}: #{itemBean.itemName.name}</h3>
+                        </f:facet>
+                        <h:outputLabel value="Kod Egzemplarza" style="font-weight:bold"/>
+                        <h:inputText id="barCode" value="#{itemBean.item.barCode}" required="true" />
+                        <h:outputLabel value="Status" style="font-weight:bold"/>
+                        <h:selectOneMenu id="status" value="#{itemBean.item.status}" required="true">
+                            <f:selectItem itemValue="Available" itemLabel="Dostępny"/>
+                            <f:selectItem itemValue="Ordered" itemLabel="Sprzedany"/>
+                            <f:selectItem itemValue="InBasket" itemLabel="W koszyku"/>
+                        </h:selectOneMenu>
+                        <h:commandButton id="add" value="Dodaj" action="#{itemBean.saveSpecificItemAddition}" />
+                        <h:commandButton id="cancel" value="Anuluj" action="#{itemBean.cancelSpecificItemEdit}" />
+                    </h:panelGrid>
+                </h:form>
+
+                <p>
+                    <a href="employeeIndex.xhtml">Powrót</a>
+                </p>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</h:body>
+</html>

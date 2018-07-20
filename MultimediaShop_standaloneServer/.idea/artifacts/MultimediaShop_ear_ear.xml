@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ear" name="MultimediaShop-ear:ear">
-    <output-path>$PROJECT_DIR$/MultimediaShop-ear/target</output-path>
-    <root id="archive" name="MultimediaShop-ear-1.0-SNAPSHOT.ear">
-      <element id="artifact" artifact-name="MultimediaShop-ear:ear exploded" />
-    </root>
-  </artifact>
-</component>

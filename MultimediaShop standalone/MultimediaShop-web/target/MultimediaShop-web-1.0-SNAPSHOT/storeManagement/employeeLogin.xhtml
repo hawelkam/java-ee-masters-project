@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+    <h:outputStylesheet library="style" name="commonStyle.css" />
+    <title>MultimediaShop - portal pracownika</title>
+</h:head>
+<h:body>
+    <div class="content">
+        <h3><h:outputText value="Zaloguj się:" /></h3>
+        <h:form id="loginForm">
+            <p>Login: <h:inputText id="login" value="#{employeeLoginBean.login}"></h:inputText></p>
+            <p>Hasło: <h:inputSecret id="password" value="#{employeeLoginBean.password}"></h:inputSecret></p>
+            <p><h:commandButton id="performLogin" value="Zaloguj" action="#{employeeLoginBean.performLogin}"></h:commandButton>
+                <h:commandButton id="createNewUser" value="Utwórz konto" action="#{employeeLoginBean.showNewUserDialog}"></h:commandButton></p>
+        </h:form>
+
+        <h:panelGroup rendered="#{employeeLoginBean.edit}">
+            <h3>Utwórz nowego użytkownika:</h3>
+            <h:form id="newEmployeeForm">
+                <p>Imię: <h:inputText id="firstName" value="#{employeeLoginBean.newUser.firstName}" /></p>
+                <p>Nazwisko: <h:inputText id="lastName" value="#{employeeLoginBean.newUser.lastName}" /></p>
+                <p>Adres: <h:inputText id="address" value="#{employeeLoginBean.newUser.address}" /></p>
+                <p>Login: <h:inputText id="newLogin" value="#{employeeLoginBean.newUser.login}" /></p>
+                <p>Hasło: <h:inputSecret id="newPassword"  value="#{employeeLoginBean.newUser.password}" /></p>
+                <p>ID pracownika: <h:inputText id="employeeId" value="#{employeeLoginBean.newUser.employeeId}" /></p>
+                <p>
+                    <h:commandButton id="create" value="Utwórz" action="#{employeeLoginBean.saveEdit}" />
+                    <h:commandButton id="cancel" value="Anuluj" action="#{employeeLoginBean.cancelEdit}" />
+                </p>
+            </h:form>
+        </h:panelGroup>
+    </div>
+</h:body>
+</html>

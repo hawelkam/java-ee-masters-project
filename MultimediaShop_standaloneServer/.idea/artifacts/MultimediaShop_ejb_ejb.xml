@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ejb-jar" name="MultimediaShop-ejb:ejb">
-    <output-path>$PROJECT_DIR$/MultimediaShop-ejb/target</output-path>
-    <root id="archive" name="MultimediaShop-ejb-1.0-SNAPSHOT.jar">
-      <element id="artifact" artifact-name="MultimediaShop-ejb:ejb exploded" />
-    </root>
-  </artifact>
-</component>
