@@ -104,7 +104,7 @@ public class CustomerLoginBean implements Serializable {
         }
     }
 
-    public void logout() {
+    public void performLogout() {
         loggedUser = null;
         login = null;
         password = null;

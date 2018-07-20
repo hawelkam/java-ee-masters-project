@@ -74,6 +74,23 @@
                         </f:facet>
                         <h:outputLabel value="Nazwa" style="font-weight:bold"/>
                         <h:inputText value="#{itemBean.itemName.name}"/>
+                        <h:outputLabel value="Autor" style="font-weight:bold"/>
+                        <h:inputText value="#{itemBean.itemName.author}"/>
+                        <h:outputLabel value="Dystrybutor" style="font-weight:bold"/>
+                        <h:inputText value="#{itemBean.itemName.distributor}"/>
+                        <h:outputLabel value="Opis" style="font-weight:bold"/>
+                        <h:inputTextarea value="#{itemBean.itemName.description}"/>
+                        <h:outputLabel value="Nośnik" style="font-weight:bold"/>
+                        <h:selectOneMenu value="#{itemBean.itemName.medium}">
+                            <f:selectItem itemValue="" />
+                            <f:selectItem itemValue="DVD" />
+                            <f:selectItem itemValue="CD" />
+                            <f:selectItem itemValue="Bluray" />
+                            <f:selectItem itemValue="Vinyl" />
+                            <f:selectItem itemValue="Digital" />
+                        </h:selectOneMenu>
+                        <h:outputLabel value="Cena" style="font-weight:bold"/>
+                        <h:inputText value="#{itemBean.itemName.price}"/>
 
                         <h:commandButton value="Zapisz zmiany" action="#{itemBean.saveEdit}" />
                         <h:commandButton value="Anuluj" action="#{itemBean.cancelEdit}" />

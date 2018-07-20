@@ -25,10 +25,7 @@ public class OrderBean implements Serializable {
     private OrderDto details;
 
     public List<OrderDto> listOrders(String customerId) {
-        LoggingSupport.logTimeToConsole("LIST ORDERS START");
-        List<OrderDto> orders = multimediaShopFacade.listOrders(customerId);
-        LoggingSupport.logTimeToConsole("LIST ORDERS FINISH");
-        return orders;
+        return multimediaShopFacade.listOrders(customerId);
     }
 
     public boolean isDetailsEnabled() {
@@ -54,8 +51,8 @@ public class OrderBean implements Serializable {
 
     public void cancelOrder(OrderDto order) {
         LoggingSupport.logTimeToConsole("CANCEL ORDER START");
-        order.getItems().forEach(this::changeStatusToAvailable);
         multimediaShopFacade.cancelOrder(order.getId());
+        order.getItems().forEach(this::changeStatusToAvailable);
     }
 
     public void orderDetails(OrderDto orderDto) {

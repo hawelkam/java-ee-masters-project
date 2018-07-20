@@ -100,14 +100,15 @@ public class MultimediaShopFacade extends AbstractFacade<ItemNameDto> {
         return true;
     }
 
-    public void editItem(ItemDto editedItem) {
+    public boolean editItem(ItemDto editedItem) {
         List<Item> existingNames = itemDao.findItemByBarCode(editedItem.getBarCode());
         if(existingNames == null || existingNames.size() == 0) {
-            return;
+            return false;
         }
         editedItem.setItemNameDto(ItemFactory.createItemNameDtoWithoutItems(existingNames.get(0).getItemName()));
         editedItem.setEdited(true);
         itemManagementProducer.sendAddOrUpdateItemMessage(editedItem);
+        return true;
     }
 
     public List<ItemNameDto> searchItemNames(ItemNameSearchCriteria searchCriteria) {

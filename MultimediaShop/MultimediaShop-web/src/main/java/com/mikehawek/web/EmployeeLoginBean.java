@@ -106,15 +106,9 @@ public class EmployeeLoginBean implements Serializable {
         }
     }
 
-    public void logout() {
+    public void performLogout() {
         loggedUser = null;
         login = null;
         password = null;
-    }
-
-    @PreDestroy
-    public void preDestroy()
-    {
-        LoggingSupport.logTimeToConsole("DESTROYING THE BEAN");
     }
 }

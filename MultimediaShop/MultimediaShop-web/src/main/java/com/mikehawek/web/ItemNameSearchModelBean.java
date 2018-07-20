@@ -34,6 +34,7 @@ public class ItemNameSearchModelBean implements Serializable{
     }
 
     public void search() {
+        disableDetails();
         searchResult = multimediaShopFacade.searchItemNames(this.itemNameSearchCriteria);
         if (searchResult == null || searchResult.size() == 0) {
             FacesContext.getCurrentInstance().addMessage(
@@ -44,6 +45,7 @@ public class ItemNameSearchModelBean implements Serializable{
     }
 
     public void resetSearch() {
+        disableDetails();
         this.itemNameSearchCriteria = new ItemNameSearchCriteria();
         this.searchResult = new ArrayList<>();
     }

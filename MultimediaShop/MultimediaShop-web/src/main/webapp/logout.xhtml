@@ -10,13 +10,15 @@
 
 <h:head>
     <h:outputStylesheet library="style" name="commonStyle.css" />
-    <title>Witaj!</title>
+    <title>Wylogowano!</title>
 </h:head>
 <h:body bgcolor="white">
+    #{customerLoginBean.performLogout()}
+    #{employeeLoginBean.performLogout()}
     <div class="content">
+        Zostałeś wylogowany!
         <h:form>
-        <p><h:commandButton value="Logowanie klienta" action="shop/customerLogin" /></p>
-        <p><h:commandButton value=" Logowanie pracownika" action="storeManagement/employeeLogin" /></p>
+            <p><h:commandButton value="Idź do ekranu logowania" action="/welcome.xhtml" /></p>
         </h:form>
     </div>
 </h:body>

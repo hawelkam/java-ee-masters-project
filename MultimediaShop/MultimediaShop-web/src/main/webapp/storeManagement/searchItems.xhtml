@@ -53,10 +53,8 @@
                 <h:form id="itemEditForm" rendered="#{itemBean.specificItemEdit}">
                     <h:panelGrid id="editItem" columns="2" border="1" cellpadding="10" cellspacing="1" >
                         <f:facet name="header">
-                            <h3>Edytuj egzemplarz przedmiotu #{itemBean.itemName.productCode}: #{itemBean.itemName.name}</h3>
+                            <h3>Edytuj egzemplarz #{itemBean.item.barCode} przedmiotu #{itemBean.itemName.productCode}: #{itemBean.itemName.name}</h3>
                         </f:facet>
-                        <h:outputLabel value="Kod Egzemplarza" style="font-weight:bold"/>
-                        <h:inputText id="barCode" value="#{itemBean.item.barCode}" required="true" />
                         <h:outputLabel value="Status" style="font-weight:bold"/>
                         <h:selectOneMenu id="status" value="#{itemBean.item.status}" required="true">
                                 <f:selectItem itemValue="Available" itemLabel="Dostępny"/>

@@ -21,6 +21,7 @@ public class ItemBean implements Serializable {
     @EJB
     private MultimediaShopFacade multimediaShopFacade;
 
+
     private String name;
     private ItemNameDto itemName;
     private ItemNameDto beforeEditItemName;
@@ -44,9 +45,13 @@ public class ItemBean implements Serializable {
         if (!result) {
             FacesContext.getCurrentInstance().addMessage(
                     null,
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Item name with code " + itemName.getProductCode() + " already exists!", ""));
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Przedmiot z kodem " + itemName.getProductCode() + " już istnieje!", ""));
             return;
         }
+        FacesContext.getCurrentInstance().addMessage(
+                null,
+                new FacesMessage(FacesMessage.SEVERITY_INFO, "Przedmiot z kodem " + itemName.getProductCode() + " został dodany!", ""));
+
         setItemNames(multimediaShopFacade.listItemNames());
         resetAdd();
 
@@ -56,7 +61,7 @@ public class ItemBean implements Serializable {
         itemName = new ItemNameDto();
     }
 
-    public List<ItemNameDto> listItems() {
+    public List<ItemNameDto> listItemNames() {
         return multimediaShopFacade.listItemNames();
     }
 
@@ -80,7 +85,7 @@ public class ItemBean implements Serializable {
 
     public void delete(String productCode) throws IOException {
         multimediaShopFacade.deleteItemName(productCode);
-        this.itemNames = listItems();
+        this.itemNames = listItemNames();
     }
 
     public void addSpecificItem(ItemNameDto itemName) {
@@ -103,17 +108,33 @@ public class ItemBean implements Serializable {
     public void saveSpecificItemEdit() {
         LoggingSupport.logTimeToConsole("EDIT ITEM OPERATION START");
         this.item.setItemNameDto(this.itemName);
-        multimediaShopFacade.editItem(this.item);
-        this.item = new ItemDto();
-        this.itemNames = listItems();
-        specificItemEdit = false;
+        if(multimediaShopFacade.editItem(this.item)) {
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Egzemplarz " + item.getBarCode() + " edytowany!", ""));
+            this.item = new ItemDto();
+            this.itemNames = listItemNames();
+            specificItemEdit = false;
+            return;
+        }
+        FacesContext.getCurrentInstance().addMessage(
+                null,
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, "Egzemplarz " + item.getBarCode() + " nie istnieje!", ""));
     }
 
     public void saveSpecificItemAddition() {
         this.item.setItemNameDto(this.itemName);
-        multimediaShopFacade.addItem(this.item);
-        this.item = new ItemDto();
-        specificItemEdit = false;
+        if(multimediaShopFacade.addItem(this.item)) {
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Egzemplarz " + item.getBarCode() + " dodany!", ""));
+            this.item = new ItemDto();
+            specificItemEdit = false;
+            return;
+        }
+        FacesContext.getCurrentInstance().addMessage(
+                null,
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, "Egzemplarz " + item.getBarCode() + " już istnieje!", ""));
     }
 
     public void deleteSpecificItem(String barCode) throws IOException {
